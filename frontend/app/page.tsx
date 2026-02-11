@@ -118,7 +118,7 @@ export default function Home() {
           {/* Background image with overlay */}
           <div className="absolute inset-0">
             <Image
-              src="/smartcity.jpg"
+              src="/city.jpg"
               alt="Smart City Transportation"
               fill
               className="object-cover"
@@ -502,11 +502,13 @@ export default function Home() {
                                  transition-all duration-300">
                   Submit Paper
                 </button>
-                <button className="px-8 py-4 border-2 border-fog text-fog font-bold rounded-xl
-                                 hover:bg-fog hover:text-white hover:-translate-y-1
-                                 transition-all duration-300">
-                  Lihat Panduan Penulisan
-                </button>
+                <Link href="/call-for-paper/author-guideline">
+                  <button className="px-8 py-4 border-2 border-fog text-fog font-bold rounded-xl
+                                   hover:bg-fog hover:text-white hover:-translate-y-1
+                                   transition-all duration-300 w-full sm:w-auto">
+                    Lihat Panduan Penulisan
+                  </button>
+                </Link>
               </div>
             </FadeIn>
           </div>

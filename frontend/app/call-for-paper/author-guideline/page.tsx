@@ -18,17 +18,22 @@ const sections = [
 
 export default function AuthorGuideline() {
     const [activeSection, setActiveSection] = useState('abstract');
+    const isScrollingRef = { current: false };
 
     // Handle scroll to highlight active section
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
+            // Prevent observer from overriding the state while we are programmatically scrolling
+            if (isScrollingRef.current) return;
+
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     setActiveSection(entry.target.id);
                 }
             });
         }, {
-            rootMargin: '-20% 0px -70% 0px',
+            // Adjusted margins to trigger precisely when section passes the top nav bar (approx 120px)
+            rootMargin: '-15% 0px -75% 0px',
             threshold: 0
         });
 
@@ -37,17 +42,39 @@ export default function AuthorGuideline() {
             if (element) observer.observe(element);
         });
 
-        return () => observer.disconnect();
+        // Fallback for manual scroll tracking
+        const handleScroll = () => {
+            if (isScrollingRef.current) return;
+            // Additional logic can be added here if needed for very small sections
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            observer.disconnect();
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const scrollToSection = (id: string) => {
+        isScrollingRef.current = true;
         setActiveSection(id);
         const element = document.getElementById(id);
         if (element) {
+            const offset = 140; // Slightly more than the navigation height
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
             window.scrollTo({
-                top: element.offsetTop - 120,
+                top: offsetPosition,
                 behavior: 'smooth',
             });
+
+            // Re-enable observer after smooth scroll completes (approx 800ms)
+            setTimeout(() => {
+                isScrollingRef.current = false;
+            }, 1000);
         }
     };
 
@@ -59,7 +86,7 @@ export default function AuthorGuideline() {
                 <section className="relative h-[45vh] min-h-[400px] bg-pine flex items-center overflow-hidden">
                     <div className="absolute inset-0">
                         <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2000')] bg-cover bg-center opacity-20" />
+                        <div className="absolute inset-0 bg-[url('/smartcity.jpg')] bg-cover bg-center opacity-20" />
                     </div>
 
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
@@ -142,13 +169,7 @@ export default function AuthorGuideline() {
                             <div id="abstract" className="scroll-mt-32 space-y-12">
                                 <FadeIn direction="up">
                                     <div className="space-y-8">
-                                        <div className="flex items-center gap-4">
-                                            <span className="w-1.5 h-10 bg-fog rounded-full" />
-                                            <h2 className="text-3xl font-black uppercase tracking-tight">AUTHOR GUIDELINES</h2>
-                                        </div>
-                                        <p className="text-lg font-bold text-sage italic bg-sage/5 p-6 rounded-2xl border-l-4 border-sage">
-                                            Gambaran proses untuk peserta Simposium Madiun:
-                                        </p>
+
                                         <div className="bg-white rounded-[2rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
                                             <h3 className="text-xl font-extrabold text-pine text-center border-b border-clay/30 pb-6 uppercase">
                                                 INSTRUKSI PENULISAN MAKALAH UNTUK <br />
@@ -282,12 +303,12 @@ export default function AuthorGuideline() {
                                                 'Bab-bab Pembahasan (data, analisis, dan lain-lain)', 'Kesimpulan',
                                                 'Ucapan Terima kasih (boleh tidak ada)', 'Daftar Pustaka'
                                             ].map((item, i) => (
-                                                <div key={i} className="group relative flex items-center p-5 bg-gradient-to-r from-sage/5 to-moss/10 hover:from-sage/20 hover:to-moss/30 rounded-2xl border border-moss/20 hover:border-moss/40 hover:shadow-xl hover:shadow-moss/10 transition-all duration-500">
+                                                <div key={i} className="group relative flex items-center p-5 bg-gradient-to-r from-sage/10 to-moss/20 rounded-2xl border border-moss/30 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-moss/10">
                                                     <div className="flex items-center gap-6">
-                                                        <div className="w-12 h-12 rounded-xl bg-white border border-moss/20 flex items-center justify-center shadow-sm group-hover:bg-pine group-hover:border-pine transition-all duration-500">
-                                                            <span className="text-pine font-black text-sm group-hover:text-white transition-colors duration-500">{(i + 1).toString().padStart(2, '0')}</span>
+                                                        <div className="w-12 h-12 rounded-xl bg-pine border border-pine flex items-center justify-center shadow-sm transition-all duration-500">
+                                                            <span className="text-white font-black text-sm">{(i + 1).toString().padStart(2, '0')}</span>
                                                         </div>
-                                                        <span className="text-base font-extrabold text-pine/80 group-hover:text-pine transition-colors duration-500 tracking-tight">{item}</span>
+                                                        <span className="text-base font-extrabold text-pine transition-colors duration-500 tracking-tight">{item}</span>
                                                     </div>
                                                 </div>
                                             ))}
