@@ -41,9 +41,13 @@ export default function FadeIn({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && scrollDir.current === 'down') {
-          // Fade in: as soon as element appears at screen bottom
-          setVisible(true);
+        const isNearTop = entry.boundingClientRect.top < window.innerHeight * 0.8;
+
+        if (entry.isIntersecting) {
+          // Fade in if scrolling down OR if it's already well in view (e.g. on navigation/mount)
+          if (scrollDir.current === 'down' || isNearTop) {
+            setVisible(true);
+          }
         } else if (scrollDir.current === 'up' && entry.boundingClientRect.top > 0 && entry.intersectionRatio < 0.15) {
           // Fade out: when 85% of component is hidden (only 15% visible)
           setVisible(false);
@@ -52,15 +56,24 @@ export default function FadeIn({
       { threshold: [0, 0.05, 0.1, 0.15, 0.2] }
     );
 
+    // Initial check in case it's already in viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top >= 0 && rect.top < window.innerHeight) {
+      setVisible(true);
+    }
+
     // Also check on scroll for smooth fade out at 85% hidden
     const onScroll = () => {
       if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const visibleHeight = Math.max(0, window.innerHeight - Math.max(0, rect.top));
-      const ratio = rect.height > 0 ? visibleHeight / rect.height : 0;
+      const r = el.getBoundingClientRect();
+      const visibleHeight = Math.max(0, window.innerHeight - Math.max(0, r.top));
+      const ratio = r.height > 0 ? visibleHeight / r.height : 0;
 
-      if (scrollDir.current === 'up' && rect.top > 0 && ratio < 0.15) {
+      if (scrollDir.current === 'up' && r.top > 0 && ratio < 0.15) {
         setVisible(false);
+      } else if (r.top < window.innerHeight * 0.8 && r.bottom > 0) {
+        // Safe check to ensure visible if it's inside the viewport
+        setVisible(true);
       }
     };
 
