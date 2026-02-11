@@ -203,7 +203,7 @@ export default function Home() {
               {/* Left — Decorative block */}
               <FadeIn direction="left">
                 <div className="relative">
-                  <div className="aspect-[16/9] rounded-2xl bg-gradient-to-br from-pine to-fog overflow-hidden relative">
+                  <div className="aspect-[6/3] rounded-2xl bg-gradient-to-br from-pine to-fog overflow-hidden relative">
                     <div className="absolute inset-0 bg-[url('/mobility.jpg')] bg-cover bg-center opacity-30" />
                     <div className="relative z-10 flex left-3 bottom-2 flex-col justify-end h-full p-8">
                       <p className="text-clay text-sm font-semibold tracking-widest uppercase mb-2">Tahun 2026</p>
