@@ -161,9 +161,13 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={400}>
-                <p className="text-base sm:text-lg text-moss/90 font-medium leading-relaxed max-w-xl">
-                  Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future
-                </p>
+                <div className="max-w-3xl border-l-4 border-fog pl-6 py-2">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-black leading-[1.2] tracking-tight">
+                    <span className="bg-gradient-to-r from-white via-moss to-sage bg-clip-text text-transparent italic pr-4">
+                      "Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future"
+                    </span>
+                  </p>
+                </div>
               </FadeIn>
 
               <FadeIn delay={500}>

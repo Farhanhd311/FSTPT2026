@@ -8,6 +8,8 @@ interface DropdownItem {
   href: string;
   label: string;
   desc?: string;
+  icon?: React.ReactNode;
+  color?: string; // Tailwind color class like 'text-fog' or 'text-sage'
 }
 
 interface NavItem {
@@ -21,15 +23,55 @@ const navItems: NavItem[] = [
   {
     label: 'Main Program',
     dropdown: [
-      { href: '/main-program/sub-page-1', label: 'Sub Page 1', desc: 'Program utama bagian pertama' },
-      { href: '/main-program/sub-page-2', label: 'Sub Page 2', desc: 'Program utama bagian kedua' },
+      {
+        href: '/main-program/sub-page-1',
+        label: 'Agenda Kegiatan',
+        desc: 'Jadwal lengkap konferensi',
+        color: 'text-fog',
+        icon: (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        )
+      },
+      {
+        href: '/main-program/sub-page-2',
+        label: 'Venue & Hotel',
+        desc: 'Informasi lokasi dan penginapan',
+        color: 'text-sage',
+        icon: (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        )
+      },
     ],
   },
   {
     label: 'Call For Paper',
     dropdown: [
-      { href: '/call-for-paper/author-guideline', label: 'Author Guideline', desc: 'Panduan lengkap penulisan paper' },
-      { href: '/call-for-paper/registration', label: 'Registration', desc: 'Pendaftaran peserta dan pemakalah' },
+      {
+        href: '/call-for-paper/author-guideline',
+        label: 'Author Guideline',
+        desc: 'Complete submission manual',
+        color: 'text-clay',
+        icon: (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        )
+      },
+      {
+        href: '/call-for-paper/registration',
+        label: 'Registration',
+        desc: 'Register as participant',
+        color: 'text-moss',
+        icon: (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+        )
+      },
     ],
   },
   { label: 'Panitia', href: '/panitia' },
@@ -130,32 +172,52 @@ export default function Navigation() {
                     {/* Dropdown */}
                     <div
                       className={`
-                        absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200
+                        absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-300
                         ${activeDropdown === item.label
                           ? 'opacity-100 translate-y-0 pointer-events-auto'
-                          : 'opacity-0 -translate-y-2 pointer-events-none'
+                          : 'opacity-0 -translate-y-4 pointer-events-none'
                         }
                       `}
                     >
-                      <div className="w-60 bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_8px_30px_rgba(34,57,60,0.12)] border border-pine/5 p-1.5 overflow-hidden">
-                        {/* Subtle top gradient accent */}
-                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-fog via-sage to-fog rounded-t-xl" />
-                        {item.dropdown.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            className="group/item flex flex-col gap-0.5 px-3.5 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-fog/5 hover:to-sage/5 transition-all duration-200"
-                          >
-                            <span className="text-sm font-medium text-pine group-hover/item:text-fog transition-colors">
-                              {sub.label}
-                            </span>
-                            {sub.desc && (
-                              <span className="text-xs text-pine/40 group-hover/item:text-pine/60 transition-colors">
-                                {sub.desc}
-                              </span>
-                            )}
-                          </Link>
-                        ))}
+                      <div className="w-[320px] bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_20px_50px_rgba(34,57,60,0.15)] border border-pine/5 p-2.5 overflow-hidden">
+                        {/* Elegant accent border at top */}
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-fog via-sage to-clay opacity-80" />
+
+                        <div className="space-y-1">
+                          {item.dropdown.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              className="group/item flex items-start gap-4 p-3 rounded-xl hover:bg-gradient-to-r hover:from-white hover:to-pine/5 transition-all duration-300 relative overflow-hidden"
+                            >
+                              {/* Hover glow effect */}
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000" />
+
+                              <div className={`
+                                w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300
+                                bg-white shadow-sm border border-pine/5
+                                group-hover/item:scale-110 group-hover/item:shadow-md
+                                ${sub.color || 'text-pine'} group-hover/item:bg-pine group-hover/item:text-white
+                              `}>
+                                {sub.icon}
+                              </div>
+
+                              <div className="flex flex-col gap-0.5 pointer-events-none">
+                                <span className="text-[15px] font-bold text-pine flex items-center gap-1.5 transition-colors group-hover/item:text-fog">
+                                  {sub.label}
+                                  <svg className="w-3 h-3 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </span>
+                                {sub.desc && (
+                                  <span className="text-xs text-sage leading-snug group-hover/item:text-pine/60 transition-colors">
+                                    {sub.desc}
+                                  </span>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -262,15 +324,28 @@ export default function Navigation() {
                   className={`overflow-hidden transition-all duration-300 ${mobileDropdown === item.label ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                 >
-                  <div className="ml-3 pl-3 border-l-2 border-fog/15 space-y-0.5 py-1">
+                  <div className="ml-3 pl-3 border-l-2 border-fog/10 space-y-0.5 py-1">
                     {item.dropdown.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="block px-3 py-2 rounded-lg text-sm text-pine/70 hover:text-fog hover:bg-fog/5 transition-colors"
+                        className="group flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-fog/5 transition-all duration-200"
                       >
-                        {sub.label}
+                        <div className={`w-8 h-8 rounded-md flex items-center justify-center bg-white shadow-sm border border-pine/5 ${sub.color || 'text-pine'} group-hover:bg-pine group-hover:text-white transition-all`}>
+                          {/* Scale down icon for mobile */}
+                          <div className="scale-75">
+                            {sub.icon}
+                          </div>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-sm font-semibold text-pine group-hover:text-fog transition-colors">
+                            {sub.label}
+                          </span>
+                          <span className="text-[10px] text-sage/70 group-hover:text-pine/40 transition-colors line-clamp-1">
+                            {sub.desc}
+                          </span>
+                        </div>
                       </Link>
                     ))}
                   </div>

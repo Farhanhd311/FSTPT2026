@@ -11,7 +11,7 @@ const committeeData = {
     steering: [
         { name: "Dr. Efa Yonnedi, S.E., M.PPM., Akt., CA., CRGP", image: "/panitia/efa yonedi.png" },
         { name: "Prof. Dr. Techn. Marzuki, M.Sc. Eng", image: "/panitia/technmarzukii.png" },
-        { name: "Dr. Ir. Is Prima Nanda, S.T., M.T", image: "/panitia/prima nanda.png" },
+        { name: "Dr. Ir. Is Prima Nanda, S.T., M.T", image: "/panitia/primananda.jpeg" },
         { name: "Ir. Sabril Haris HG., S.T., M.T., Ph. D", image: "/panitia/sabrilll.png" }
     ],
     organizing: [
@@ -21,10 +21,11 @@ const committeeData = {
         { role: "Treasurer", name: "Dwi Jenita Maharani, S.T., M.Eng.", image: "/panitia/jenita.png" }
     ],
     scientific: [
-        { name: "Prof. Dr. Eng. Ir. Jafril Tanjung, M.T.", institution: "Universitas Andalas, Indonesia" },
-        { name: "Prof. Dr.Eng. Ir. Rendy Thamrin, S.T., M.T.", institution: "Universitas Andalas, Indonesia" },
-        { name: "Prof. Ir. Taufika Ophiyandri, S.T., M. Sc, Ph. D", institution: "Universitas Andalas, Indonesia" },
-        { name: "Ir. Purnawan, M.T., Ph.D.", institution: "Universitas Andalas, Indonesia" }
+        { name: "Prof. Dr. Eng. Ir. Jafril Tanjung, M.T.", institution: "Universitas Andalas, Indonesia", image: "/panitia/jafril.png" },
+        { name: "Prof. Dr.Eng. Ir. Rendy Thamrin, S.T., M.T.", institution: "Universitas Andalas, Indonesia", image: "/panitia/rendy.jpg" },
+        { name: "Prof. Ir. Taufika Ophiyandri, S.T., M. Sc, Ph. D", institution: "Universitas Andalas, Indonesia", image: "/panitia/opi.jpg" },
+        { name: "Ir. Purnawan, M.T., Ph.D.", institution: "Universitas Andalas, Indonesia", image: "/panitia/purnawan.jpg" },
+        { name: "Prof. Ir. Elsa Eka Putri, S.T., M. Sc (Eng.), Ph.D.", institution: "Universitas Andalas, Indonesia", image: "/panitia/elsa.png" }
     ],
     subCommittees: [
         {
@@ -75,7 +76,6 @@ const committeeData = {
             coordinator: "Ir. Benny Hidayat, M.T., Ph.D.",
             members: [
                 "Ir. Hendra Gunawan, M.T.",
-                "Prof. Ir. Elsa Eka Putri, S.T., M. Sc (Eng.), Ph.D.",
                 "Muhazir Rahendra, S.T., M.T.",
                 "Ayu Marta Mulya, S. IP",
                 "Talitha Hulwa (2310922023)",
@@ -214,6 +214,39 @@ export default function Committee() {
                                 ))}
                             </div>
                         </section>
+
+                        {/* ═══════════════ SCIENTIFIC COMMITTEE ═══════════════ */}
+                        <section>
+                            <div className="text-center mb-12">
+                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">Scientific Committee</h2>
+                                <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
+                            </div>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                                {committeeData.scientific.map((item, i) => (
+                                    <FadeIn key={i} direction="up" delay={i * 50}>
+                                        <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
+                                            <div className="relative h-72 overflow-hidden bg-pine/5">
+                                                <div className="absolute inset-0 bg-gradient-to-t from-pine/20 to-transparent z-10" />
+                                                {/* Profile Photo */}
+                                                <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
+                                                    <NextImage
+                                                        src={item.image}
+                                                        alt={item.name}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="(max-w-7xl) 20vw"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="p-6 flex-grow flex flex-col justify-center text-center">
+                                                <p className="font-black text-pine leading-tight text-base sm:text-xs xl:text-base tracking-tight mb-2">{item.name}</p>
+                                                <p className="text-[10px] font-bold text-sage uppercase tracking-wider">{item.institution}</p>
+                                            </div>
+                                        </div>
+                                    </FadeIn>
+                                ))}
+                            </div>
+                        </section>
                     </div>
 
                     {/* ═══════════════ STANDARD SECTION (Sub Committees & Scientific) ═══════════════ */}
@@ -255,30 +288,7 @@ export default function Committee() {
                             </div>
                         </section>
 
-                        {/* ═══════════════ SCIENTIFIC COMMITTEE ═══════════════ */}
-                        <section>
-                            <div className="text-center mb-12">
-                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">Scientific Committee</h2>
-                                <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
-                            </div>
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                                {committeeData.scientific.map((item, i) => (
-                                    <FadeIn key={i} direction="up" delay={i * 100}>
-                                        <div className="p-8 bg-white border border-pine/10 rounded-[2rem] shadow-md hover:shadow-xl transition-all duration-300 group flex items-center gap-6">
-                                            <div className="w-14 h-14 bg-moss/10 rounded-2xl flex items-center justify-center text-moss flex-shrink-0 group-hover:bg-pine group-hover:text-white transition-all duration-500">
-                                                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <p className="font-bold text-pine text-lg leading-tight mb-1">{item.name}</p>
-                                                <p className="text-sm font-medium text-sage">{item.institution}</p>
-                                            </div>
-                                        </div>
-                                    </FadeIn>
-                                ))}
-                            </div>
-                        </section>
+
                     </div>
                 </div>
             </main>
