@@ -41,22 +41,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Hide scrollbar but keep scroll functionality */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--morning-clay);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--fog-horizon);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--pine-black);
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Blob animations for Hero section */
