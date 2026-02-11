@@ -81,7 +81,7 @@ export default function Navigation() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-              <div className="relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden">
                 <Image
                   src="/logo.htm"
                   alt="Logo FSTPT"

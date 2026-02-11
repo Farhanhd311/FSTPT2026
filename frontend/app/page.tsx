@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import SubThemesGrid from '@/components/SubThemesGrid';
+import Timeline from '@/components/Timeline';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -140,7 +141,7 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2.5 px-5 py-2 text-sm font-medium
                                text-white/90 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full">
                   <span className="w-2 h-2 bg-fog rounded-full animate-pulse" />
-                  FSTPT 2026 — Universitas Andalas
+                  FSTPT 2026 — Padang, West Sumatera
                 </span>
               </FadeIn>
 
@@ -196,7 +197,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════ ABOUT / PENJELASAN ═══════════════ */}
-        <section className="flex flex-col justify-center items-center py-24 lg:py-32 bg-white h-190">
+        <section className="flex flex-col justify-center items-center py-24 lg:py-32 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -226,10 +227,10 @@ export default function Home() {
                     What is{' '}
                     <span className="text-fog">FSTPT</span>?
                   </h2>
-                  <p className="text-sage leading-relaxed mb-8 pb-4 text-justify">
+                  <p className="text-sage leading-relaxed mb-8 text-justify">
                     Forum Studi Transportasi antar Perguruan Tinggi (FSTPT) is a scientific forum established to foster interaction and communication among students, lecturers, and researchers from universities and institutions across Indonesia engaged in education, research, and community service in the transportation sector. FSTPT is realized through: (1) a mid-year national transportation seminar, (2) an end-of-year national transportation symposium, and (3) the International Symposium on Transportation and Sustainable Development Conference (ISTSDC), held biennially. These platforms serve as avenues for exchanging research findings, scientific studies, and professional experiences to strengthen the Tridharma of Higher Education and support national transportation research and innovation programs. Since its inception in 1998, the end-of-year symposium alone has featured nearly 6,000 presentations by students and lecturers in transportation sciences, while ISTSDC further expands international collaboration and knowledge exchange in sustainable transport development.
                   </p>
-                  <p className="text-sage leading-relaxed mb-8 text-center">
+                  <p className="text-sage leading-relaxed text-center">
                     In 2026, FSTPT will host <strong className="text-pine">ISTSDC ke-5</strong> and{' '}
                     <strong className="text-pine">Symposium Nasional ke-29</strong> with the theme
                     &quot;Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future&quot;
@@ -255,11 +256,11 @@ export default function Home() {
         </section>
 
         {/* ═══════════════ OBJECTIVES ═══════════════ */}
-        <section className="flex flex-col justify-center items-center py-24 lg:py-32 bg-clay/15 h-120">
+        <section className="flex flex-col justify-center items-center py-24 lg:py-16 bg-clay/15">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
             <FadeIn>
-              <div className="max-w-8xl mx-auto mb-16 h-20">
+              <div className="max-w-8xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-pine text-center leading-tight mb-4">
                   OBJECTIVES
                 </h2>
@@ -272,7 +273,7 @@ export default function Home() {
             <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12 py-10">
               {objectives.map((obj, i) => (
                 <FadeIn key={i} delay={i * 120}>
-                  <div className="group relative bg-white rounded-2xl shadow-sm h-52
+                  <div className="group relative bg-white rounded-2xl shadow-sm h-70
                                   hover:shadow-xl hover:-translate-y-1
                                   transition-all duration-300 overflow-hidden">
 
@@ -282,7 +283,7 @@ export default function Home() {
                                     transition-transform duration-500" />
 
                     {/* Row 1 — Title */}
-                    <div className="flex justify-center items-center px-4 pt-8 pb-6 border-b border-clay/30 h-13">
+                    <div className="flex justify-center items-center px-4 pt-6 pb-4 border-b border-clay/30">
                       <h3 className="text-lg font-bold text-pine text-center">
                         {obj.title}
                       </h3>
@@ -308,7 +309,7 @@ export default function Home() {
 
             {/* Section Header */}
             <FadeIn>
-              <div className="flex flex-col justify-center items-center text-center mb-20">
+              <div className="flex flex-col justify-center items-center text-center mb-10">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-pine leading-tight mb-4">
                   MAIN ACTIVITIES
                 </h2>
@@ -389,7 +390,7 @@ export default function Home() {
 
             {/* ISTSDC & FSTPT Detail Block */}
             <FadeIn>
-              <div className="bg-pine rounded-3xl p-10 lg:p-16 relative overflow-hidden mt-16 top-10 ">
+              <div className="bg-pine rounded-3xl p-10 lg:p-16 relative overflow-hidden mt-50">
                 {/* Decorative background elements */}
                 <div className="absolute top-0 right-0 w-72 h-72 bg-fog/5 rounded-full -translate-y-1/2 translate-x-1/3" />
                 <div className="absolute bottom-0 left-0 w-56 h-56 bg-sage/5 rounded-full translate-y-1/3 -translate-x-1/4" />
@@ -399,21 +400,21 @@ export default function Home() {
                 <div className="relative">
                   {/* Heading */}
                   <div className="text-center mb-10">
-                    <h3 className="text-2xl lg:text-3xl font-extrabold text-white leading-snug mb-3">
+                    <h3 className="text-2xl lg:text-3xl font-extrabold text-white leading-snug">
                       5th ISTSDC and 29th FSTPT
                     </h3>
-                    <p className="h-10 text-moss/80 text-sm lg:text-lg text-center italic max-w-7xl mx-auto">
+                    <p className="text-moss/80 text-sm lg:text-lg text-center italic max-w-7xl mx-auto">
                       Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future
                     </p>
                   </div>
 
                   {/* Divider */}
-                  <div className="flex justify-center mb-10">
+                  <div className="flex justify-center">
                     <div className="w-16 h-px bg-fog/30" />
                   </div>
 
                   {/* Paragraphs */}
-                  <div className="h-65 space-y-6 text-moss text-sm lg:text-base leading-relaxed max-w-7xl mx-auto text-center">
+                  <div className="space-y-6 text-moss text-sm lg:text-base leading-relaxed max-w-7xl mx-auto text-center">
                     <p>
                       The 5th International Symposium on Transportation, Sustainable Development, and Civil Engineering (ISTSDC) together with the 29th National Symposium of FSTPT carries the theme &ldquo;Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future&rdquo; as a commitment of academics, practitioners, and policymakers to drive the transformation of transportation systems that are efficient, low-carbon, safe, and sustainable.
                     </p>
@@ -429,6 +430,7 @@ export default function Home() {
             </FadeIn>
           </div>
         </section>
+
 
         {/* ═══════════════ SUBTHEMES ═══════════════ */}
         <section className="flex flex-col justify-center items-center py-24 lg:py-20 bg-pine relative overflow-hidden mt-16">
@@ -452,6 +454,32 @@ export default function Home() {
             </FadeIn>
 
             <SubThemesGrid subthemes={subthemes} />
+          </div>
+        </section>
+
+        {/* ═══════════════ IMPORTANT DATES ═══════════════ */}
+        <section className="relative py-28 lg:py-20 bg-gradient-to-b from-white via-clay/5 to-white overflow-hidden">
+          {/* Background decorative grid */}
+          <div className="absolute inset-0 bg-grid-pattern opacity-40" />
+
+          {/* Floating orbs */}
+          <div className="absolute top-16 left-[8%] w-64 h-64 bg-fog/5 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute bottom-20 right-[10%] w-48 h-48 bg-sage/5 rounded-full blur-3xl animate-float-delay" />
+
+          <div className="relative max-w-4xl mx-auto px-6 lg:px-12">
+            <FadeIn>
+              <div className="text-center mb-20">
+                <p className="text-fog font-semibold tracking-widest uppercase text-sm mb-3">Timeline</p>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-pine leading-tight mb-4">
+                  Tanggal Penting
+                </h2>
+                <p className="text-sage leading-relaxed max-w-xl mx-auto">
+                  Catat tanggal-tanggal penting berikut untuk memastikan partisipasi Anda dalam FSTPT 2026.
+                </p>
+              </div>
+            </FadeIn>
+
+            <Timeline />
           </div>
         </section>
 

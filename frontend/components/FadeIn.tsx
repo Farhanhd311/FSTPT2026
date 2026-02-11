@@ -42,16 +42,34 @@ export default function FadeIn({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && scrollDir.current === 'down') {
+          // Fade in: as soon as element appears at screen bottom
           setVisible(true);
-        } else if (!entry.isIntersecting && scrollDir.current === 'up' && entry.boundingClientRect.top > 0) {
+        } else if (scrollDir.current === 'up' && entry.boundingClientRect.top > 0 && entry.intersectionRatio < 0.15) {
+          // Fade out: when 85% of component is hidden (only 15% visible)
           setVisible(false);
         }
       },
-      { threshold: 0.05 }
+      { threshold: [0, 0.05, 0.1, 0.15, 0.2] }
     );
 
+    // Also check on scroll for smooth fade out at 85% hidden
+    const onScroll = () => {
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const visibleHeight = Math.max(0, window.innerHeight - Math.max(0, rect.top));
+      const ratio = rect.height > 0 ? visibleHeight / rect.height : 0;
+
+      if (scrollDir.current === 'up' && rect.top > 0 && ratio < 0.15) {
+        setVisible(false);
+      }
+    };
+
     observer.observe(el);
-    return () => observer.disconnect();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   const translate =
