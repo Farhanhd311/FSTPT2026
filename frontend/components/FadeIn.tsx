@@ -17,6 +17,19 @@ export default function FadeIn({
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const scrollDir = useRef<'down' | 'up'>('down');
+
+  // Track scroll direction
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      scrollDir.current = currentY >= lastY ? 'down' : 'up';
+      lastY = currentY;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -24,12 +37,15 @@ export default function FadeIn({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && scrollDir.current === 'down') {
+          // Scrolling down & element enters viewport → fade in
           setVisible(true);
-          observer.unobserve(el);
+        } else if (!entry.isIntersecting && scrollDir.current === 'up' && entry.boundingClientRect.top > 0) {
+          // Scrolling up & element leaves viewport from bottom → fade out
+          setVisible(false);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: '0px 0px -25% 0px' }
     );
 
     observer.observe(el);
