@@ -58,7 +58,7 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
                               group-hover:from-fog/5 group-hover:to-sage/5 transition-all duration-500 rounded-xl" />
 
               {/* Number badge */}
-              <span className="text-4xl font-black text-white/[0.06] absolute top-3 right-4
+              <span className="text-4xl font-black text-white/[0.1] absolute top-3 right-4
                              group-hover:text-fog/15 transition-colors duration-400">
                 {st.number}
               </span>
@@ -66,7 +66,7 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
               <div className="relative">
                 <div className="w-8 h-1 bg-gradient-to-r from-fog to-sage rounded-full mb-3
                                 group-hover:w-12 transition-all duration-400" />
-                <h3 className="text-sm font-bold text-white/90 pr-10 leading-snug
+                <h3 className="text-sm font-bold text-white/90 pr-10 pt-3 leading-snug
                                group-hover:text-white transition-colors duration-300">{st.title}</h3>
               </div>
 
@@ -123,7 +123,7 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
 
               <div className="relative">
                 {/* Number */}
-                <span className="text-6xl font-black text-fog/10">{selected.number}</span>
+                <span className="text-6xl font-black text-fog/30">{selected.number}</span>
 
                 {/* Accent line */}
                 <div className="w-14 h-1 bg-gradient-to-r from-fog to-sage rounded-full mt-4 mb-5" />
