@@ -45,12 +45,12 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
   return (
     <>
       {/* Cards Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-5">
         {subthemes.map((st, i) => (
           <FadeIn key={i} delay={i * 60}>
             <div
               onClick={() => openModal(st)}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10
+              className="group h-33 bg-white/5 backdrop-blur-sm border border-white/10
                         rounded-xl p-5 hover:bg-white/10 hover:border-fog/40
                         hover:-translate-y-1 transition-all duration-300 cursor-pointer"
             >
@@ -62,7 +62,7 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
 
               <div className="relative">
                 <div className="w-8 h-1 bg-gradient-to-r from-fog to-sage rounded-full mb-3" />
-                <h3 className="text-sm font-bold text-white pr-10 leading-snug">{st.title}</h3>
+                <h3 className="text-sm font-bold text-white pr-10 pt-3 leading-snug">{st.title}</h3>
               </div>
             </div>
           </FadeIn>

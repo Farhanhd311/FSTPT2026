@@ -252,7 +252,7 @@ export default function Home() {
                                     transition-transform duration-500" />
 
                     {/* Row 1 — Title */}
-                    <div className="flex justify-center items-center px-8 pt-8 pb-4 border-b border-clay/30 h-13">
+                    <div className="flex justify-center items-center px-4 pt-8 pb-6 border-b border-clay/30 h-13">
                       <h3 className="text-lg font-bold text-pine text-center">
                         {obj.title}
                       </h3>
@@ -406,10 +406,10 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-sage/10 rounded-full translate-y-1/2 -translate-x-1/3" />
 
-          <div className="relative max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="relative max-w-8xl mx-auto px-6 lg:px-12">
 
             <FadeIn>
-              <div className="text-center max-w-7xl mx-auto mb-16">
+              <div className="text-center max-w-8xl mx-auto mb-16">
                 <p className="text-moss font-semibold tracking-widest uppercase text-sm mb-3">Tema</p>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4">
                   Sub-Themes
