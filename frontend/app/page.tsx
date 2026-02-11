@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import SubThemesGrid from '@/components/SubThemesGrid';
 import Image from 'next/image';
+import Link from 'next/link';
 
 /* ────────────────────────────────────────
    Data
@@ -111,58 +112,87 @@ export default function Home() {
       <Navigation />
       <main className="min-h-screen bg-white">
 
-        {/* ═══════════════ HERO ═══════════════ */}
-        <section className="relative overflow-hidden">
-          <div className="grid lg:grid-cols-2 min-h-[85vh]">
+        {/* ═══════════════ HERO (NEW DESIGN) ═══════════════ */}
+        <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+          {/* Background image with overlay */}
+          <div className="absolute inset-0">
+            <Image
+              src="/smartcity.jpg"
+              alt="Smart City Transportation"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-pine/95 via-pine/80 to-pine/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-pine/60 via-transparent to-transparent" />
+          </div>
 
-            {/* Left — Text Panel */}
-            <div className="flex flex-col justify-center items-center px-8 md:px-14 lg:px-16 py-20 lg:py-0">
-              <div className="space-y-8 max-w-xl">
-                <span className="w-35 h-10 inline-flex justify-center items-center gap-2 px-5 py-2 text-sm font-semibold
-                               text-fog border border-fog/50 rounded-full">
-                  <span className="w-2 h-2 bg-fog rounded-full" />
-                  FSTPT 2026
+          {/* Floating decorative elements */}
+          <div className="absolute top-20 right-[15%] w-72 h-72 rounded-full border border-white/5 animate-float-slow" />
+          <div className="absolute bottom-32 right-[25%] w-48 h-48 rounded-full border border-fog/10 animate-float-delay" />
+          <div className="absolute top-1/3 right-[10%] w-3 h-3 bg-fog/30 rounded-full animate-pulse-glow" />
+          <div className="absolute bottom-1/4 right-[20%] w-2 h-2 bg-moss/40 rounded-full animate-pulse-glow" style={{ animationDelay: '2s' }} />
+
+          {/* Content */}
+          <div className="relative w-full px-6 sm:px-10 lg:px-16 py-20">
+            <div className="max-w-3xl space-y-6">
+              <FadeIn delay={100}>
+                <span className="inline-flex items-center gap-2.5 px-5 py-2 text-sm font-medium
+                               text-white/90 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full">
+                  <span className="w-2 h-2 bg-fog rounded-full animate-pulse" />
+                  FSTPT 2026 — Universitas Andalas
                 </span>
+              </FadeIn>
 
-                <h1 className="text-4xl sm:text-5xl font-extrabold text-pine
-                             leading-[1.1] tracking-tight">
+              <FadeIn delay={200}>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
                   Forum Studi{' '}
-                  <span className="text-fog">Transportasi</span>
+                  <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Transportasi</span>
                   <br />
                   Antar Perguruan Tinggi
                 </h1>
+              </FadeIn>
 
-                <p className="text-xl sm:text-2xl text-pine font-bold tracking-tight italic h-10">
+              <FadeIn delay={300}>
+                <p className="text-xl sm:text-2xl text-white/70 font-semibold tracking-tight">
                   ISTSDC 5th &amp; Symposium Nasional Ke-29
                 </p>
+              </FadeIn>
 
-                <p className="text-lg text-sage font-bold leading-relaxed h-17">
+              <FadeIn delay={400}>
+                <p className="text-base sm:text-lg text-moss/90 font-medium leading-relaxed max-w-xl">
                   Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future
                 </p>
+              </FadeIn>
 
-                <div className="flex gap-4 pt-2">
-                  <button className="w-40 h-11 px-6 border border-fog text-fog
-                                   text-sm font-semibold rounded-lg hover:bg-fog
-                                   hover:text-white hover:-translate-y-0.5
-                                   transition-all duration-300">
-                    SMC-FSTPT 2026
-                  </button>
+              <FadeIn delay={500}>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <Link href="/login"
+                    className="group relative px-7 py-3.5 bg-gradient-to-r from-fog to-sage text-white
+                             text-sm font-bold rounded-xl overflow-hidden
+                             hover:shadow-[0_8px_30px_rgba(70,112,126,0.4)] hover:-translate-y-0.5
+                             transition-all duration-300">
+                    <span className="relative z-10 flex items-center gap-2">
+                      SMC-FSTPT 2026
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </Link>
+                  <Link href="/call-for-paper/sub-page-1"
+                    className="px-7 py-3.5 text-white/80 text-sm font-semibold rounded-xl
+                             border border-white/20 backdrop-blur-sm
+                             hover:bg-white/10 hover:text-white hover:border-white/30
+                             transition-all duration-300">
+                    Call For Paper
+                  </Link>
                 </div>
-              </div>
-            </div>
-
-            {/* Right — Image */}
-            <div className="relative min-h-[350px] lg:min-h-0">
-              <Image
-                src="/smartcity.jpg"
-                alt="Smart City Transportation"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent hidden lg:block" />
+              </FadeIn>
             </div>
           </div>
+
+          {/* Bottom gradient fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
         </section>
 
         {/* ═══════════════ ABOUT / PENJELASAN ═══════════════ */}
@@ -202,7 +232,7 @@ export default function Home() {
                   <p className="text-sage leading-relaxed mb-8 text-center">
                     In 2026, FSTPT will host <strong className="text-pine">ISTSDC ke-5</strong> and{' '}
                     <strong className="text-pine">Symposium Nasional ke-29</strong> with the theme
-                    "Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future"
+                    &quot;Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future&quot;
                   </p>
 
                   {/* Stats row */}
