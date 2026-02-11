@@ -28,8 +28,8 @@ const navItems: NavItem[] = [
   {
     label: 'Call For Paper',
     dropdown: [
-      { href: '/call-for-paper/sub-page-1', label: 'Sub Page 1', desc: 'Informasi call for paper' },
-      { href: '/call-for-paper/sub-page-2', label: 'Sub Page 2', desc: 'Panduan submission paper' },
+      { href: '/call-for-paper/author-guideline', label: 'Author Guideline', desc: 'Panduan lengkap penulisan paper' },
+      { href: '/call-for-paper/registration', label: 'Registration', desc: 'Pendaftaran peserta dan pemakalah' },
     ],
   },
   { label: 'Panitia', href: '/panitia' },
