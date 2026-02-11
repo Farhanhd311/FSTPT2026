@@ -196,10 +196,10 @@ export default function Home() {
                     What is{' '}
                     <span className="text-fog">FSTPT</span>?
                   </h2>
-                  <p className="text-sage leading-relaxed mb-6">
+                  <p className="text-sage leading-relaxed mb-8 pb-4 text-justify">
                     Forum Studi Transportasi antar Perguruan Tinggi (FSTPT) is a scientific forum established to foster interaction and communication among students, lecturers, and researchers from universities and institutions across Indonesia engaged in education, research, and community service in the transportation sector. FSTPT is realized through: (1) a mid-year national transportation seminar, (2) an end-of-year national transportation symposium, and (3) the International Symposium on Transportation and Sustainable Development Conference (ISTSDC), held biennially. These platforms serve as avenues for exchanging research findings, scientific studies, and professional experiences to strengthen the Tridharma of Higher Education and support national transportation research and innovation programs. Since its inception in 1998, the end-of-year symposium alone has featured nearly 6,000 presentations by students and lecturers in transportation sciences, while ISTSDC further expands international collaboration and knowledge exchange in sustainable transport development.
                   </p>
-                  <p className="text-sage leading-relaxed mb-8">
+                  <p className="text-sage leading-relaxed mb-8 text-center">
                     In 2026, FSTPT will host <strong className="text-pine">ISTSDC ke-5</strong> and{' '}
                     <strong className="text-pine">Symposium Nasional ke-29</strong> with the theme
                     "Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future"
@@ -406,10 +406,10 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-sage/10 rounded-full translate-y-1/2 -translate-x-1/3" />
 
-          <div className="relative max-w-8xl mx-auto px-6 lg:px-12">
+          <div className="relative max-w-5xl mx-auto px-6 lg:px-12">
 
             <FadeIn>
-              <div className="text-center max-w-8xl mx-auto mb-16">
+              <div className="text-center max-w-7xl mx-auto mb-16">
                 <p className="text-moss font-semibold tracking-widest uppercase text-sm mb-3">Tema</p>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4">
                   Sub-Themes
