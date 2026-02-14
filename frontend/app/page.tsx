@@ -156,7 +156,7 @@ export default function Home() {
 
               <FadeIn delay={300}>
                 <p className="text-xl sm:text-2xl text-white/70 font-semibold tracking-tight">
-                  ISTSDC 5th &amp; Symposium Nasional Ke-29
+                  ISTSDC 5th &amp; Symposium Nasional Ke-XXIX
                 </p>
               </FadeIn>
 
