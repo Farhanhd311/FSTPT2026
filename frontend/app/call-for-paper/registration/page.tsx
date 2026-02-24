@@ -17,7 +17,7 @@ export default function Registration() {
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
                         <FadeIn direction="up">
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-moss text-xs font-bold uppercase tracking-widest mb-6">
-                                FSTPT 29 — Padang, West Sumatera
+                                FSTPT XXIX — Padang, West Sumatera
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
                                 Symposium <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Registration</span>

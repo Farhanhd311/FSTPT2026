@@ -7,8 +7,9 @@ import NextImage from 'next/image';
 
 const committeeData = {
     organizer: "Departemen Teknik Sipil, Fakultas Teknik, Universitas Andalas",
-    event: "ISTSDC ke-5, Simposium Nasional Transportasi, Rapat Anggota Tahunan (RAT), dan Workshop FSTPT ke-29 Tahun 2026",
+    event: "ISTSDC ke-V, Simposium Nasional Transportasi, Rapat Anggota Tahunan (RAT), dan Workshop FSTPT ke-XXIX Tahun 2026",
     steering: [
+        { name: "H. Mahyeldi Ansharullah, S.P., M.M.", image: "/panitia/mahyeldi.jpg" },
         { name: "Dr. Efa Yonnedi, S.E., M.PPM., Akt., CA., CRGP", image: "/panitia/efa yonedi.png" },
         { name: "Prof. Dr. Techn. Marzuki, M.Sc. Eng", image: "/panitia/technmarzukii.png" },
         { name: "Dr. Ir. Is Prima Nanda, S.T., M.T", image: "/panitia/primananda.jpeg" },
@@ -25,7 +26,7 @@ const committeeData = {
         { name: "Prof. Dr.Eng. Ir. Rendy Thamrin, S.T., M.T.", institution: "Universitas Andalas, Indonesia", image: "/panitia/rendy.jpg" },
         { name: "Prof. Ir. Taufika Ophiyandri, S.T., M. Sc, Ph. D", institution: "Universitas Andalas, Indonesia", image: "/panitia/opi.jpg" },
         { name: "Ir. Purnawan, M.T., Ph.D.", institution: "Universitas Andalas, Indonesia", image: "/panitia/purnawan.jpg" },
-        { name: "Prof. Ir. Elsa Eka Putri, S.T., M. Sc (Eng.), Ph.D.", institution: "Universitas Andalas, Indonesia", image: "/panitia/elsa.png" }
+        { name: "Prof. Ir. Elsa Eka Putri, S.T., M. Sc (Eng.), Ph.D.", institution: "Universitas Andalas, Indonesia", image: "/panitia/elsaa.jpeg" }
     ],
     subCommittees: [
         {
@@ -78,6 +79,7 @@ const committeeData = {
                 "Ir. Hendra Gunawan, M.T.",
                 "Muhazir Rahendra, S.T., M.T.",
                 "Ayu Marta Mulya, S. IP",
+                "Farhan Fitrahadi (2311522037)",
                 "Talitha Hulwa (2310922023)",
                 "Aulia Rahman (ali) (2310922038)"
             ]
@@ -128,7 +130,7 @@ export default function Committee() {
                                 Committee <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">FSTPT 2026</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
-                                Penyelenggara Kegiatan ISTSDC ke-5, Simposium Nasional Transportasi, RAT, dan Workshop FSTPT ke-29 Tahun 2026.
+                                Penyelenggara Kegiatan ISTSDC ke-V, Simposium Nasional Transportasi, RAT, dan Workshop FSTPT ke-XXIX Tahun 2026.
                             </p>
                         </FadeIn>
                     </div>
@@ -154,11 +156,11 @@ export default function Committee() {
                                 <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">Steering Committee</h2>
                                 <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                                 {committeeData.steering.map((item, i) => (
                                     <FadeIn key={i} direction="up" delay={i * 50}>
                                         <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
-                                            <div className="relative h-72 overflow-hidden bg-pine/5">
+                                            <div className="relative h-64 overflow-hidden bg-pine/5">
                                                 <div className="absolute inset-0 bg-gradient-to-t from-pine/20 to-transparent z-10" />
                                                 {/* Profile Photo */}
                                                 <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">

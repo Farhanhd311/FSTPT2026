@@ -118,7 +118,7 @@ export default function Home() {
           {/* Background image with overlay */}
           <div className="absolute inset-0">
             <Image
-              src="/city.jpg"
+              src="/lembahanai.jpeg"
               alt="Smart City Transportation"
               fill
               className="object-cover"
@@ -156,7 +156,7 @@ export default function Home() {
 
               <FadeIn delay={300}>
                 <p className="text-xl sm:text-2xl text-white/70 font-semibold tracking-tight">
-                  ISTSDC 5th &amp; Symposium Nasional Ke-XXIX
+                  ISTSDC Ke-V &amp; Symposium Nasional Ke-XXIX
                 </p>
               </FadeIn>
 
@@ -213,7 +213,7 @@ export default function Home() {
                     <div className="relative z-10 flex left-3 bottom-2 flex-col justify-end h-full p-8">
                       <p className="text-clay text-sm font-semibold tracking-widest uppercase mb-2">Tahun 2026</p>
                       <p className="text-white text-2xl font-extrabold leading-tight">
-                        Symposium Nasional<br />FSTPT Ke-29
+                        Symposium Nasional<br />FSTPT Ke-XXIX
                       </p>
                     </div>
                   </div>
@@ -235,15 +235,15 @@ export default function Home() {
                     Forum Studi Transportasi antar Perguruan Tinggi (FSTPT) is a scientific forum established to foster interaction and communication among students, lecturers, and researchers from universities and institutions across Indonesia engaged in education, research, and community service in the transportation sector. FSTPT is realized through: (1) a mid-year national transportation seminar, (2) an end-of-year national transportation symposium, and (3) the International Symposium on Transportation and Sustainable Development Conference (ISTSDC), held biennially. These platforms serve as avenues for exchanging research findings, scientific studies, and professional experiences to strengthen the Tridharma of Higher Education and support national transportation research and innovation programs. Since its inception in 1998, the end-of-year symposium alone has featured nearly 6,000 presentations by students and lecturers in transportation sciences, while ISTSDC further expands international collaboration and knowledge exchange in sustainable transport development.
                   </p>
                   <p className="text-sage leading-relaxed text-center">
-                    In 2026, FSTPT will host <strong className="text-pine">ISTSDC ke-5</strong> and{' '}
-                    <strong className="text-pine">Symposium Nasional ke-29</strong> with the theme
+                    In 2026, FSTPT will host <strong className="text-pine">ISTSDC ke-V</strong> and{' '}
+                    <strong className="text-pine">Symposium Nasional ke-XXIX</strong> with the theme
                     &quot;Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future&quot;
                   </p>
 
                   {/* Stats row */}
                   <div className="grid grid-cols-3 gap-6">
                     {[
-                      { value: '29th', label: 'Symposium' },
+                      { value: 'XXIXth', label: 'Symposium' },
                       { value: '500+', label: 'Peserta' },
                       { value: '100+', label: 'Paper' },
                     ].map((s, i) => (
@@ -344,7 +344,7 @@ export default function Home() {
                       International &amp; National Symposium Sessions
                     </h3>
                     <p className="text-sage text-sm lg:text-base leading-relaxed pl-5">
-                      The 5th International Symposium on Transportation, Sustainable Development, and Civil Engineering (ISTSDC) combined with the 29th National Symposium of FSTPT will feature a series of international and national symposium sessions, including plenary and parallel discussions. These sessions will present keynote speeches and research papers under the theme &ldquo;Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future&rdquo;, covering 18 sub-themes such as sustainable transport policy, digitalization, road safety, inclusive public transport, green vehicle innovation, and resilient multimodal infrastructure.
+                      The Vth International Symposium on Transportation, Sustainable Development, and Civil Engineering (ISTSDC) combined with the XXIXth National Symposium of FSTPT will feature a series of international and national symposium sessions, including plenary and parallel discussions. These sessions will present keynote speeches and research papers under the theme &ldquo;Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future&rdquo;, covering 18 sub-themes such as sustainable transport policy, digitalization, road safety, inclusive public transport, green vehicle innovation, and resilient multimodal infrastructure.
                     </p>
                   </div>
                 </div>

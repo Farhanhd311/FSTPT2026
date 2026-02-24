@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
     label: 'Main Program',
     dropdown: [
       {
-        href: '/main-program/sub-page-1',
+        href: '/main-program/agenda-kegiatan',
         label: 'Agenda Kegiatan',
         desc: 'Jadwal lengkap konferensi',
         color: 'text-fog',
@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
         )
       },
       {
-        href: '/main-program/sub-page-2',
+        href: '/main-program/venue-hotel',
         label: 'Venue & Hotel',
         desc: 'Informasi lokasi dan penginapan',
         color: 'text-sage',

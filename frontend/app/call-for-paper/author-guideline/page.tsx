@@ -6,13 +6,11 @@ import FadeIn from '@/components/FadeIn';
 import { useState, useEffect } from 'react';
 
 const sections = [
-    { id: 'abstract', title: 'Abstract & Abstrak' },
-    { id: 'general', title: 'Penjelasan Umum' },
-    { id: 'format', title: 'Format & Layout' },
-    { id: 'structure', title: 'Sistematika' },
-    { id: 'media', title: 'Tabel, Gambar & Persamaan' },
-    { id: 'thanks', title: 'Ucapan Terima Kasih' },
+    { id: 'general', title: 'Petunjuk Umum' },
+    { id: 'format', title: 'Format Penulisan' },
+    { id: 'structure', title: 'Struktur Makalah' },
     { id: 'bibliography', title: 'Daftar Pustaka' },
+    { id: 'thanks', title: 'Ucapan Terimakasih' },
     { id: 'appendix', title: 'Lampiran' },
 ];
 
@@ -92,13 +90,13 @@ export default function AuthorGuideline() {
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
                         <FadeIn direction="up">
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-moss text-xs font-bold uppercase tracking-widest mb-6">
-                                FSTPT 29 — Padang, West Sumatera
+                                FSTPT XXIX — Padang, West Sumatera
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
                                 Author <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Guideline</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
-                                Panduan Lengkap Penulisan Makalah Simposium Nasional FSTPT Ke-28.
+                                Panduan Lengkap Penulisan Makalah Simposium Nasional FSTPT XXIX.
                             </p>
                         </FadeIn>
                     </div>
@@ -128,9 +126,8 @@ export default function AuthorGuideline() {
                                         Unduh file `.docx` untuk mempercepat dan menyeragamkan proses penulisan makalah Anda.
                                     </p>
                                     <a
-                                        href="https://bit.ly/templatefstpt28"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        href="/template_Symposium FSTPT Unand 2026.docx"
+                                        download="template_Symposium FSTPT Unand 2026.docx"
                                         className="flex items-center justify-center gap-2 w-full py-4 bg-pine text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg hover:shadow-fog/30 transition-all duration-300"
                                     >
                                         Download Template
@@ -165,229 +162,242 @@ export default function AuthorGuideline() {
                         {/* ═══════════════ CONTENT AREA ═══════════════ */}
                         <div className="lg:col-span-9 space-y-10 text-pine/90">
 
-                            {/* Section: GAMBARAN UMUM & ABSTRACTS */}
-                            <div id="abstract" className="scroll-mt-32 space-y-12">
+                            {/* Section: TITLE, AUTHORS & ABSTRACTS */}
+                            <div id="general" className="scroll-mt-32 space-y-12">
                                 <FadeIn direction="up">
                                     <div className="space-y-8">
-
                                         <div className="bg-white rounded-[2rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
-                                            <h3 className="text-xl font-extrabold text-pine text-center border-b border-clay/30 pb-6 uppercase">
-                                                INSTRUKSI PENULISAN MAKALAH UNTUK <br />
-                                                SIMPOSIUM FORUM STUDI TRANSPORTASI ANTAR PERGURUAN TINGGI KE-28
-                                            </h3>
+                                            <div className="text-center border-b border-clay/30 pb-10">
+                                                <h3 className="text-xl md:text-2xl font-black text-pine uppercase mb-8 leading-tight">
+                                                    PETUNJUK PENULISAN MAKALAH UNTUK SYMPOSIUM NASIONAL FSTPT XXIX, <br />
+                                                    07 – 08 NOVEMBER 2026
+                                                </h3>
 
-                                            <div className="grid md:grid-cols-2 gap-12">
+                                                <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
+                                                    <div className="text-center">
+                                                        <p className="font-bold text-pine text-lg">Dodi Gusnadi¹</p>
+                                                        <p className="text-xs text-sage mt-1">Mahasiswa magister Teknik Sipil, Fakultas Teknik</p>
+                                                        <p className="text-xs text-sage">Universitas Andalas, Padang</p>
+                                                        <p className="text-xs font-semibold text-fog mt-1 underline">asraf@gmail.com</p>
+                                                    </div>
+                                                    <div className="text-center">
+                                                        <p className="font-bold text-pine text-lg">Citra Arsi Utami²</p>
+                                                        <p className="text-xs text-sage mt-1">Teknik Sipil, Fakultas Teknik</p>
+                                                        <p className="text-xs text-sage">Universitas Andalas, Padang</p>
+                                                        <p className="text-xs font-semibold text-fog mt-1 underline">tyas@gmail.com</p>
+                                                    </div>
+                                                    <div className="text-center">
+                                                        <p className="font-bold text-pine text-lg">Ardi Fitra³</p>
+                                                        <p className="text-xs text-sage mt-1">Teknik Sipil, Fakultas Teknik</p>
+                                                        <p className="text-xs text-sage">Universitas Andalas, Padang</p>
+                                                        <p className="text-xs font-semibold text-fog mt-1 underline">ardi@gmail.com</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="grid md:grid-cols-2 gap-12 pt-4">
                                                 <div className="space-y-4">
-                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">Abstract</h4>
-                                                    <div className="text-sm leading-relaxed space-y-4 text-justify">
+                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">ABSTRACT</h4>
+                                                    <div className="text-sm leading-relaxed space-y-4 text-justify text-sage">
                                                         <p>
-                                                            This document contains the detailed guidelines for preparation of full papers of the 28th FSTPT Symposium. To submit a paper for presentation at the symposium, follow the instructions in this document. Author(s) should review all information in this document before submitting papers for consideration. Papers that do not follow the guidelines may not be considered for presentation or publication.
-                                                        </p>
-                                                        <p>
-                                                            The deadline for submitting draft full paper is <strong className="text-pine">May 16, 2025</strong>. The paper will be subsequently reviewed by the Scientific Committee and the result will be informed to the corresponding author. The authors have to revise their paper according to the Scientific Committee’s comments and to resubmit the paper by <strong className="text-pine">July 11, 2025</strong> at the latest. All presented papers will be published in the Proceedings of the Symposium. Abstract should be within 150 words.
+                                                            This document consists of detailed paper writing instructions for Seminar Nasional FSTPT XXIX at Andalas University Padang. To submit a paper in this seminar, please follow the following guidelines for writing the paper. The author should read through these instructions before writing a paper. Papers that do not follow these instructions are not included in the seminar. The deadline for submission a draft of full paper is September 25, 2023. The paper will be reviewed by a reviewer team and the results will be informed through the author’s email address. All accepted papers will be published in a seminar proceeding that has an ISBN and uploaded online. The best papers and presentations in the seminar will be awarded by the committee. The abstract is written in a concise and straightforward sentence and must not more than 250 words.
                                                         </p>
                                                     </div>
-                                                    <p className="text-xs font-bold pt-4 text-pine/60">Keywords: keyword A, keyword B, keyword C, keyword D, keyword E</p>
+                                                    <p className="text-xs font-bold pt-4 text-pine/60 italic">Keywords: keyword 1, keyword 2, keyword 3, keyword 4, keyword 5</p>
                                                 </div>
 
                                                 <div className="space-y-4">
-                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">Abstrak</h4>
-                                                    <div className="text-sm leading-relaxed space-y-4 text-justify">
+                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">ABSTRAK</h4>
+                                                    <div className="text-sm leading-relaxed space-y-4 text-justify text-sage">
                                                         <p>
-                                                            Dokumen ini berisi rincian panduan penulisan makalah dari the Simposium FSTPT ke-28. Untuk memasukkan makalah untuk dipresentasikan dalam simposium, ikutilah instruksi dalam dokumen ini. Penulis (para penulis) wajib mengikuti semua informasi yang ada di dalam dokumen ini sebelum memasukkan makalah untuk direview. Makalah yang tidak mengikuti panduan ini tidak akan dipertimbangkan untuk dipresentasikan dan dipublikasikan.
-                                                        </p>
-                                                        <p>
-                                                            Batas terakhir pemasukan draft makalah adalah <strong className="text-pine">16 Mei 2025</strong>. Makalah akan direview oleh Komite Ilmiah FSTPT dan hasilnya akan diinformasikan kepada penulis kontak. Penulis (para penulis) wajib merevisi makalah sesuai dengan semua komentar dari Komite Ilmiah dan memasukkan ulang makalah paling lambat pada tanggal <strong className="text-pine">11 Juli 2025</strong>. Semua makalah yang telah dipresentasikan akan dipublikasi di dalam prosiding simposium. Abstrak ditulis dalam maksimal 150 kata.
+                                                            Dokumen ini terdiri dari detail petunjuk penulisan makalah untuk ACE Conference 2023 di Universitas Andalas Padang. Untuk mengirim makalah pada seminar ini, harap diikuti petunjuk penulisan makalah berikut ini. Penulis harus membaca seluruh petunjuk ini sebelum menulis makalah. Makalah yang tidak mengikuti petunjuk ini, tidak diikutkan dalam seminar yang akan dilaksanakan. Batas akhir pengumpulan draft makalah lengkap adalah 25 September 2023. Makalah akan direview oleh tim reviewer dan hasilnya akan diinformasikan kembali melalui alamat email penulis. Semua makalah yang diterima akan di publikasikan dalam proseding seminar yang mempunyai ISBN dan diunggah secara online. Makalah dan presentasi terbaik dalam seminar akan mendapatkan penghargaan dari panitia. Abstrak ditulis dengan kalimat yang ringkas dan lugas tidak melebih dari 250 kata.
                                                         </p>
                                                     </div>
-                                                    <p className="text-xs font-bold pt-4 text-pine/60">Kata Kunci: kata kunci A, kata kunci B, kata kunci C, kata kunci D, kata kunci E</p>
+                                                    <p className="text-xs font-bold pt-4 text-pine/60 italic">Kata Kunci : kata kunci 1, kata kunci 2, kata kunci 3, kata kunci 4, kata kunci 5</p>
                                                 </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-8">
+                                            <h3 className="text-2xl font-black text-pine uppercase">1. PETUNJUK UMUM</h3>
+                                            <div className="text-sage leading-relaxed space-y-6">
+                                                <p>
+                                                    Petunjuk ini dibuat untuk panduan menyiapkan makalah yang layak untuk dipresentasikan dalam seminar. Penulis pertama adalah peneliti, mahasiswa S2 atau S3, sedang penulis berikutnya dapat pembimbing atau co-pembimbing atau teman dalam grup penelitian.
+                                                </p>
+                                                <p>
+                                                    Penulis harus menulis makalahnya sesuai dengan petunjuk ini agar makalah tersebut dapat diterima. Makalah yang dikirim harus ditulis dengan menggunakan <strong className="text-pine underline decoration-fog underline-offset-4">Microsoft Word 2003/2007/2010/2013/2019</strong>.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </FadeIn>
                             </div>
 
-                            {/* Section: PENJELASAN UMUM */}
-                            <div id="general" className="scroll-mt-32">
-                                <FadeIn direction="up">
-                                    <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-8">
-                                        <h3 className="text-2xl font-black text-pine uppercase">PENJELASAN UMUM</h3>
-                                        <div className="text-sage leading-relaxed space-y-6">
-                                            <p>
-                                                Instruksi ini disusun sebagai panduan untuk penulis (para penulis) mempersiapkan makalah. Sebagai legitimasi untuk dipresentasikan dalam simposium ini, maka <strong className="text-pine underline decoration-fog underline-offset-4">paling sedikit 1 (satu) dari para penulis adalah dosen</strong>.
-                                            </p>
-                                            <p>
-                                                Selanjutnya, penulis (para penulis) wajib memenuhi semua instruksi sebagai syarat untuk diterimanya makalah. Makalah harus dimasukkan dalam bentuk soft-copy dengan format sesuai dengan Microsoft Word.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </FadeIn>
-                            </div>
-
-                            {/* Section: FORMAT */}
+                            {/* Section: FORMAT PENULISAN */}
                             <div id="format" className="scroll-mt-32 space-y-10">
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-10">
-                                        <h3 className="text-2xl font-black text-pine uppercase">FORMAT</h3>
-                                        <p className="text-sage font-medium">Format kertas adalah sebagai berikut:</p>
+                                        <h3 className="text-2xl font-black text-pine uppercase">2. FORMAT PENULISAN</h3>
 
-                                        <div className="grid sm:grid-cols-2 gap-6">
-                                            <ul className="space-y-4 text-sm font-semibold text-pine/80 list-none">
-                                                <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Kertas A4 posisi portrait</li>
-                                                <li className="flex gap-3">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" />
-                                                    Margin: Atas 3,5 cm, Bawah 3,0 cm, Kiri 3,0 cm, Kanan 2,5 cm
-                                                </li>
-                                                <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Tipe font adalah Times New Roman</li>
-                                                <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Makalah ditulis dalam satu baris dan satu kolom</li>
-                                            </ul>
-                                            <ul className="space-y-4 text-sm font-semibold text-pine/80 list-none">
-                                                <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Jumlah maksimum makalah 10 (sepuluh) halaman, termasuk Gambar, Tabel, Lampiran, dan Daftar Pustaka</li>
-                                                <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Jarak antar paragraf diberi satu baris tanpa indent</li>
-                                                <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Finalisasi nomor halaman akan dilakukan oleh Editor</li>
-                                                <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Makalah tidak diberi footer</li>
-                                            </ul>
+                                        <div className="space-y-6">
+                                            <h4 className="text-lg font-black text-pine">2.1 Ketentuan Umum</h4>
+                                            <p className="text-sage font-medium">Makalah harus mengikuti format sebagai berikut:</p>
+                                            <div className="grid sm:grid-cols-2 gap-6">
+                                                <ul className="space-y-4 text-sm font-semibold text-pine/80 list-none">
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Kertas A4, dengan orientasi portrait</li>
+                                                    <li className="flex gap-3">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" />
+                                                        Margin: Atas 3 cm, Bawah 4 cm, Kiri 3 cm, dan Kanan 3 cm
+                                                    </li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Tipe font adalah Times New Roman</li>
+                                                </ul>
+                                                <ul className="space-y-4 text-sm font-semibold text-pine/80 list-none">
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Jumlah halaman: 6 sampai 10 halaman</li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Penulisan teks: single spaced and single column text</li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Dilarang menulis pada headers and footers</li>
+                                                </ul>
+                                            </div>
+                                            <p className="text-xs font-bold text-pine/60 italic bg-clay/5 p-4 rounded-xl border border-clay/10">
+                                                * Mohon diperiksa kembali jika ada kesalahan ketik dan ejaan. Ikuti petunjuk pengaturan format menggunakan styles Ms-Word yang telah disediakan dalam template.
+                                            </p>
                                         </div>
 
                                         <div className="space-y-6 pt-10 border-t border-clay/30">
-                                            <h4 className="text-lg font-black text-pine">Judul dan Informasi untuk Penulis</h4>
-                                            <div className="bg-clay/5 p-8 rounded-2xl border border-clay/20 space-y-4 text-sm leading-relaxed">
-                                                <p>Judul makalah harus ditulis di tengah setelah 2 baris kosong dari sisi margin atas. Judul menggunakan <strong className="text-pine">HURUF KAPITAL</strong> dicetak tebal, 16pt dan satu spasi. Sisipkan 1 baris kosong setelah judul.</p>
-                                                <p>Jika hanya terdapat 1 (satu) penulis, informasi mengenai penulis ditulis di tengah dengan menggunakan tipe font 10pt dengan 1 (satu) spasi. Informasi mengenai penulis berisi nama penulis tanpa gelar (dicetak tebal), jabatan, organisasi/institusi, alamat, nomor telepon/hp, dan alamat email. Sisipkan 2 baris kosong setelah informasi penulis.</p>
-                                                <div className="p-4 bg-white rounded-xl border border-clay/30 inline-block">
-                                                    <p className="font-bold text-fog mb-2 uppercase text-[10px] tracking-widest">Aturan Multiple Penulis:</p>
-                                                    <ul className="space-y-1 font-bold text-pine/70 italic text-xs">
-                                                        <li>2 penulis : berdampingan</li>
-                                                        <li>3 penulis : 3 berjajar ke samping</li>
-                                                        <li>4 penulis : 2 di atas, 2 di bawah</li>
-                                                    </ul>
+                                            <h4 className="text-lg font-black text-pine">2.2 Penggunaan Style Untuk Pengaturan</h4>
+                                            <div className="text-sm leading-relaxed text-sage space-y-6">
+                                                <p>Dalam file makalah ini telah disediakan style Ms-Word yang akan dipergunakan untuk pengaturan format makalah. Penulis tinggal mengklik style yang berkesesuaian untuk mendapatkan pengaturan makalah yang baik.</p>
+
+                                                <div className="grid gap-4">
+                                                    <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
+                                                        <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Title</div>
+                                                        <p className="font-medium text-pine/80">Ukuran font Times New Roman 16pt, bold, spasi tunggal.</p>
+                                                    </div>
+                                                    <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
+                                                        <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Author</div>
+                                                        <p className="font-medium text-pine/80">Nama penulis ditulis dalam satu baris, beri superscript angka untuk identifikasi afiliasi.</p>
+                                                    </div>
+                                                    <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
+                                                        <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Affiliation</div>
+                                                        <p className="font-medium text-pine/80">Informasi Jurusan/Program Studi, Fakultas, Universitas, dan Email.</p>
+                                                    </div>
+                                                    <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
+                                                        <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Abstract</div>
+                                                        <p className="font-medium text-pine/80">Abstract –header untuk judul dan Abstract untuk isi (satu kolom, satu paragraf).</p>
+                                                    </div>
+                                                </div>
+
+                                                <div className="space-y-4 pt-4">
+                                                    <p>● Berilah maksimum lima buah kata kunci menggunakan style <strong className="text-pine">'Keywords'</strong>. Hitamkan (bold) kata ‘Abstrak:’ sebelum kata kunci.</p>
+                                                    <p>● Teks paragraf menggunakan style <strong className="text-pine">'Normal'</strong> yang memberikan jarak antar paragraf.</p>
+                                                    <p>● Pergunakan <strong className="text-pine">'Heading 1'</strong> (HURUF KAPITAL), <strong className="text-pine">'Heading 2'</strong>, dan <strong className="text-pine">'Heading 3'</strong>. Nomor bab akan diberikan otomatis oleh Ms-Word.</p>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className="space-y-6 pt-6">
-                                            <h4 className="text-lg font-black text-pine">Abstrak</h4>
-                                            <div className="bg-clay/5 p-8 rounded-2xl border border-clay/20 space-y-4 text-sm leading-relaxed">
-                                                <p>Abstrak ditulis sebelum Bab Pendahuluan. Abstrak mengandung uraian latar belakang, tujuan penelitian, metode penelitian, dan hasil penelitian. Abstrak dibatasi maksimum 150 (seratus lima puluh) kata.</p>
-                                                <p>Abstrak ditulis dalam bahasa Inggris dan Bahasa Indonesia dengan huruf ukuran 10 pt, satu kolom penuh. Tulisan abstrak sebagai judul dituliskan di atas teks abstrak. Di bawah abstrak sejarak satu spasi harus dituliskan lima kata-kata kunci. Sisipkan 2 baris kosong setelah kata kunci.</p>
-                                            </div>
-                                        </div>
+                                        <div className="space-y-8 pt-10 border-t border-clay/30">
+                                            <h4 className="text-lg font-black text-pine">2.3 Tabel dan Gambar</h4>
+                                            <div className="text-sm leading-relaxed text-sage space-y-8">
+                                                <p>Persamaan, tabel, dan gambar harus ditempatkan diantara teks pada tempat yang sesuai dengan diskusi tabel dan gambar. Tabel harus diberi nomor urut. Judul tabel diletakkan di atas tabel.</p>
 
-                                        <div className="space-y-6 pt-6">
-                                            <h4 className="text-lg font-black text-pine">Corak (Style), Bab, Sub-bab, Sub-sub-bab, dan Paragraf</h4>
-                                            <div className="bg-clay/5 p-8 rounded-2xl border border-clay/20 space-y-4 text-sm leading-relaxed">
-                                                <p>Dipandang perlu untuk mempertahankan corak (style) dari judul, jenis font dan baris spasi dalam file ini untuk tujuan keseragaman corak yang digunakan pada prosiding.</p>
-                                                <p>Bagian utama makalah dimulai setelah 2 (dua) baris spasi dari kata kunci. Bagian utama makalah dibagi menjadi bab-bab, sub-bab (jika perlu), dan sub-sub-bab (jika perlu). <strong className="text-pine">Judul tiap bab ditulis dengan huruf besar dicetak tebal menggunakan ukuran 16pt.</strong> Judul Sub Bab harus ditulis dengan format rata kiri, ditulis dengan seluruhnya cetak tebal, sedangkan huruf besar hanya pada huruf pertama, menggunakan tipe font Times New Roman 12pt. Penulisan Bab dan Sub-bab tidak diberi nomor. Sub-sub bab (jika perlu) dapat diberi nomor.</p>
-                                                <p>Tiap paragraf dimulai dengan format rata kiri tanpa indentation untuk kalimat pertama. Paragraf harus ditulis dalam tipe font Times New Roman 12pt dengan 1 (satu) spasi. 1 (satu) baris spasi sebagai jarak antar paragraf.</p>
+                                                <div className="overflow-x-auto rounded-2xl border border-clay/20">
+                                                    <table className="w-full text-xs">
+                                                        <thead>
+                                                            <tr className="bg-pine text-white">
+                                                                <th className="p-4 text-left border-r border-white/10" rowSpan={2}>No.</th>
+                                                                <th className="p-4 text-left border-r border-white/10" rowSpan={2}>Atribut perjalanan</th>
+                                                                <th className="p-4 text-center" colSpan={2}>Kondisi pelayanan</th>
+                                                            </tr>
+                                                            <tr className="bg-pine/90 text-white">
+                                                                <th className="p-2 text-center border-r border-white/10">(+)</th>
+                                                                <th className="p-2 text-center">(-)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody className="bg-white/50">
+                                                            <tr className="border-b border-clay/10">
+                                                                <td className="p-4 font-bold border-r border-clay/10 text-center">1.</td>
+                                                                <td className="p-4 border-r border-clay/10">Biaya perjalanan</td>
+                                                                <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">Rp 6,000/km</td>
+                                                                <td className="p-4 text-center text-pine font-bold italic">Rp 4,500/km</td>
+                                                            </tr>
+                                                            <tr className="border-b border-clay/10">
+                                                                <td className="p-4 font-bold border-r border-clay/10 text-center">2.</td>
+                                                                <td className="p-4 border-r border-clay/10">Biaya kemacetan</td>
+                                                                <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">Rp 3,000/jam</td>
+                                                                <td className="p-2 text-center text-pine font-bold italic">Rp 5,000/jam</td>
+                                                            </tr>
+                                                            <tr className="border-b border-clay/10">
+                                                                <td className="p-4 font-bold border-r border-clay/10 text-center">3.</td>
+                                                                <td className="p-4 border-r border-clay/10">Tarip parkir</td>
+                                                                <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">Rp 3,000</td>
+                                                                <td className="p-4 text-center text-pine font-bold italic">Rp 6,000</td>
+                                                            </tr>
+                                                            <tr className="border-b border-clay/10">
+                                                                <td className="p-4 font-bold border-r border-clay/10 text-center">4.</td>
+                                                                <td className="p-4 border-r border-clay/10">Waktu perjalanan</td>
+                                                                <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">-10 minutes</td>
+                                                                <td className="p-4 text-center text-pine font-bold italic">-5 minutes</td>
+                                                            </tr>
+                                                            <tr className="bg-clay/5">
+                                                                <td className="p-4 font-bold border-r border-clay/10 text-center">5.</td>
+                                                                <td className="p-4 border-r border-clay/10">Waktu berjalan kaki</td>
+                                                                <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">-5 minutes</td>
+                                                                <td className="p-4 text-center text-pine font-bold italic">-3 minutes</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p className="text-[10px] font-bold text-pine/40 text-center uppercase tracking-widest italic">Tabel 1. Kondisi pelayanan atribut perjalanan</p>
+
+                                                <div className="space-y-6 pt-4">
+                                                    <p>Gambar harus diberi nomor urut. Judul gambar diletakkan di bawah gambar. Gambar harus jelas dan mudah dibaca. Lihat Gambar 1, persamaan harus juga diberi nomor urut. Nomor diletakkan di sisi kanan dari persamaan.</p>
+
+                                                    <div className="bg-white p-8 rounded-2xl border border-clay/10 flex flex-col items-center gap-6 shadow-sm">
+                                                        <div className="w-full max-w-md aspect-video bg-clay/5 rounded-xl border-2 border-dashed border-clay/20 flex items-center justify-center group overflow-hidden relative">
+                                                            <img
+                                                                src="/gambar.png"
+                                                                alt="Diagram seleksi makalah"
+                                                                className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                                                            />
+                                                            <div className="absolute inset-0 bg-pine/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                                                <span className="bg-white/90 px-4 py-2 rounded-full text-[10px] font-black text-pine shadow-lg">PREVIEW IMAGE</span>
+                                                            </div>
+                                                        </div>
+                                                        <p className="text-xs font-bold text-pine/60 italic text-center">Gambar 1. Diagram seleksi makalah pada ACE 8</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </FadeIn>
                             </div>
 
-                            {/* Section: SISTEMATIKA */}
+                            {/* Section: STRUKTUR MAKALAH */}
                             <div id="structure" className="scroll-mt-32">
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
-                                        <div className="text-center space-y-4">
-                                            <h3 className="text-2xl md:text-3xl font-black text-pine uppercase tracking-tight">SISTEMATIKA PENULISAN MAKALAH</h3>
-                                            <p className="text-sage font-medium max-w-2xl mx-auto">
-                                                Makalah mengandung komponen-komponen utama dengan urutan penulisan secara sistematis sebagai berikut:
+                                        <div className="text-left space-y-4">
+                                            <h3 className="text-2xl md:text-3xl font-black text-pine uppercase tracking-tight">3. STRUKTUR MAKALAH</h3>
+                                            <p className="text-sage font-medium max-w-2xl">
+                                                Struktur makalah sebaiknya terdiri dari komponen-komponen utama sebagai berikut:
                                             </p>
                                         </div>
 
-                                        <div className="max-w-2xl mx-auto space-y-4">
+                                        <div className="max-w-2xl flex flex-col gap-4">
                                             {[
-                                                'Judul', 'Penulis', 'Abstract', 'Abstrak', 'Pendahuluan/Latar Belakang',
-                                                'Bab-bab Pembahasan (data, analisis, dan lain-lain)', 'Kesimpulan',
-                                                'Ucapan Terima kasih (boleh tidak ada)', 'Daftar Pustaka'
+                                                'Judul', 'Informasi penulis', 'Abstrak', 'Pendahuluan', 'Studi pustaka',
+                                                'Hasil & Pembahasan', 'Kesimpulan', 'Daftar pustaka',
+                                                'Ucapan terimakasih', 'Lampiran'
                                             ].map((item, i) => (
-                                                <div key={i} className="group relative flex items-center p-5 bg-gradient-to-r from-sage/10 to-moss/20 rounded-2xl border border-moss/30 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-moss/10">
-                                                    <div className="flex items-center gap-6">
-                                                        <div className="w-12 h-12 rounded-xl bg-pine border border-pine flex items-center justify-center shadow-sm transition-all duration-500">
-                                                            <span className="text-white font-black text-sm">{(i + 1).toString().padStart(2, '0')}</span>
+                                                <div key={i} className="group relative flex items-center p-4 bg-gradient-to-r from-sage/5 to-moss/10 rounded-2xl border border-moss/10 transition-all duration-300 hover:shadow-lg hover:border-moss/30">
+                                                    <div className="flex items-center gap-4">
+                                                        <div className="w-10 h-10 rounded-xl bg-pine flex items-center justify-center">
+                                                            <span className="text-white font-black text-xs">{(i + 1).toString()}</span>
                                                         </div>
-                                                        <span className="text-base font-extrabold text-pine transition-colors duration-500 tracking-tight">{item}</span>
+                                                        <span className="text-sm font-bold text-pine tracking-tight">{item}</span>
                                                     </div>
                                                 </div>
                                             ))}
                                         </div>
-                                    </div>
-                                </FadeIn>
-                            </div>
-
-                            {/* Section: EQUATIONS & MEDIA */}
-                            <div id="media" className="scroll-mt-32">
-                                <FadeIn direction="up">
-                                    <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
-                                        <h3 className="text-2xl font-black text-pine uppercase text-center md:text-left">PENULISAN PERSAMAAN, TABEL, DAN GAMBAR</h3>
-
-                                        <div className="space-y-6 text-sm leading-relaxed text-sage">
-                                            <div className="space-y-4">
-                                                <p>Posisikan tabel dekat dengan kalimat rujukannya di dalam teks dan diberi nomor secara secara berurutan. Cantumkan nama tabel yang cukup jelas di atas tabel. Hindari penggunaan singkatan dalam kepala kolom. Tuliskan unit pengukuran yang digunakan di bawah kepala kolom. Gunakan hanya garis horizontal pada tabel, yakni di atas dan satu di bawah kepala kolom dan pada sisi bawah tabel.</p>
-
-                                                {/* Example Table Image */}
-                                                <div className="bg-white p-4 rounded-2xl border border-clay/10 inline-block shadow-sm">
-                                                    <img
-                                                        src="/tabel.png"
-                                                        alt="Contoh Format Tabel"
-                                                        className="max-h-[300px] w-auto h-auto rounded-lg"
-                                                    />
-                                                    <p className="text-[10px] font-bold text-pine/40 mt-3 text-center uppercase tracking-widest italic">Contoh Format Tabel 1</p>
-                                                </div>
-                                            </div>
-
-                                            <div className="space-y-4">
-                                                <p>Buatlah gambar dengan menggunakan perangkat lunak grafis dan diberi nomor secara berurutan. Sisipkan 2 baris kosong antara teks dan gambar. Jika memungkinkan, tempatkan gambar pada setelan wrap in line with text. Cantumkan nama gambar yang cukup informatif di bawah gambar. Sisipkan 1 baris jarak antara gambar dan nama gambar. Gambar bisa berupa hitam putih atau warna.</p>
-
-                                                {/* Example Figure Image */}
-                                                <div className="bg-white p-6 rounded-2xl border border-clay/10 inline-block shadow-sm">
-                                                    <img
-                                                        src="/gambar.png"
-                                                        alt="Interpolasi Spatial Interpolation: Metode Kriging"
-                                                        className="max-h-[350px] w-auto h-auto rounded-lg mx-auto"
-                                                    />
-                                                    <p className="text-xs font-bold text-pine/60 mt-4 text-center italic">Gambar 1. Interpolasi Spatial Interpolation: Metode Kriging</p>
-                                                </div>
-                                            </div>
-
-                                            <div className="space-y-4 pt-6">
-                                                <p>Persamaan dan simbol harus diketik menggunakan equation editor. Persamaan ditempatkan 1 cm dari margin kiri. Persamaan harus diberi nomor secara berurutan yang ditempatkan dalam tanda kurung pada posisi tab stop 15,5 cm rata kanan. Gunakan corak “Persamaan” untuk mendapatkan format yang seragam. Simbol dan notasi dapat didefinisikan pada kalimat sebelum persamaan atau di bawah persamaan. Sisipkan 1 baris kosong sebelum dan sesudah persamaan.</p>
-
-                                                <div className="p-8 bg-clay/10 rounded-2xl border border-clay/20 flex flex-col items-center gap-4">
-                                                    <div className="w-full flex justify-center items-center">
-                                                        <img
-                                                            src="/rumus.png"
-                                                            alt="Formula Persamaan"
-                                                            className="max-h-[100px] w-auto h-auto rounded-lg"
-                                                        />
-                                                    </div>
-                                                    <div className="w-full text-xs font-medium space-y-1 pt-4 border-t border-clay/30 text-center md:text-left">
-                                                        <p>dimana,</p>
-                                                        <p>V = kecepatan (km/jam),</p>
-                                                        <p>ΔD = jarak (km),</p>
-                                                        <p>Δt = waktu (jam).</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <p className="bg-pine/5 p-6 rounded-xl border border-pine/10 font-bold text-pine italic">
-                                                Keseluruhan persamaan, tabel, dan gambar yang dibuat dengan menggunakan perangkat lunak non-MS. Word harus diimpor ke dalam file naskah dalam MS. Word.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </FadeIn>
-                            </div>
-
-                            {/* Section: UCAPAN TERIMA KASIH */}
-                            <div id="thanks" className="scroll-mt-32">
-                                <FadeIn direction="up">
-                                    <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-6">
-                                        <h3 className="text-2xl font-black text-pine uppercase">UCAPAN TERIMA KASIH</h3>
-                                        <p className="text-sm leading-relaxed text-sage">
-                                            Ucapan terima kasih, bila ada, dituliskan di makalah. Ucapan terima kasih ini ditulis pada bagian akhir teks sebelum Daftar Pustaka. Ucapan terima kasih ditujukan kepada pemberi dana, pemberi beasiswa, pemberi data, pihak-pihak yang membantu, dan sebagainya. <strong className="text-pine">Ucapan terima kasih ditulis dengan huruf ukuran 10 pt.</strong>
-                                        </p>
                                     </div>
                                 </FadeIn>
                             </div>
@@ -397,69 +407,42 @@ export default function AuthorGuideline() {
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
                                         <div className="space-y-6">
-                                            <h3 className="text-2xl font-black text-pine uppercase">DAFTAR PUSTAKA</h3>
-                                            <div className="text-sm leading-relaxed text-sage space-y-4">
-                                                <p>Daftar Pustaka hanya berisi pustaka-pustaka yang memang disebut dalam naskah. Daftar Pustaka ditulis berurutan menurut abjad (ascending) nama akhir penulis. Apabila jumlah penulis lebih dari satu orang, maka semua nama penulis harus dicantumkan. Format penulisan daftar pustaka adalah hanging 1 cm dari sisi margin kiri.</p>
-                                                <p>Ketentuan umum mengenai urutan penulisan data sebuah pustaka adalah sebagai berikut, misalkan diambil dari buku, ataupun artikel:</p>
+                                            <h3 className="text-2xl font-black text-pine uppercase">4. DAFTAR PUSTAKA</h3>
+                                            <div className="text-sm leading-relaxed text-sage space-y-6">
+                                                <p>Daftar pustaka hanya berisi referensi yang dikutip dalam teks makalah. Daftar pustaka ini ditulis dalam naik urutan berdasarkan nama terakhir penulis. Pergunakan style <strong className="text-pine underline decoration-fog underline-offset-4">'References'</strong> for pengaturan format daftar pustaka ini.</p>
+                                                <p className="bg-pine/5 p-6 rounded-xl border border-pine/10 font-bold text-pine italic">
+                                                    Format penulisan referensi mengikuti metode APA 6th, contoh penulisannya adalah sebagai berikut : Nama dari penulis. Tahun publikasi. Judul publikasi. Tempat penerbitan: penerbit.
+                                                </p>
                                             </div>
                                         </div>
 
-                                        <div className="grid gap-4">
-                                            {[
-                                                { t: 'Buku', v: 'Smith, A dan Jones, B, tahun publikasi, judul, lokasi, penerbit, halaman.' },
-                                                { t: 'Buku dengan Editor', v: 'Smith, A, ed., tahun publikasi, judul, lokasi, penerbit, halaman.' },
-                                                { t: 'Artikel Majalah/Jurnal', v: 'Smith, A dan Jones, B, tahun publikasi, judul artikel, nama jurnal, volume dan nomor terbit, halaman, link doi.' },
-                                                { t: 'Artikel Jurnal Online', v: 'Smith, A dan Jones, B, tahun publikasi, judul, volume dan nomor terbit, halaman, URL.' },
-                                                { t: 'Paper Konferensi', v: 'Smith, A dan Jones, B, tahun publikasi, judul dalam prosiding konferensi (lokasi, tanggal)' }
-                                            ].map((item, i) => (
-                                                <div key={i} className="p-6 bg-clay/5 rounded-2xl border border-clay/20">
-                                                    <h4 className="text-xs font-black text-fog uppercase tracking-widest mb-2">{item.t}</h4>
-                                                    <p className="text-sm font-medium italic text-pine">{item.v}</p>
-                                                </div>
-                                            ))}
-                                        </div>
-
-                                        <div className="space-y-8 pt-10 border-t border-clay/30">
-                                            <h4 className="text-lg font-black text-pine">Contoh:</h4>
-                                            <div className="bg-clay/5 p-8 rounded-2xl border border-clay/20 space-y-4 text-xs leading-relaxed italic text-pine/80">
-                                                <p className="pl-4 -indent-4">Cornforth, D.H. 2005. Landslides in Practice Investigation, Analysis, and Remedial/Preventative Options in Soils. New Jersey: John Wiley and Sons, Inc., hal. 10-15.</p>
-                                                <p className="pl-4 -indent-4">Department of Transportation. 2006. Data Armada Angkutan Umum Provinsi DIY Tahun 2006. Bidang Angkutan Dinas Perhubungan Provinsi Daerah Istimewa Yogyakarta.</p>
-                                                <p className="pl-4 -indent-4">Fwa, T.F. 2006. The Handbook of Highway Engineering. New York: CRC Press, hal. 40-43.</p>
-                                                <p className="pl-4 -indent-4">Majid, A. dan McCaffer, R. 1998. Factors of Non-Excusable Delays that Influence Contractors’ Performance. Journal of Management Engineering ASCE, hal. 42-49.</p>
-                                                <p className="pl-4 -indent-4">Munawar, A., Kusumawardani, S.S., Utomo, R.B., dan Yuzal, S., 2012, “Integrated Public Transport Ticketing System in Yogyakarta” dalam Proceedings of the 12th Asia-Pacific ITS Forum & Exhibition (Kuala Lumpur, 16-18 April 2012).</p>
-                                                <p className="pl-4 -indent-4">Sugiyanto, G. 2007. Kajian Penerapan Congestion Charging untuk Meningkatkan Penggunaan Angkutan Umum (Studi Kasus di Koridor Malioboro, Yogyakarta). Tesis untuk derajat Magister Rekayasa Transportasi, Institut Teknologi Bandung (tidak dipublikasikan).</p>
+                                        <div className="space-y-8">
+                                            <h4 className="text-lg font-black text-pine tracking-tight">Contoh Penulisan:</h4>
+                                            <div className="grid gap-4">
+                                                {[
+                                                    'Departemen Perhubungan. 2016. Data Parkir di Badan Jalan Tahun 2016. Unit Pengelola Teknis, Dinas Perhubungan Provinsi Daerah Istimewa Aceh.',
+                                                    'Fwa, T.F. 2006. The Handbook of Highway Engineering. New York: CRC Press.',
+                                                    'Fathur, S. 2012. Kajian Penerapan Tarip Parkir Progresif di Jalan Sudirman Yogyakarta. Thesis for Magister Degree. Rekayasa Transportasi, Institut Teknologi Yogyakarta (unpublished).',
+                                                    'May, A.D. 2006. Transportation and Traffic Engineering. New Jersey: John Wiley and Sons, Inc'
+                                                ].map((ref, i) => (
+                                                    <div key={i} className="group p-5 bg-clay/5 rounded-2xl border border-clay/10 transition-all hover:bg-white hover:shadow-md hover:border-pine/20">
+                                                        <p className="text-sm font-medium italic text-pine/80 leading-relaxed pl-4 border-l-2 border-pine/20 group-hover:border-pine">{ref}</p>
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
+                                    </div>
+                                </FadeIn>
+                            </div>
 
-                                        <div className="space-y-8 pt-10 border-t border-clay/30">
-                                            <h4 className="text-lg font-black text-pine">Cara Mensitasi Pustaka (Harvard Style)</h4>
-                                            <div className="space-y-12">
-                                                {/* Summary Rules - Restored content exactly as user requested */}
-                                                <div className="space-y-4">
-                                                    <p className="text-sm font-bold text-fog underline underline-offset-4">Pustaka oleh satu orang penulis, misalnya:</p>
-                                                    <p className="text-xs italic text-pine p-3 bg-white border border-clay/30 rounded-lg">Smith, A. 2020. Contoh Penulisan Sitasi dengan Satu Penulis dalam Artikel Ilmiah. Jakarta, Penerbit ABC. 100 halaman.</p>
-                                                    <div className="text-sm leading-relaxed text-sage space-y-4">
-                                                        <p>Untuk mensitasi pustaka yang ditulis oleh satu orang penulis, maka penulisannya adalah dengan menulis nama penulis diikuti oleh tahun dalam tanda kurung <strong className="text-pine">(Smith, 2020)</strong>.</p>
-                                                        <p>Atau apabila penulis sebagai subyek kalimat: <strong className="text-pine">Smith (2020)</strong> menyatakan bahwa...</p>
-                                                    </div>
-                                                </div>
-                                                <div className="space-y-4">
-                                                    <p className="text-sm font-bold text-fog underline underline-offset-4">Pustaka oleh dua orang penulis, misalnya:</p>
-                                                    <p className="text-xs italic text-pine p-3 bg-white border border-clay/30 rounded-lg">Smith, A dan Jones, B. 2021. Contoh Penulisan Sitasi dengan Dua Penulis dalam Artikel Ilmiah. Surabaya, Penerbit DEF. 125 halaman.</p>
-                                                    <div className="text-sm leading-relaxed text-sage space-y-4">
-                                                        <p>Untuk mensitasi pustaka yang ditulis oleh dua orang penulis, maka penulisannya adalah dengan menulis kedua nama penulis <strong className="text-pine">(Smith dan Jones, 2021)</strong>.</p>
-                                                        <p>Atau apabila penulis sebagai subyek kalimat: <strong className="text-pine">Smith dan Jones (2021)</strong> menyatakan bahwa...</p>
-                                                    </div>
-                                                </div>
-                                                <div className="space-y-4">
-                                                    <p className="text-sm font-bold text-fog underline underline-offset-4">Pustaka oleh lebih dari dua orang penulis:</p>
-                                                    <div className="text-sm leading-relaxed text-sage space-y-4">
-                                                        <p>Untuk mensitasi pustaka yang ditulis oleh lebih dari dua orang penulis, maka penulisannya adalah dengan menulis nama penulis pertama diikuti dengan et al. <strong className="text-pine">(Smith et al., 2022)</strong>.</p>
-                                                        <p>Atau apabila penulis sebagai subyek kalimat: <strong className="text-pine">Smith et al. (2022)</strong> menyatakan bahwa...</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            {/* Section: UCAPAN TERIMAKASIH */}
+                            <div id="thanks" className="scroll-mt-32">
+                                <FadeIn direction="up">
+                                    <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-6">
+                                        <h3 className="text-2xl font-black text-pine uppercase">5. UCAPAN TERIMAKASIH</h3>
+                                        <p className="text-sm leading-relaxed text-sage italic">
+                                            Jika dibutuhkan tambahkan ucapan terimakasih pada pihak-pihak yang membantu dalam penelitian, penulisan makalah, atau pun pelaksanaan seminar.
+                                        </p>
                                     </div>
                                 </FadeIn>
                             </div>
@@ -468,9 +451,9 @@ export default function AuthorGuideline() {
                             <div id="appendix" className="scroll-mt-32 space-y-12 pb-20">
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-6">
-                                        <h3 className="text-2xl font-black text-pine uppercase">LAMPIRAN</h3>
+                                        <h3 className="text-2xl font-black text-pine uppercase">6. LAMPIRAN</h3>
                                         <p className="text-sm leading-relaxed text-sage">
-                                            Pemuatan lampiran dimungkinkan (tabel, gambar, dll). Pembuatan lampiran harus mengikuti ketentuan-ketentuan mengenai perangkat lunak, bahasa, pengaturan halaman, header, dan penulisan media.
+                                            Makalah dapat dilengkapi dengan lampiran yang berisi tabel, gambar, peta dan yang lain-lain jika perlu untuk dilampirkan. Lampiran harus mematuhi ketentuan bahasa, penomoran halaman, header, format halaman, format tabel dan gambar.
                                         </p>
                                     </div>
 
@@ -479,11 +462,8 @@ export default function AuthorGuideline() {
                                         <div className="relative z-10 space-y-4">
                                             <h4 className="text-fog font-black uppercase tracking-[0.2em] text-xs">Penting:</h4>
                                             <p className="text-xl md:text-2xl font-black max-w-2xl mx-auto leading-tight">
-                                                Panjang halaman maksimal <span className="text-moss">10 (sepuluh) halaman</span>.
-                                                <span className="block text-moss/70 text-lg md:text-xl mt-2 font-bold italic">(termasuk lampiran, kalau ada)</span>
-                                            </p>
-                                            <p className="text-moss/60 text-sm font-medium">
-                                                Makalah melebihi batas tidak akan diterima untuk publikasi prosiding.
+                                                Panjang halaman <span className="text-moss">6 sampai 10 halaman</span>.
+                                                <span className="block text-moss/70 text-lg md:text-xl mt-2 font-bold italic">(termasuk lampiran, tabel, gambar, dan daftar pustaka)</span>
                                             </p>
                                         </div>
                                     </div>

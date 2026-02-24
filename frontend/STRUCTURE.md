@@ -8,8 +8,8 @@ app/
 ├── main-program/
 │   ├── sub-page-1/
 │   │   └── page.tsx                 # Main Program Sub Page 1
-│   └── sub-page-2/
-│       └── page.tsx                 # Main Program Sub Page 2
+│   └── venue-hotel/
+│       └── page.tsx                 # Venue & Hotel Page
 ├── call-for-paper/
 │   ├── sub-page-1/
 │   │   └── page.tsx                 # Call For Paper Sub Page 1
@@ -39,7 +39,7 @@ components/
 - **Home** → `/`
 - **Main Program** (Dropdown) ▼
   - Sub Page 1 → `/main-program/sub-page-1`
-  - Sub Page 2 → `/main-program/sub-page-2`
+  - Venue & Hotel → `/main-program/venue-hotel`
 - **Call For Paper** (Dropdown) ▼
   - Sub Page 1 → `/call-for-paper/sub-page-1`
   - Sub Page 2 → `/call-for-paper/sub-page-2`
@@ -66,9 +66,9 @@ components/
 - Template halaman dengan placeholder content
 - Siap untuk diisi konten
 
-**Sub Page 2** (`/main-program/sub-page-2`)
-- Template halaman dengan placeholder content
-- Siap untuk diisi konten
+**Venue & Hotel** (`/main-program/venue-hotel`)
+- Informasi lengkap terkait venue acara (Universitas Andalas)
+- Daftar hotel rekomendasi di sekitar lokasi acara
 
 ### 3. Call For Paper
 **Sub Page 1** (`/call-for-paper/sub-page-1`)

@@ -192,20 +192,16 @@ export default function Timeline() {
                   <div className="relative z-10 shrink-0 w-12 lg:w-16 flex justify-center pt-1">
                     {item.highlight ? (
                       <div className={`w-5 h-5 rounded-full ring-4 transition-all duration-500
-                                    ${isPast
-                          ? 'bg-sage/60 ring-sage/20'
-                          : isCurrent
-                            ? 'bg-gradient-to-br from-fog to-pine ring-fog/30 shadow-[0_0_20px_rgba(70,112,126,0.5)] animate-pulse-glow'
-                            : 'bg-gradient-to-br from-fog to-pine ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.4)]'
+                                    ${isCurrent
+                          ? 'bg-gradient-to-br from-fog to-pine ring-fog/30 shadow-[0_0_20px_rgba(70,112,126,0.5)] animate-pulse-glow'
+                          : 'bg-gradient-to-br from-fog to-pine ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.4)]'
                         }`} />
                     ) : (
                       <div className={`w-4 h-4 rounded-full ring-4 transition-all duration-500
                                     group-hover:scale-125
-                                    ${isPast
-                          ? 'bg-sage/50 ring-clay/20 shadow-none'
-                          : isCurrent
-                            ? 'bg-gradient-to-br from-fog to-sage ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.5)] scale-125'
-                            : 'bg-gradient-to-br from-fog to-sage ring-white shadow-[0_0_12px_rgba(70,112,126,0.3)]'
+                                    ${isCurrent
+                          ? 'bg-gradient-to-br from-fog to-sage ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.5)] scale-125'
+                          : 'bg-gradient-to-br from-fog to-sage ring-white shadow-[0_0_12px_rgba(70,112,126,0.3)]'
                         }
                                     group-hover:shadow-[0_0_20px_rgba(70,112,126,0.5)]`} />
                     )}
@@ -222,55 +218,41 @@ export default function Timeline() {
                   {item.highlight ? (
                     /* Highlighted event card */
                     <div className={`flex-1 rounded-2xl p-6 lg:p-7 relative overflow-hidden transition-all duration-400
-                                  ${isPast
-                        ? 'bg-gradient-to-r from-sage/20 to-clay/10 border border-sage/20'
+                                  ${isCurrent || !isPast
+                        ? 'bg-gradient-to-r from-pine to-[#1e3a3f] border border-fog/20 shadow-xl shadow-pine/10'
                         : 'bg-gradient-to-r from-pine to-[#1e3a3f] border border-fog/20 shadow-xl shadow-pine/10'
                       }
                                   hover:-translate-y-0.5`}>
                       {/* Glow decoration */}
-                      {!isPast && (
-                        <>
-                          <div className="absolute top-0 right-0 w-40 h-40 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/3" />
-                          <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-fog/40 to-transparent rounded-full" />
-                        </>
-                      )}
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/3" />
+                      <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-fog/40 to-transparent rounded-full" />
 
                       <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div>
                           <span className={`inline-block px-4 py-1.5 text-xs font-bold rounded-full mb-3
-                                        ${isPast ? 'text-sage bg-sage/20' : labelColors[item.label]}`}>
+                                        ${labelColors[item.label]}`}>
                             {item.label}
                           </span>
-                          <h3 className={`text-lg lg:text-xl font-extrabold
-                                       ${isPast ? 'text-sage' : 'text-white'}`}>
+                          <h3 className={`text-lg lg:text-xl font-extrabold text-white`}>
                             {item.title}
                           </h3>
                           {item.description && (
-                            <p className={`text-sm mt-1 ${isPast ? 'text-sage/60' : 'text-moss/70'}`}>
+                            <p className={`text-sm mt-1 text-moss/70`}>
                               {item.description}
                             </p>
                           )}
                         </div>
                         <div className="text-right shrink-0">
-                          <p className={`text-2xl lg:text-3xl font-black tracking-tight
-                                      ${isPast
-                              ? 'text-sage/50'
-                              : 'text-transparent bg-clip-text bg-gradient-to-r from-moss to-clay'
-                            }`}>
+                          <p className={`text-2xl lg:text-3xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-moss to-clay`}>
                             {item.date}
                           </p>
-                          <p className={`text-sm font-semibold ${isPast ? 'text-sage/40' : 'text-fog'}`}>
+                          <p className={`text-sm font-semibold text-fog`}>
                             {item.year}
                           </p>
                         </div>
                       </div>
 
-                      {/* Status badge */}
-                      {isPast && (
-                        <div className="absolute top-3 right-3">
-                          <span className="text-[10px] font-bold text-sage/40 bg-sage/10 px-2 py-0.5 rounded">COMPLETED</span>
-                        </div>
-                      )}
+
                       {isCurrent && (
                         <div className="absolute top-3 right-3">
                           <span className="text-[10px] font-bold text-white bg-fog/40 px-2 py-0.5 rounded animate-pulse">ONGOING</span>
@@ -280,18 +262,16 @@ export default function Timeline() {
                   ) : (
                     /* Regular card */
                     <div className={`flex-1 backdrop-blur-sm border rounded-2xl p-5 lg:p-6 transition-all duration-300
-                                  ${isPast
-                        ? 'bg-clay/5 border-clay/10 opacity-60 hover:opacity-80'
-                        : isCurrent
-                          ? 'bg-white border-fog/25 shadow-lg shadow-fog/10 ring-1 ring-fog/10'
-                          : 'bg-white/80 border-clay/20 hover:shadow-lg hover:shadow-fog/5 hover:border-fog/20'
+                                  ${isCurrent
+                        ? 'bg-white border-fog/25 shadow-lg shadow-fog/10 ring-1 ring-fog/10'
+                        : 'bg-white/80 border-clay/20 hover:shadow-lg hover:shadow-fog/5 hover:border-fog/20'
                       }
                                   hover:-translate-y-0.5`}>
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                         <div>
                           <div className="flex items-center gap-2 mb-2">
                             <span className={`inline-block px-3 py-1 text-xs font-bold rounded-full
-                                          ${isPast ? 'text-sage/50 bg-sage/10' : labelColors[item.label]}`}>
+                                          ${labelColors[item.label]}`}>
                               {item.label}
                             </span>
                             {isCurrent && (
@@ -300,23 +280,16 @@ export default function Timeline() {
                                 ACTIVE
                               </span>
                             )}
-                            {isPast && (
-                              <span className="px-2 py-0.5 text-[10px] font-bold text-sage/40 bg-sage/5 rounded-full">
-                                ✓ DONE
-                              </span>
-                            )}
                           </div>
-                          <h3 className={`text-base lg:text-lg font-bold
-                                       ${isPast ? 'text-sage/60 line-through decoration-sage/20' : 'text-pine'}`}>
+                          <h3 className={`text-base lg:text-lg font-bold text-pine`}>
                             {item.title}
                           </h3>
                         </div>
                         <div className="text-right shrink-0">
-                          <p className={`text-lg lg:text-xl font-extrabold tracking-tight
-                                      ${isPast ? 'text-sage/40' : 'text-fog'}`}>
+                          <p className={`text-lg lg:text-xl font-extrabold tracking-tight text-fog`}>
                             {item.date}
                           </p>
-                          <p className={`text-xs font-medium ${isPast ? 'text-sage/30' : 'text-sage'}`}>
+                          <p className={`text-xs font-medium text-sage`}>
                             {item.year}
                           </p>
                         </div>
