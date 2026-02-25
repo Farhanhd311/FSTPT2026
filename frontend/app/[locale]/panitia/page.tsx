@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import NextImage from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const committeeData = {
     organizer: "Departemen Teknik Sipil, Fakultas Teknik, Universitas Andalas",
@@ -110,6 +111,8 @@ const committeeData = {
 };
 
 export default function Committee() {
+    const t = useTranslations('committee');
+
     return (
         <>
             <Navigation />
@@ -124,13 +127,13 @@ export default function Committee() {
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
                         <FadeIn direction="up">
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-moss text-xs font-bold uppercase tracking-widest mb-6">
-                                Organizational Structure
+                                {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                Committee <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">FSTPT 2026</span>
+                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
-                                Penyelenggara Kegiatan ISTSDC ke-V, Simposium Nasional Transportasi, RAT, dan Workshop FSTPT ke-XXIX Tahun 2026.
+                                {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
@@ -138,12 +141,11 @@ export default function Committee() {
                 </section>
 
                 <div className="space-y-24 -mt-20 relative z-30">
-                    {/* ═══════════════ WIDE SECTION (Steering & Organizing) ═══════════════ */}
                     <div className="max-w-[1550px] mx-auto px-6 sm:px-8 lg:px-12 space-y-24">
                         {/* ═══════════════ ORGANIZING BODY ═══════════════ */}
                         <FadeIn direction="up" delay={100}>
                             <div className="bg-white/80 backdrop-blur-xl border border-pine/10 rounded-[2.5rem] p-10 shadow-2xl shadow-pine/5 text-center max-w-7xl mx-auto">
-                                <h2 className="text-xs font-black text-moss uppercase tracking-[0.2em] mb-4">Penyelenggara</h2>
+                                <h2 className="text-xs font-black text-moss uppercase tracking-[0.2em] mb-4">{t('organizer')}</h2>
                                 <p className="text-2xl md:text-3xl font-black text-pine leading-tight">
                                     {committeeData.organizer}
                                 </p>
@@ -153,7 +155,7 @@ export default function Committee() {
                         {/* ═══════════════ STEERING COMMITTEE ═══════════════ */}
                         <section>
                             <div className="text-center mb-12">
-                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">Steering Committee</h2>
+                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('steeringCommittee')}</h2>
                                 <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -162,15 +164,8 @@ export default function Committee() {
                                         <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
                                             <div className="relative h-64 overflow-hidden bg-pine/5">
                                                 <div className="absolute inset-0 bg-gradient-to-t from-pine/20 to-transparent z-10" />
-                                                {/* Profile Photo */}
                                                 <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
-                                                    <NextImage
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                        fill
-                                                        className="object-cover"
-                                                        sizes="(max-w-7xl) 25vw"
-                                                    />
+                                                    <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
                                                 </div>
                                             </div>
                                             <div className="p-6 flex-grow flex flex-col justify-center text-center">
@@ -185,7 +180,7 @@ export default function Committee() {
                         {/* ═══════════════ ORGANIZING COMMITTEE ═══════════════ */}
                         <section>
                             <div className="text-center mb-12">
-                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">Organizing Committee</h2>
+                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('organizingCommittee')}</h2>
                                 <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -194,15 +189,8 @@ export default function Committee() {
                                         <div className="h-full bg-pine border border-white/10 rounded-[2.5rem] overflow-hidden shadow-xl flex flex-col group hover:-translate-y-2 transition-all duration-500">
                                             <div className="relative h-72 overflow-hidden bg-white/5">
                                                 <div className="absolute inset-0 bg-gradient-to-t from-pine/60 to-transparent z-10" />
-                                                {/* Profile Photo */}
                                                 <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
-                                                    <NextImage
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                        fill
-                                                        className="object-cover"
-                                                        sizes="(max-w-7xl) 25vw"
-                                                    />
+                                                    <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
                                                 </div>
                                                 <div className="absolute bottom-4 left-0 right-0 z-20 px-6">
                                                     <h3 className="text-[10px] font-black text-moss uppercase tracking-[0.2em] group-hover:tracking-[0.4em] transition-all duration-500">{item.role}</h3>
@@ -220,7 +208,7 @@ export default function Committee() {
                         {/* ═══════════════ SCIENTIFIC COMMITTEE ═══════════════ */}
                         <section>
                             <div className="text-center mb-12">
-                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">Scientific Committee</h2>
+                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('scientificCommittee')}</h2>
                                 <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -229,15 +217,8 @@ export default function Committee() {
                                         <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
                                             <div className="relative h-72 overflow-hidden bg-pine/5">
                                                 <div className="absolute inset-0 bg-gradient-to-t from-pine/20 to-transparent z-10" />
-                                                {/* Profile Photo */}
                                                 <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
-                                                    <NextImage
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                        fill
-                                                        className="object-cover"
-                                                        sizes="(max-w-7xl) 20vw"
-                                                    />
+                                                    <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 20vw" />
                                                 </div>
                                             </div>
                                             <div className="p-6 flex-grow flex flex-col justify-center text-center">
@@ -251,12 +232,11 @@ export default function Committee() {
                         </section>
                     </div>
 
-                    {/* ═══════════════ STANDARD SECTION (Sub Committees & Scientific) ═══════════════ */}
                     <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 space-y-24">
                         {/* ═══════════════ SUB COMMITTEES ═══════════════ */}
                         <section className="space-y-12">
                             <div className="text-center">
-                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">Sub Committees</h2>
+                                <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('subCommittees')}</h2>
                                 <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid lg:grid-cols-2 gap-10">
@@ -268,12 +248,12 @@ export default function Committee() {
                                             </div>
                                             <div className="p-8 space-y-6 flex-grow">
                                                 <div>
-                                                    <span className="text-[10px] font-black text-moss uppercase tracking-widest block mb-2">Coordinator</span>
+                                                    <span className="text-[10px] font-black text-moss uppercase tracking-widest block mb-2">{t('coordinator')}</span>
                                                     <p className="text-lg font-bold text-pine">{sub.coordinator}</p>
                                                 </div>
                                                 <div className="h-px bg-clay/30 w-full" />
                                                 <div>
-                                                    <span className="text-[10px] font-black text-moss uppercase tracking-widest block mb-3">Members</span>
+                                                    <span className="text-[10px] font-black text-moss uppercase tracking-widest block mb-3">{t('members')}</span>
                                                     <ul className="space-y-3">
                                                         {sub.members.map((member, j) => (
                                                             <li key={j} className="flex items-start gap-3">
@@ -289,8 +269,6 @@ export default function Committee() {
                                 ))}
                             </div>
                         </section>
-
-
                     </div>
                 </div>
             </main>

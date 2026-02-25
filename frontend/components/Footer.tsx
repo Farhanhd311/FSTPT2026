@@ -1,12 +1,17 @@
-import Link from 'next/link';
+'use client';
+
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('footer');
+
   const quickLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/main-program/sub-page-1', label: 'Main Program' },
-    { href: '/call-for-paper/sub-page-1', label: 'Call For Paper' },
-    { href: '/panitia', label: 'Panitia' },
-    { href: '/flyer', label: 'Flyer' },
+    { href: '/', label: t('home') },
+    { href: '/main-program/agenda-kegiatan', label: t('mainProgram') },
+    { href: '/call-for-paper/author-guideline', label: t('callForPaper') },
+    { href: '/panitia', label: t('panitia') },
+    { href: '/flyer', label: t('flyer') },
   ];
 
   const socialLinks = [
@@ -34,16 +39,16 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <span className="text-lg font-bold text-white">FSTPT 2026</span>
+              <span className="text-lg font-bold text-white">{t('brand')}</span>
             </Link>
             <p className="text-moss/80 text-sm leading-relaxed max-w-xs">
-              Forum Studi Transportasi antar Perguruan Tinggi — Membangun masa depan transportasi Indonesia yang lebih baik.
+              {t('brandDesc')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">Quick Links</h3>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">{t('quickLinks')}</h3>
             <ul className="space-y-1.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -57,7 +62,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">Contact</h3>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">{t('contact')}</h3>
             <ul className="space-y-2.5">
               <li>
                 <a href="mailto:info@fstpt2026.com" className="flex items-center gap-2 text-moss/80 hover:text-white text-sm transition-colors duration-200">
@@ -87,7 +92,7 @@ export default function Footer() {
 
           {/* Follow Us & Newsletter */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">Follow Us</h3>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">{t('followUs')}</h3>
             <div className="flex flex-wrap gap-2 mb-5">
               {socialLinks.map((social) => (
                 <a
@@ -103,11 +108,11 @@ export default function Footer() {
               ))}
             </div>
             {/* Compact Newsletter */}
-            <p className="text-moss/60 text-xs mb-2">Subscribe to our newsletter</p>
+            <p className="text-moss/60 text-xs mb-2">{t('newsletter')}</p>
             <div className="flex gap-1.5">
               <input
                 type="email"
-                placeholder="Email Anda"
+                placeholder={t('emailPlaceholder')}
                 className="flex-1 min-w-0 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder-moss/50 focus:outline-none focus:border-fog/50 transition-colors"
               />
               <button className="px-3 py-1.5 bg-gradient-to-r from-fog to-sage text-white rounded-lg hover:opacity-90 transition-opacity duration-200 flex-shrink-0">
@@ -125,12 +130,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-moss/50 text-xs">
-            &copy; 2026 FSTPT (Forum Studi Transportasi antar Perguruan Tinggi). All rights reserved.
+            {t('copyright')}
           </p>
           <div className="flex gap-5 text-xs">
-            <a href="#" className="text-moss/50 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-moss/50 hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="text-moss/50 hover:text-white transition-colors">Sitemap</a>
+            <a href="#" className="text-moss/50 hover:text-white transition-colors">{t('privacy')}</a>
+            <a href="#" className="text-moss/50 hover:text-white transition-colors">{t('terms')}</a>
+            <a href="#" className="text-moss/50 hover:text-white transition-colors">{t('sitemap')}</a>
           </div>
         </div>
       </div>

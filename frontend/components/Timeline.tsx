@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import FadeIn from './FadeIn';
+import { useTranslations } from 'next-intl';
 
 interface TimelineItem {
   label: string;
@@ -12,15 +13,16 @@ interface TimelineItem {
   highlight?: boolean;
 }
 
-const timelineData: TimelineItem[] = [
-  { label: 'MILESTONE', title: 'Pengumuman Call for Paper', date: '14 February', year: '2026' },
-  { label: 'SUBMISSION', title: 'Periode Pengumpulan Full Paper', date: '1 March – 15 July', year: '2026' },
-  { label: 'REVIEW', title: 'Proses Review Full Paper', date: '1 June – 31 July', year: '2026' },
-  { label: 'ANNOUNCEMENT', title: 'Pengumuman Hasil Review Paper', date: '1 August', year: '2026' },
-  { label: 'REVISION', title: 'Revisi & Pengumpulan Camera-Ready Paper', date: '1 – 31 August', year: '2026' },
-  { label: 'REGISTRATION', title: 'Registrasi Peserta & Pemakalah', date: '15 August – 30 September', year: '2026' },
-  { label: 'EVENT DAY', title: 'Pelaksanaan Acara', date: '6 – 7 November', year: '2026', description: 'Convention Hall & UPT Bahasa Universitas Andalas, Padang', highlight: true },
+const timelineBase = [
+  { label: 'MILESTONE', titleKey: 'item1Title', date: '14 February', year: '2026' },
+  { label: 'SUBMISSION', titleKey: 'item2Title', date: '1 March – 15 July', year: '2026' },
+  { label: 'REVIEW', titleKey: 'item3Title', date: '1 June – 31 July', year: '2026' },
+  { label: 'ANNOUNCEMENT', titleKey: 'item4Title', date: '1 August', year: '2026' },
+  { label: 'REVISION', titleKey: 'item5Title', date: '1 – 31 August', year: '2026' },
+  { label: 'REGISTRATION', titleKey: 'item6Title', date: '15 August – 30 September', year: '2026' },
+  { label: 'EVENT DAY', titleKey: 'item7Title', descKey: 'item7Desc', date: '6 – 7 November', year: '2026', highlight: true },
 ];
+
 
 // Check if a date range has passed based on the current real date
 function getStatus(date: string, year: string): 'past' | 'current' | 'upcoming' {
@@ -89,7 +91,7 @@ function getNextMilestone(): { title: string; daysLeft: number } | null {
     'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11,
   };
 
-  for (const item of timelineData) {
+  for (const item of timelineBase) {
     const parts = item.date.split('–').map(s => s.trim());
     const startPart = parts[0];
     const endPart = parts[parts.length - 1];
@@ -103,7 +105,7 @@ function getNextMilestone(): { title: string; daysLeft: number } | null {
     if (now < startDate) {
       const diffMs = startDate.getTime() - now.getTime();
       const daysLeft = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-      return { title: item.title, daysLeft };
+      return { title: item.titleKey, daysLeft };
     }
 
     // Check if the end date hasn't passed yet (current)
@@ -113,13 +115,14 @@ function getNextMilestone(): { title: string; daysLeft: number } | null {
     const endDate = new Date(2026, endMonth, endDay, 23, 59, 59);
 
     if (now <= endDate) {
-      return { title: item.title, daysLeft: 0 }; // currently active
+      return { title: item.titleKey, daysLeft: 0 }; // currently active
     }
   }
   return null;
 }
 
 export default function Timeline() {
+  const t = useTranslations('timelineData');
   const [lineProgress, setLineProgress] = useState(0);
   const [mounted, setMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -129,8 +132,8 @@ export default function Timeline() {
   useEffect(() => { setMounted(true); }, []);
 
   const statuses = mounted
-    ? timelineData.map(item => getStatus(item.date, item.year))
-    : timelineData.map(() => 'upcoming' as const);
+    ? timelineBase.map(item => getStatus(item.date, item.year))
+    : timelineBase.map(() => 'upcoming' as const);
   const completedCount = statuses.filter(s => s === 'past').length;
   const activeCount = statuses.filter(s => s === 'current').length;
   const overallProgress = mounted ? computeOverallProgress() : 0;
@@ -176,7 +179,7 @@ export default function Timeline() {
         />
 
         <div className="space-y-5">
-          {timelineData.map((item, i) => {
+          {timelineBase.map((item, i) => {
             const status = getStatus(item.date, item.year);
 
             const isPast = status === 'past';
@@ -234,11 +237,11 @@ export default function Timeline() {
                             {item.label}
                           </span>
                           <h3 className={`text-lg lg:text-xl font-extrabold text-white`}>
-                            {item.title}
+                            {t(item.titleKey)}
                           </h3>
-                          {item.description && (
+                          {item.descKey && (
                             <p className={`text-sm mt-1 text-moss/70`}>
-                              {item.description}
+                              {t(item.descKey)}
                             </p>
                           )}
                         </div>
@@ -255,7 +258,7 @@ export default function Timeline() {
 
                       {isCurrent && (
                         <div className="absolute top-3 right-3">
-                          <span className="text-[10px] font-bold text-white bg-fog/40 px-2 py-0.5 rounded animate-pulse">ONGOING</span>
+                          <span className="text-[10px] font-bold text-white bg-fog/40 px-2 py-0.5 rounded animate-pulse">{t('ongoing')}</span>
                         </div>
                       )}
                     </div>
@@ -277,12 +280,12 @@ export default function Timeline() {
                             {isCurrent && (
                               <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold text-fog bg-fog/10 rounded-full">
                                 <span className="w-1.5 h-1.5 bg-fog rounded-full animate-pulse" />
-                                ACTIVE
+                                {t('active')}
                               </span>
                             )}
                           </div>
                           <h3 className={`text-base lg:text-lg font-bold text-pine`}>
-                            {item.title}
+                            {t(item.titleKey)}
                           </h3>
                         </div>
                         <div className="text-right shrink-0">

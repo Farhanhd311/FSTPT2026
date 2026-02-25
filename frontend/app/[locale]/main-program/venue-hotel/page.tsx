@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import Image from 'next/image';
 import { useState, useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 
 const hotelData = [
     { name: 'Daima Hotel Padang', image: '/hotel/hoteldaima.png', stars: 3, price: 437600, distance: 12.9, link: 'https://url-shortener.me/DZJW' },
@@ -25,34 +26,36 @@ const hotelData = [
     { name: 'The ZHM Premiere Hotel Padang', image: '/hotel/TheZhmPremier.png', stars: 4, price: 770871, distance: 13.5, link: 'https://url-shortener.me/DZB2' },
 ];
 
-const sortOptions = [
-    {
-        id: 'price-low', label: 'Harga Terendah', icon: (
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
-            </svg>
-        )
-    },
-    {
-        id: 'price-high', label: 'Harga Tertinggi', icon: (
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-        )
-    },
-    {
-        id: 'distance-near', label: 'Jarak Terdekat', icon: (
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        )
-    },
-];
-
 export default function VenueHotel() {
+    const t = useTranslations('venue');
+    const tv = useTranslations('venueData');
     const [sortBy, setSortBy] = useState('price-low');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const sortOptions = [
+        {
+            id: 'price-low', label: t('priceLow'), icon: (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                </svg>
+            )
+        },
+        {
+            id: 'price-high', label: t('priceHigh'), icon: (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+            )
+        },
+        {
+            id: 'distance-near', label: t('distanceNear'), icon: (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            )
+        },
+    ];
 
     const sortedHotels = useMemo(() => {
         return [...hotelData].sort((a, b) => {
@@ -78,13 +81,13 @@ export default function VenueHotel() {
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
                         <FadeIn direction="up">
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-moss text-xs font-bold uppercase tracking-widest mb-6">
-                                Event Logistics
+                                {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                Venue & <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Hotels</span>
+                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
-                                Informasi Lengkap Lokasi Acara dan Rekomendasi Penginapan Sekitar Venue.
+                                {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
@@ -108,29 +111,29 @@ export default function VenueHotel() {
                                 <div className="p-8 md:p-14 flex flex-col justify-center">
                                     <div className="space-y-6">
                                         <div>
-                                            <span className="text-clay font-black text-xs uppercase tracking-[0.2em] mb-3 block">Main Venue</span>
-                                            <h2 className="text-3xl md:text-4xl font-black text-pine mb-4 uppercase">Convention Hall <br />Universitas Andalas</h2>
+                                            <span className="text-clay font-black text-xs uppercase tracking-[0.2em] mb-3 block">{t('mainVenue')}</span>
+                                            <h2 className="text-3xl md:text-4xl font-black text-pine mb-4 uppercase whitespace-pre-line">{t('venueTitle')}</h2>
                                             <div className="flex items-center gap-3 text-sage font-medium">
                                                 <svg className="w-5 h-5 text-fog " fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                                 </svg>
-                                                <span>Limau Manis, Pauh, Padang, West Sumatera</span>
+                                                <span>{t('venueAddress')}</span>
                                             </div>
                                         </div>
 
                                         <p className="text-sage leading-relaxed text-justify">
-                                            Convention Hall Universitas Andalas merupakan fasilitas utama yang terletak di kampus Limau Manis, dikenal dengan arsitektur modernnya dan pemandangan kota Padang yang memukau dari ketinggian. Gedung ini dilengkapi dengan fasilitas konferensi bertaraf nasional yang mendukung kenyamanan peserta selama simposium berlangsung.
+                                            {t('venueDesc')}
                                         </p>
 
                                         <div className="grid grid-cols-2 gap-4 pt-4">
                                             <div className="p-4 bg-clay/5 rounded-2xl border border-clay/10">
-                                                <h4 className="font-bold text-pine text-xs uppercase mb-1">Kapasitas</h4>
-                                                <p className="text-sage text-sm">Hingga 2000 Orang</p>
+                                                <h4 className="font-bold text-pine text-xs uppercase mb-1">{t('capacity')}</h4>
+                                                <p className="text-sage text-sm">{t('capacityValue')}</p>
                                             </div>
                                             <div className="p-4 bg-fog/5 rounded-2xl border border-fog/10">
-                                                <h4 className="font-bold text-pine text-xs uppercase mb-1">Fasilitas</h4>
-                                                <p className="text-sage text-sm">Full AC & Wi-Fi</p>
+                                                <h4 className="font-bold text-pine text-xs uppercase mb-1">{t('facilities')}</h4>
+                                                <p className="text-sage text-sm">{t('facilitiesValue')}</p>
                                             </div>
                                         </div>
 
@@ -140,7 +143,7 @@ export default function VenueHotel() {
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 mt-4 px-8 py-4 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg transition-all duration-300"
                                         >
-                                            Buka Google Maps
+                                            {t('openMaps')}
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                             </svg>
@@ -157,17 +160,17 @@ export default function VenueHotel() {
                     <div className={`flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 relative ${isDropdownOpen ? 'z-50' : 'z-10'}`}>
                         <FadeIn direction="right">
                             <div className="text-left">
-                                <span className="text-clay font-black text-xs uppercase tracking-[0.3em] mb-4 block">Accommodation</span>
-                                <h2 className="text-4xl md:text-5xl font-black text-pine uppercase">Rekomendasi <span className="text-fog">Hotel</span></h2>
+                                <span className="text-clay font-black text-xs uppercase tracking-[0.3em] mb-4 block">{t('hotelBadge')}</span>
+                                <h2 className="text-4xl md:text-5xl font-black text-pine uppercase">{t('hotelTitle')} <span className="text-fog">{t('hotelTitleHighlight')}</span></h2>
                                 <p className="text-sage font-medium mt-4 max-w-xl">
-                                    Pilihan hotel terbaik di Kota Padang untuk menunjang kenyamanan istirahat Anda selama kegiatan berlangsung.
+                                    {t('hotelSubtitle')}
                                 </p>
                             </div>
                         </FadeIn>
 
                         <FadeIn direction="left" delay={200}>
                             <div className={`flex flex-col gap-3 min-w-[280px] relative ${isDropdownOpen ? 'z-50' : 'z-20'}`}>
-                                <label className="text-[10px] font-black text-pine/40 uppercase tracking-widest ml-1">Urutkan Berdasarkan:</label>
+                                <label className="text-[10px] font-black text-pine/40 uppercase tracking-widest ml-1">{t('sortBy')}</label>
 
                                 <div className="relative">
                                     {/* Dropdown Trigger */}
@@ -259,7 +262,7 @@ export default function VenueHotel() {
 
                                         {/* Distance Badge */}
                                         <div className="absolute bottom-6 left-6 px-4 py-1.5 bg-pine/80 backdrop-blur-md rounded-full text-xs font-bold text-white shadow-lg border border-white/10">
-                                            {hotel.distance} km away
+                                            {hotel.distance} {t('kmAway')}
                                         </div>
                                     </div>
 
@@ -274,13 +277,13 @@ export default function VenueHotel() {
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                                     </svg>
                                                 </div>
-                                                <span className="text-sm">Padang, West Sumatera</span>
+                                                <span className="text-sm">{tv('hotelLocation')}</span>
                                             </div>
                                         </div>
 
                                         <div className="space-y-6">
                                             <div className="p-5 bg-clay/5 rounded-2xl border border-clay/10">
-                                                <p className="text-[10px] font-black text-pine/40 uppercase tracking-[0.2em] mb-1">Rates Start From</p>
+                                                <p className="text-[10px] font-black text-pine/40 uppercase tracking-[0.2em] mb-1">{t('ratesFrom')}</p>
                                                 <p className="text-2xl font-black text-fog">Rp {hotel.price.toLocaleString('id-ID')}</p>
                                             </div>
 
@@ -290,7 +293,7 @@ export default function VenueHotel() {
                                                 rel="noopener noreferrer"
                                                 className="flex items-center justify-center gap-3 w-full py-4 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg transition-all duration-300 group/btn"
                                             >
-                                                Detail Penginapan
+                                                {t('detailBtn')}
                                                 <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                                 </svg>
@@ -311,25 +314,25 @@ export default function VenueHotel() {
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-moss/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl animate-float-delay" />
 
                             <div className="relative z-10 space-y-8">
-                                <span className="text-moss font-black uppercase tracking-[0.4em] text-xs">Akomodasi Terjamin</span>
+                                <span className="text-moss font-black uppercase tracking-[0.4em] text-xs">{t('ctaBadge')}</span>
                                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black max-w-4xl mx-auto leading-tight">
-                                    Persiapkan <span className="text-moss italic">Kehadiran</span> Anda di Kota Padang
+                                    {t('ctaTitle')} <span className="text-moss italic">{t('ctaTitleHighlight')}</span> {t('ctaTitleEnd')}
                                 </h2>
                                 <p className="text-moss/70 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-                                    Kami merekomendasikan untuk melakukan pemesanan hotel lebih awal untuk mendapatkan harga terbaik.
+                                    {t('ctaDesc')}
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
                                     <a
                                         href="mailto:fstpt2026@unand.ac.id"
                                         className="px-10 py-5 bg-moss text-pine font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-xl shadow-moss/20"
                                     >
-                                        Hubungi Panitia
+                                        {t('contactCommittee')}
                                     </a>
                                     <button
                                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                         className="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-white/20 transition-all duration-300"
                                     >
-                                        Kembali Ke Atas
+                                        {t('backToTop')}
                                     </button>
                                 </div>
                             </div>

@@ -4,33 +4,40 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import { useState, useEffect } from 'react';
-
-const sections = [
-    { id: 'general', title: 'Petunjuk Umum' },
-    { id: 'format', title: 'Format Penulisan' },
-    { id: 'structure', title: 'Struktur Makalah' },
-    { id: 'bibliography', title: 'Daftar Pustaka' },
-    { id: 'thanks', title: 'Ucapan Terimakasih' },
-    { id: 'appendix', title: 'Lampiran' },
-];
+import { useTranslations } from 'next-intl';
 
 export default function AuthorGuideline() {
+    const t = useTranslations('authorGuideline');
+    const c = useTranslations('authorGuidelineContent');
     const [activeSection, setActiveSection] = useState('abstract');
     const isScrollingRef = { current: false };
+
+    const sections = [
+        { id: 'general', title: c('tocGeneral') },
+        { id: 'format', title: c('tocFormat') },
+        { id: 'structure', title: c('tocStructure') },
+        { id: 'bibliography', title: c('tocBibliography') },
+        { id: 'thanks', title: c('tocThanks') },
+        { id: 'appendix', title: c('tocAppendix') },
+    ];
+
+    const structureItems: string[] = [
+        c('structureItems.0'), c('structureItems.1'), c('structureItems.2'),
+        c('structureItems.3'), c('structureItems.4'), c('structureItems.5'),
+        c('structureItems.6'), c('structureItems.7'), c('structureItems.8'),
+        c('structureItems.9'),
+    ];
 
     // Handle scroll to highlight active section
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
-            // Prevent observer from overriding the state while we are programmatically scrolling
             if (isScrollingRef.current) return;
-
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     setActiveSection(entry.target.id);
                 }
             });
         }, {
-            // Adjusted margins to trigger precisely when section passes the top nav bar (approx 120px)
             rootMargin: '-15% 0px -75% 0px',
             threshold: 0
         });
@@ -40,10 +47,8 @@ export default function AuthorGuideline() {
             if (element) observer.observe(element);
         });
 
-        // Fallback for manual scroll tracking
         const handleScroll = () => {
             if (isScrollingRef.current) return;
-            // Additional logic can be added here if needed for very small sections
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -51,6 +56,7 @@ export default function AuthorGuideline() {
             observer.disconnect();
             window.removeEventListener('scroll', handleScroll);
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -58,7 +64,7 @@ export default function AuthorGuideline() {
         setActiveSection(id);
         const element = document.getElementById(id);
         if (element) {
-            const offset = 140; // Slightly more than the navigation height
+            const offset = 140;
             const bodyRect = document.body.getBoundingClientRect().top;
             const elementRect = element.getBoundingClientRect().top;
             const elementPosition = elementRect - bodyRect;
@@ -69,7 +75,6 @@ export default function AuthorGuideline() {
                 behavior: 'smooth',
             });
 
-            // Re-enable observer after smooth scroll completes (approx 800ms)
             setTimeout(() => {
                 isScrollingRef.current = false;
             }, 1000);
@@ -90,13 +95,13 @@ export default function AuthorGuideline() {
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
                         <FadeIn direction="up">
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-moss text-xs font-bold uppercase tracking-widest mb-6">
-                                FSTPT XXIX — Padang, West Sumatera
+                                {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                Author <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Guideline</span>
+                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
-                                Panduan Lengkap Penulisan Makalah Simposium Nasional FSTPT XXIX.
+                                {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
@@ -118,19 +123,19 @@ export default function AuthorGuideline() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black text-pine uppercase tracking-tight leading-none">Template Paper</h3>
-                                            <p className="text-[10px] font-bold text-pine/30 uppercase tracking-widest mt-1">Microsoft Word</p>
+                                            <h3 className="text-xl font-black text-pine uppercase tracking-tight leading-none">{t('templateTitle')}</h3>
+                                            <p className="text-[10px] font-bold text-pine/30 uppercase tracking-widest mt-1">{t('templateFormat')}</p>
                                         </div>
                                     </div>
                                     <p className="text-sage text-[11px] font-medium mb-8 leading-relaxed">
-                                        Unduh file `.docx` untuk mempercepat dan menyeragamkan proses penulisan makalah Anda.
+                                        {t('templateDesc')}
                                     </p>
                                     <a
                                         href="/template_Symposium FSTPT Unand 2026.docx"
                                         download="template_Symposium FSTPT Unand 2026.docx"
                                         className="flex items-center justify-center gap-2 w-full py-4 bg-pine text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg hover:shadow-fog/30 transition-all duration-300"
                                     >
-                                        Download Template
+                                        {t('downloadTemplate')}
                                         <svg className="w-4 h-4 translate-y-[1px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                         </svg>
@@ -140,7 +145,7 @@ export default function AuthorGuideline() {
 
                             {/* Sticky Navigation Sidebar */}
                             <div className="hidden lg:block sticky top-28">
-                                <p className="text-[10px] font-black text-pine/30 uppercase tracking-[0.3em] mb-6 ml-4">Table of Contents</p>
+                                <p className="text-[10px] font-black text-pine/30 uppercase tracking-[0.3em] mb-6 ml-4">{t('toc')}</p>
                                 <div className="space-y-2 p-3 bg-white/60 backdrop-blur-md rounded-[2.5rem] border border-pine/5 shadow-sm">
                                     {sections.map((s) => (
                                         <button
@@ -161,7 +166,7 @@ export default function AuthorGuideline() {
 
                         {/* ═══════════════ CONTENT AREA ═══════════════ */}
                         <div className="lg:col-span-9 space-y-10 text-pine/90">
-
+                            
                             {/* Section: TITLE, AUTHORS & ABSTRACTS */}
                             <div id="general" className="scroll-mt-32 space-y-12">
                                 <FadeIn direction="up">
@@ -169,27 +174,27 @@ export default function AuthorGuideline() {
                                         <div className="bg-white rounded-[2rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
                                             <div className="text-center border-b border-clay/30 pb-10">
                                                 <h3 className="text-xl md:text-2xl font-black text-pine uppercase mb-8 leading-tight">
-                                                    PETUNJUK PENULISAN MAKALAH UNTUK SYMPOSIUM NASIONAL FSTPT XXIX, <br />
-                                                    07 – 08 NOVEMBER 2026
+                                                    {c('paperTitle')} <br />
+                                                    {c('paperDate')}
                                                 </h3>
 
                                                 <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
                                                     <div className="text-center">
                                                         <p className="font-bold text-pine text-lg">Dodi Gusnadi¹</p>
-                                                        <p className="text-xs text-sage mt-1">Mahasiswa magister Teknik Sipil, Fakultas Teknik</p>
-                                                        <p className="text-xs text-sage">Universitas Andalas, Padang</p>
+                                                        <p className="text-xs text-sage mt-1">{c('author1Role')}</p>
+                                                        <p className="text-xs text-sage">{c('university')}</p>
                                                         <p className="text-xs font-semibold text-fog mt-1 underline">asraf@gmail.com</p>
                                                     </div>
                                                     <div className="text-center">
                                                         <p className="font-bold text-pine text-lg">Citra Arsi Utami²</p>
-                                                        <p className="text-xs text-sage mt-1">Teknik Sipil, Fakultas Teknik</p>
-                                                        <p className="text-xs text-sage">Universitas Andalas, Padang</p>
+                                                        <p className="text-xs text-sage mt-1">{c('author2Role')}</p>
+                                                        <p className="text-xs text-sage">{c('university')}</p>
                                                         <p className="text-xs font-semibold text-fog mt-1 underline">tyas@gmail.com</p>
                                                     </div>
                                                     <div className="text-center">
                                                         <p className="font-bold text-pine text-lg">Ardi Fitra³</p>
-                                                        <p className="text-xs text-sage mt-1">Teknik Sipil, Fakultas Teknik</p>
-                                                        <p className="text-xs text-sage">Universitas Andalas, Padang</p>
+                                                        <p className="text-xs text-sage mt-1">{c('author3Role')}</p>
+                                                        <p className="text-xs text-sage">{c('university')}</p>
                                                         <p className="text-xs font-semibold text-fog mt-1 underline">ardi@gmail.com</p>
                                                     </div>
                                                 </div>
@@ -197,36 +202,28 @@ export default function AuthorGuideline() {
 
                                             <div className="grid md:grid-cols-2 gap-12 pt-4">
                                                 <div className="space-y-4">
-                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">ABSTRACT</h4>
+                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">{c('abstractTitle')}</h4>
                                                     <div className="text-sm leading-relaxed space-y-4 text-justify text-sage">
-                                                        <p>
-                                                            This document consists of detailed paper writing instructions for Seminar Nasional FSTPT XXIX at Andalas University Padang. To submit a paper in this seminar, please follow the following guidelines for writing the paper. The author should read through these instructions before writing a paper. Papers that do not follow these instructions are not included in the seminar. The deadline for submission a draft of full paper is September 25, 2023. The paper will be reviewed by a reviewer team and the results will be informed through the author’s email address. All accepted papers will be published in a seminar proceeding that has an ISBN and uploaded online. The best papers and presentations in the seminar will be awarded by the committee. The abstract is written in a concise and straightforward sentence and must not more than 250 words.
-                                                        </p>
+                                                        <p>{c('abstractContent')}</p>
                                                     </div>
-                                                    <p className="text-xs font-bold pt-4 text-pine/60 italic">Keywords: keyword 1, keyword 2, keyword 3, keyword 4, keyword 5</p>
+                                                    <p className="text-xs font-bold pt-4 text-pine/60 italic">{c('keywords')}</p>
                                                 </div>
 
                                                 <div className="space-y-4">
-                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">ABSTRAK</h4>
+                                                    <h4 className="font-black text-fog uppercase text-sm tracking-widest">{c('abstrakTitle')}</h4>
                                                     <div className="text-sm leading-relaxed space-y-4 text-justify text-sage">
-                                                        <p>
-                                                            Dokumen ini terdiri dari detail petunjuk penulisan makalah untuk ACE Conference 2023 di Universitas Andalas Padang. Untuk mengirim makalah pada seminar ini, harap diikuti petunjuk penulisan makalah berikut ini. Penulis harus membaca seluruh petunjuk ini sebelum menulis makalah. Makalah yang tidak mengikuti petunjuk ini, tidak diikutkan dalam seminar yang akan dilaksanakan. Batas akhir pengumpulan draft makalah lengkap adalah 25 September 2023. Makalah akan direview oleh tim reviewer dan hasilnya akan diinformasikan kembali melalui alamat email penulis. Semua makalah yang diterima akan di publikasikan dalam proseding seminar yang mempunyai ISBN dan diunggah secara online. Makalah dan presentasi terbaik dalam seminar akan mendapatkan penghargaan dari panitia. Abstrak ditulis dengan kalimat yang ringkas dan lugas tidak melebih dari 250 kata.
-                                                        </p>
+                                                        <p>{c('abstrakContent')}</p>
                                                     </div>
-                                                    <p className="text-xs font-bold pt-4 text-pine/60 italic">Kata Kunci : kata kunci 1, kata kunci 2, kata kunci 3, kata kunci 4, kata kunci 5</p>
+                                                    <p className="text-xs font-bold pt-4 text-pine/60 italic">{c('abstrakKeywords')}</p>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-8">
-                                            <h3 className="text-2xl font-black text-pine uppercase">1. PETUNJUK UMUM</h3>
+                                            <h3 className="text-2xl font-black text-pine uppercase">{c('section1Title')}</h3>
                                             <div className="text-sage leading-relaxed space-y-6">
-                                                <p>
-                                                    Petunjuk ini dibuat untuk panduan menyiapkan makalah yang layak untuk dipresentasikan dalam seminar. Penulis pertama adalah peneliti, mahasiswa S2 atau S3, sedang penulis berikutnya dapat pembimbing atau co-pembimbing atau teman dalam grup penelitian.
-                                                </p>
-                                                <p>
-                                                    Penulis harus menulis makalahnya sesuai dengan petunjuk ini agar makalah tersebut dapat diterima. Makalah yang dikirim harus ditulis dengan menggunakan <strong className="text-pine underline decoration-fog underline-offset-4">Microsoft Word 2003/2007/2010/2013/2019</strong>.
-                                                </p>
+                                                <p>{c('section1P1')}</p>
+                                                <p>{c('section1P2')} <strong className="text-pine underline decoration-fog underline-offset-4">{c('section1P2Bold')}</strong>.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -237,75 +234,75 @@ export default function AuthorGuideline() {
                             <div id="format" className="scroll-mt-32 space-y-10">
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-10">
-                                        <h3 className="text-2xl font-black text-pine uppercase">2. FORMAT PENULISAN</h3>
+                                        <h3 className="text-2xl font-black text-pine uppercase">{c('section2Title')}</h3>
 
                                         <div className="space-y-6">
-                                            <h4 className="text-lg font-black text-pine">2.1 Ketentuan Umum</h4>
-                                            <p className="text-sage font-medium">Makalah harus mengikuti format sebagai berikut:</p>
+                                            <h4 className="text-lg font-black text-pine">{c('section2_1Title')}</h4>
+                                            <p className="text-sage font-medium">{c('section2_1Intro')}</p>
                                             <div className="grid sm:grid-cols-2 gap-6">
                                                 <ul className="space-y-4 text-sm font-semibold text-pine/80 list-none">
-                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Kertas A4, dengan orientasi portrait</li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> {c('format1')}</li>
                                                     <li className="flex gap-3">
                                                         <span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" />
-                                                        Margin: Atas 3 cm, Bawah 4 cm, Kiri 3 cm, dan Kanan 3 cm
+                                                        {c('format2')}
                                                     </li>
-                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Tipe font adalah Times New Roman</li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> {c('format3')}</li>
                                                 </ul>
                                                 <ul className="space-y-4 text-sm font-semibold text-pine/80 list-none">
-                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Jumlah halaman: 6 sampai 10 halaman</li>
-                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Penulisan teks: single spaced and single column text</li>
-                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> Dilarang menulis pada headers and footers</li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> {c('format4')}</li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> {c('format5')}</li>
+                                                    <li className="flex gap-3"><span className="w-1.5 h-1.5 rounded-full bg-fog mt-2 shrink-0" /> {c('format6')}</li>
                                                 </ul>
                                             </div>
                                             <p className="text-xs font-bold text-pine/60 italic bg-clay/5 p-4 rounded-xl border border-clay/10">
-                                                * Mohon diperiksa kembali jika ada kesalahan ketik dan ejaan. Ikuti petunjuk pengaturan format menggunakan styles Ms-Word yang telah disediakan dalam template.
+                                                {c('formatNote')}
                                             </p>
                                         </div>
 
                                         <div className="space-y-6 pt-10 border-t border-clay/30">
-                                            <h4 className="text-lg font-black text-pine">2.2 Penggunaan Style Untuk Pengaturan</h4>
+                                            <h4 className="text-lg font-black text-pine">{c('section2_2Title')}</h4>
                                             <div className="text-sm leading-relaxed text-sage space-y-6">
-                                                <p>Dalam file makalah ini telah disediakan style Ms-Word yang akan dipergunakan untuk pengaturan format makalah. Penulis tinggal mengklik style yang berkesesuaian untuk mendapatkan pengaturan makalah yang baik.</p>
+                                                <p>{c('section2_2Intro')}</p>
 
                                                 <div className="grid gap-4">
                                                     <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
                                                         <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Title</div>
-                                                        <p className="font-medium text-pine/80">Ukuran font Times New Roman 16pt, bold, spasi tunggal.</p>
+                                                        <p className="font-medium text-pine/80">{c('styleTitleDesc')}</p>
                                                     </div>
                                                     <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
                                                         <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Author</div>
-                                                        <p className="font-medium text-pine/80">Nama penulis ditulis dalam satu baris, beri superscript angka untuk identifikasi afiliasi.</p>
+                                                        <p className="font-medium text-pine/80">{c('styleAuthorDesc')}</p>
                                                     </div>
                                                     <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
                                                         <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Affiliation</div>
-                                                        <p className="font-medium text-pine/80">Informasi Jurusan/Program Studi, Fakultas, Universitas, dan Email.</p>
+                                                        <p className="font-medium text-pine/80">{c('styleAffiliationDesc')}</p>
                                                     </div>
                                                     <div className="p-5 bg-clay/5 rounded-2xl border border-clay/20 flex gap-4 items-start">
                                                         <div className="shrink-0 w-max px-3 py-1 bg-pine text-white text-[10px] font-black rounded-lg">Abstract</div>
-                                                        <p className="font-medium text-pine/80">Abstract –header untuk judul dan Abstract untuk isi (satu kolom, satu paragraf).</p>
+                                                        <p className="font-medium text-pine/80">{c('styleAbstractDesc')}</p>
                                                     </div>
                                                 </div>
 
                                                 <div className="space-y-4 pt-4">
-                                                    <p>● Berilah maksimum lima buah kata kunci menggunakan style <strong className="text-pine">'Keywords'</strong>. Hitamkan (bold) kata ‘Abstrak:’ sebelum kata kunci.</p>
-                                                    <p>● Teks paragraf menggunakan style <strong className="text-pine">'Normal'</strong> yang memberikan jarak antar paragraf.</p>
-                                                    <p>● Pergunakan <strong className="text-pine">'Heading 1'</strong> (HURUF KAPITAL), <strong className="text-pine">'Heading 2'</strong>, dan <strong className="text-pine">'Heading 3'</strong>. Nomor bab akan diberikan otomatis oleh Ms-Word.</p>
+                                                    <p>● {c('styleKeyword')} <strong className="text-pine">{c('styleKeywordBold')}</strong>{c('styleKeywordAfter')}</p>
+                                                    <p>● {c('styleNormal')} <strong className="text-pine">{c('styleNormalBold')}</strong>{c('styleNormalAfter')}</p>
+                                                    <p>● {c('styleHeading')} <strong className="text-pine">{c('styleH1')}</strong>{c('styleH1After')} <strong className="text-pine">{c('styleH2')}</strong>{c('styleH2After')} <strong className="text-pine">{c('styleH3')}</strong>{c('styleH3After')}</p>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="space-y-8 pt-10 border-t border-clay/30">
-                                            <h4 className="text-lg font-black text-pine">2.3 Tabel dan Gambar</h4>
+                                            <h4 className="text-lg font-black text-pine">{c('section2_3Title')}</h4>
                                             <div className="text-sm leading-relaxed text-sage space-y-8">
-                                                <p>Persamaan, tabel, dan gambar harus ditempatkan diantara teks pada tempat yang sesuai dengan diskusi tabel dan gambar. Tabel harus diberi nomor urut. Judul tabel diletakkan di atas tabel.</p>
+                                                <p>{c('section2_3P1')}</p>
 
                                                 <div className="overflow-x-auto rounded-2xl border border-clay/20">
                                                     <table className="w-full text-xs">
                                                         <thead>
                                                             <tr className="bg-pine text-white">
-                                                                <th className="p-4 text-left border-r border-white/10" rowSpan={2}>No.</th>
-                                                                <th className="p-4 text-left border-r border-white/10" rowSpan={2}>Atribut perjalanan</th>
-                                                                <th className="p-4 text-center" colSpan={2}>Kondisi pelayanan</th>
+                                                                <th className="p-4 text-left border-r border-white/10" rowSpan={2}>{c('tableCol1')}</th>
+                                                                <th className="p-4 text-left border-r border-white/10" rowSpan={2}>{c('tableCol2')}</th>
+                                                                <th className="p-4 text-center" colSpan={2}>{c('tableCol3')}</th>
                                                             </tr>
                                                             <tr className="bg-pine/90 text-white">
                                                                 <th className="p-2 text-center border-r border-white/10">(+)</th>
@@ -315,54 +312,54 @@ export default function AuthorGuideline() {
                                                         <tbody className="bg-white/50">
                                                             <tr className="border-b border-clay/10">
                                                                 <td className="p-4 font-bold border-r border-clay/10 text-center">1.</td>
-                                                                <td className="p-4 border-r border-clay/10">Biaya perjalanan</td>
+                                                                <td className="p-4 border-r border-clay/10">{c('tableRow1')}</td>
                                                                 <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">Rp 6,000/km</td>
                                                                 <td className="p-4 text-center text-pine font-bold italic">Rp 4,500/km</td>
                                                             </tr>
                                                             <tr className="border-b border-clay/10">
                                                                 <td className="p-4 font-bold border-r border-clay/10 text-center">2.</td>
-                                                                <td className="p-4 border-r border-clay/10">Biaya kemacetan</td>
+                                                                <td className="p-4 border-r border-clay/10">{c('tableRow2')}</td>
                                                                 <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">Rp 3,000/jam</td>
                                                                 <td className="p-2 text-center text-pine font-bold italic">Rp 5,000/jam</td>
                                                             </tr>
                                                             <tr className="border-b border-clay/10">
                                                                 <td className="p-4 font-bold border-r border-clay/10 text-center">3.</td>
-                                                                <td className="p-4 border-r border-clay/10">Tarip parkir</td>
+                                                                <td className="p-4 border-r border-clay/10">{c('tableRow3')}</td>
                                                                 <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">Rp 3,000</td>
                                                                 <td className="p-4 text-center text-pine font-bold italic">Rp 6,000</td>
                                                             </tr>
                                                             <tr className="border-b border-clay/10">
                                                                 <td className="p-4 font-bold border-r border-clay/10 text-center">4.</td>
-                                                                <td className="p-4 border-r border-clay/10">Waktu perjalanan</td>
+                                                                <td className="p-4 border-r border-clay/10">{c('tableRow4')}</td>
                                                                 <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">-10 minutes</td>
                                                                 <td className="p-4 text-center text-pine font-bold italic">-5 minutes</td>
                                                             </tr>
                                                             <tr className="bg-clay/5">
                                                                 <td className="p-4 font-bold border-r border-clay/10 text-center">5.</td>
-                                                                <td className="p-4 border-r border-clay/10">Waktu berjalan kaki</td>
+                                                                <td className="p-4 border-r border-clay/10">{c('tableRow5')}</td>
                                                                 <td className="p-4 border-r border-clay/10 text-center text-pine font-bold italic">-5 minutes</td>
                                                                 <td className="p-4 text-center text-pine font-bold italic">-3 minutes</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                <p className="text-[10px] font-bold text-pine/40 text-center uppercase tracking-widest italic">Tabel 1. Kondisi pelayanan atribut perjalanan</p>
+                                                <p className="text-[10px] font-bold text-pine/40 text-center uppercase tracking-widest italic">{c('tableCaption')}</p>
 
                                                 <div className="space-y-6 pt-4">
-                                                    <p>Gambar harus diberi nomor urut. Judul gambar diletakkan di bawah gambar. Gambar harus jelas dan mudah dibaca. Lihat Gambar 1, persamaan harus juga diberi nomor urut. Nomor diletakkan di sisi kanan dari persamaan.</p>
+                                                    <p>{c('section2_3P2')}</p>
 
                                                     <div className="bg-white p-8 rounded-2xl border border-clay/10 flex flex-col items-center gap-6 shadow-sm">
                                                         <div className="w-full max-w-md aspect-video bg-clay/5 rounded-xl border-2 border-dashed border-clay/20 flex items-center justify-center group overflow-hidden relative">
                                                             <img
                                                                 src="/gambar.png"
-                                                                alt="Diagram seleksi makalah"
+                                                                alt="Diagram"
                                                                 className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110"
                                                             />
                                                             <div className="absolute inset-0 bg-pine/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                                                <span className="bg-white/90 px-4 py-2 rounded-full text-[10px] font-black text-pine shadow-lg">PREVIEW IMAGE</span>
+                                                                <span className="bg-white/90 px-4 py-2 rounded-full text-[10px] font-black text-pine shadow-lg">{c('previewImage')}</span>
                                                             </div>
                                                         </div>
-                                                        <p className="text-xs font-bold text-pine/60 italic text-center">Gambar 1. Diagram seleksi makalah pada ACE 8</p>
+                                                        <p className="text-xs font-bold text-pine/60 italic text-center">{c('figureCaption')}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -376,18 +373,14 @@ export default function AuthorGuideline() {
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
                                         <div className="text-left space-y-4">
-                                            <h3 className="text-2xl md:text-3xl font-black text-pine uppercase tracking-tight">3. STRUKTUR MAKALAH</h3>
+                                            <h3 className="text-2xl md:text-3xl font-black text-pine uppercase tracking-tight">{c('section3Title')}</h3>
                                             <p className="text-sage font-medium max-w-2xl">
-                                                Struktur makalah sebaiknya terdiri dari komponen-komponen utama sebagai berikut:
+                                                {c('section3Intro')}
                                             </p>
                                         </div>
 
                                         <div className="max-w-2xl flex flex-col gap-4">
-                                            {[
-                                                'Judul', 'Informasi penulis', 'Abstrak', 'Pendahuluan', 'Studi pustaka',
-                                                'Hasil & Pembahasan', 'Kesimpulan', 'Daftar pustaka',
-                                                'Ucapan terimakasih', 'Lampiran'
-                                            ].map((item, i) => (
+                                            {structureItems.map((item, i) => (
                                                 <div key={i} className="group relative flex items-center p-4 bg-gradient-to-r from-sage/5 to-moss/10 rounded-2xl border border-moss/10 transition-all duration-300 hover:shadow-lg hover:border-moss/30">
                                                     <div className="flex items-center gap-4">
                                                         <div className="w-10 h-10 rounded-xl bg-pine flex items-center justify-center">
@@ -407,17 +400,17 @@ export default function AuthorGuideline() {
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-12">
                                         <div className="space-y-6">
-                                            <h3 className="text-2xl font-black text-pine uppercase">4. DAFTAR PUSTAKA</h3>
+                                            <h3 className="text-2xl font-black text-pine uppercase">{c('section4Title')}</h3>
                                             <div className="text-sm leading-relaxed text-sage space-y-6">
-                                                <p>Daftar pustaka hanya berisi referensi yang dikutip dalam teks makalah. Daftar pustaka ini ditulis dalam naik urutan berdasarkan nama terakhir penulis. Pergunakan style <strong className="text-pine underline decoration-fog underline-offset-4">'References'</strong> for pengaturan format daftar pustaka ini.</p>
+                                                <p>{c('section4P1')} <strong className="text-pine underline decoration-fog underline-offset-4">{c('section4P1Bold')}</strong>{c('section4P1After')}</p>
                                                 <p className="bg-pine/5 p-6 rounded-xl border border-pine/10 font-bold text-pine italic">
-                                                    Format penulisan referensi mengikuti metode APA 6th, contoh penulisannya adalah sebagai berikut : Nama dari penulis. Tahun publikasi. Judul publikasi. Tempat penerbitan: penerbit.
+                                                    {c('section4Format')}
                                                 </p>
                                             </div>
                                         </div>
 
                                         <div className="space-y-8">
-                                            <h4 className="text-lg font-black text-pine tracking-tight">Contoh Penulisan:</h4>
+                                            <h4 className="text-lg font-black text-pine tracking-tight">{c('section4Examples')}</h4>
                                             <div className="grid gap-4">
                                                 {[
                                                     'Departemen Perhubungan. 2016. Data Parkir di Badan Jalan Tahun 2016. Unit Pengelola Teknis, Dinas Perhubungan Provinsi Daerah Istimewa Aceh.',
@@ -439,9 +432,9 @@ export default function AuthorGuideline() {
                             <div id="thanks" className="scroll-mt-32">
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-6">
-                                        <h3 className="text-2xl font-black text-pine uppercase">5. UCAPAN TERIMAKASIH</h3>
+                                        <h3 className="text-2xl font-black text-pine uppercase">{c('section5Title')}</h3>
                                         <p className="text-sm leading-relaxed text-sage italic">
-                                            Jika dibutuhkan tambahkan ucapan terimakasih pada pihak-pihak yang membantu dalam penelitian, penulisan makalah, atau pun pelaksanaan seminar.
+                                            {c('section5P1')}
                                         </p>
                                     </div>
                                 </FadeIn>
@@ -451,19 +444,19 @@ export default function AuthorGuideline() {
                             <div id="appendix" className="scroll-mt-32 space-y-12 pb-20">
                                 <FadeIn direction="up">
                                     <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-sm border border-pine/5 space-y-6">
-                                        <h3 className="text-2xl font-black text-pine uppercase">6. LAMPIRAN</h3>
+                                        <h3 className="text-2xl font-black text-pine uppercase">{c('section6Title')}</h3>
                                         <p className="text-sm leading-relaxed text-sage">
-                                            Makalah dapat dilengkapi dengan lampiran yang berisi tabel, gambar, peta dan yang lain-lain jika perlu untuk dilampirkan. Lampiran harus mematuhi ketentuan bahasa, penomoran halaman, header, format halaman, format tabel dan gambar.
+                                            {c('section6P1')}
                                         </p>
                                     </div>
 
                                     <div className="bg-gradient-to-br from-pine to-[#1a2e31] rounded-[2.5rem] p-12 text-center text-white relative overflow-hidden mt-12">
                                         <div className="absolute top-0 right-0 w-64 h-64 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                                         <div className="relative z-10 space-y-4">
-                                            <h4 className="text-fog font-black uppercase tracking-[0.2em] text-xs">Penting:</h4>
+                                            <h4 className="text-fog font-black uppercase tracking-[0.2em] text-xs">{c('important')}</h4>
                                             <p className="text-xl md:text-2xl font-black max-w-2xl mx-auto leading-tight">
-                                                Panjang halaman <span className="text-moss">6 sampai 10 halaman</span>.
-                                                <span className="block text-moss/70 text-lg md:text-xl mt-2 font-bold italic">(termasuk lampiran, tabel, gambar, dan daftar pustaka)</span>
+                                                {c('pageLength')} <span className="text-moss">{c('pageLengthValue')}</span>.
+                                                <span className="block text-moss/70 text-lg md:text-xl mt-2 font-bold italic">{c('pageLengthNote')}</span>
                                             </p>
                                         </div>
                                     </div>

@@ -1,89 +1,78 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
-
-interface DropdownItem {
-  href: string;
-  label: string;
-  desc?: string;
-  icon?: React.ReactNode;
-  color?: string; // Tailwind color class like 'text-fog' or 'text-sage'
-}
-
-interface NavItem {
-  label: string;
-  href?: string;
-  dropdown?: DropdownItem[];
-}
-
-const navItems: NavItem[] = [
-  { label: 'Symposium', href: '/' },
-  {
-    label: 'Main Program',
-    dropdown: [
-      {
-        href: '/main-program/agenda-kegiatan',
-        label: 'Agenda Kegiatan',
-        desc: 'Jadwal lengkap konferensi',
-        color: 'text-fog',
-        icon: (
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-        )
-      },
-      {
-        href: '/main-program/venue-hotel',
-        label: 'Venue & Hotel',
-        desc: 'Informasi lokasi dan penginapan',
-        color: 'text-sage',
-        icon: (
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        )
-      },
-    ],
-  },
-  {
-    label: 'Call For Paper',
-    dropdown: [
-      {
-        href: '/call-for-paper/author-guideline',
-        label: 'Author Guideline',
-        desc: 'Complete submission manual',
-        color: 'text-clay',
-        icon: (
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-          </svg>
-        )
-      },
-      {
-        href: '/call-for-paper/registration',
-        label: 'Registration',
-        desc: 'Register as participant',
-        color: 'text-moss',
-        icon: (
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-          </svg>
-        )
-      },
-    ],
-  },
-  { label: 'Panitia', href: '/panitia' },
-  { label: 'Flyer', href: '/flyer' },
-];
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
+  const t = useTranslations('nav');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const navItems = [
+    { label: t('symposium'), href: '/' },
+    {
+      label: t('mainProgram'),
+      dropdown: [
+        {
+          href: '/main-program/agenda-kegiatan',
+          label: t('agendaKegiatan'),
+          desc: t('agendaDesc'),
+          color: 'text-fog',
+          icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          )
+        },
+        {
+          href: '/main-program/venue-hotel',
+          label: t('venueHotel'),
+          desc: t('venueDesc'),
+          color: 'text-sage',
+          icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          )
+        },
+      ],
+    },
+    {
+      label: t('callForPaper'),
+      dropdown: [
+        {
+          href: '/call-for-paper/author-guideline',
+          label: t('authorGuideline'),
+          desc: t('authorDesc'),
+          color: 'text-clay',
+          icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          )
+        },
+        {
+          href: '/call-for-paper/registration',
+          label: t('registration'),
+          desc: t('registrationDesc'),
+          color: 'text-moss',
+          icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+          )
+        },
+      ],
+    },
+    { label: t('panitia'), href: '/panitia' },
+    { label: t('flyer'), href: '/flyer' },
+  ];
 
   // Track scroll for glassmorphism effect
   useEffect(() => {
@@ -234,8 +223,11 @@ export default function Navigation() {
               )}
             </div>
 
-            {/* Right side: CTA + Mobile toggle */}
-            <div className="flex items-center gap-3">
+            {/* Right side: Language + CTA + Mobile toggle */}
+            <div className="flex items-center gap-2">
+              {/* Language Switcher */}
+              <LanguageSwitcher />
+
               {/* CTA Button */}
               <Link
                 href="/login"
@@ -248,7 +240,7 @@ export default function Navigation() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                SMC-FSTPT
+                {t('smcFstpt')}
               </Link>
 
               {/* Mobile hamburger */}
@@ -287,7 +279,7 @@ export default function Navigation() {
       >
         {/* Mobile menu header */}
         <div className="flex items-center justify-between px-5 h-16 border-b border-clay/30">
-          <span className="text-pine font-bold text-lg">Menu</span>
+          <span className="text-pine font-bold text-lg">{t('menu')}</span>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-fog/5 transition-colors"
@@ -376,7 +368,7 @@ export default function Navigation() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            SMC-FSTPT
+            {t('smcFstpt')}
           </Link>
         </div>
       </div>

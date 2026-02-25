@@ -4,10 +4,13 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import Timeline from '@/components/Timeline';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export default function AgendaKegiatan() {
+    const t = useTranslations('agenda');
+
     return (
         <>
             <Navigation />
@@ -23,13 +26,13 @@ export default function AgendaKegiatan() {
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
                         <FadeIn direction="up">
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-moss text-xs font-bold uppercase tracking-widest mb-6">
-                                Schedule & Flyer
+                                {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                Agenda <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Kegiatan</span>
+                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
-                                Jadwal Lengkap Konferensi dan Informasi Penting FSTPT 2026.
+                                {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
@@ -41,10 +44,10 @@ export default function AgendaKegiatan() {
                     <FadeIn direction="up">
                         <div className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-xl shadow-pine/5 border border-pine/5">
                             <div className="text-center mb-16">
-                                <span className="text-clay font-black text-xs uppercase tracking-[0.2em] mb-3 block">Timeline</span>
-                                <h2 className="text-3xl md:text-4xl font-black text-pine uppercase">Tanggal Penting</h2>
+                                <span className="text-clay font-black text-xs uppercase tracking-[0.2em] mb-3 block">{t('timelineLabel')}</span>
+                                <h2 className="text-3xl md:text-4xl font-black text-pine uppercase">{t('timelineTitle')}</h2>
                                 <p className="text-sage mt-4 max-w-2xl mx-auto">
-                                    Catat tanggal-tanggal penting berikut untuk memastikan partisipasi Anda dalam FSTPT XXIX.
+                                    {t('timelineSubtitle')}
                                 </p>
                             </div>
                             <Timeline />
@@ -58,11 +61,11 @@ export default function AgendaKegiatan() {
                         <FadeIn direction="right">
                             <div className="space-y-8">
                                 <div>
-                                    <span className="text-clay font-black text-xs uppercase tracking-[0.3em] mb-4 block">Official Announcement</span>
-                                    <h2 className="text-4xl md:text-5xl font-black text-pine uppercase">Flyer <span className="text-fog">Kegiatan</span></h2>
+                                    <span className="text-clay font-black text-xs uppercase tracking-[0.3em] mb-4 block">{t('flyerBadge')}</span>
+                                    <h2 className="text-4xl md:text-5xl font-black text-pine uppercase">{t('flyerTitle')} <span className="text-fog">{t('flyerTitleHighlight')}</span></h2>
                                 </div>
                                 <p className="text-sage leading-relaxed text-justify text-lg font-medium">
-                                    Dapatkan ringkasan informasi lengkap mengenai simposium, topik penelitian, dan detail pendaftaran melalui flyer resmi FSTPT 2026. Anda dapat mengunduh atau membagikan flyer ini kepada rekan sejawat.
+                                    {t('flyerDesc')}
                                 </p>
                                 <div className="flex flex-wrap gap-4 pt-4">
                                     <a
@@ -70,7 +73,7 @@ export default function AgendaKegiatan() {
                                         download
                                         className="inline-flex items-center gap-2 px-8 py-4 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg transition-all duration-300"
                                     >
-                                        Unduh Flyer
+                                        {t('downloadFlyer')}
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                         </svg>
@@ -101,19 +104,19 @@ export default function AgendaKegiatan() {
                         <div className="bg-gradient-to-br from-pine to-[#1a2e31] rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-96 h-96 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                             <div className="relative z-10 space-y-8">
-                                <span className="text-moss font-black uppercase tracking-[0.4em] text-xs">Stay Updated</span>
+                                <span className="text-moss font-black uppercase tracking-[0.4em] text-xs">{t('ctaBadge')}</span>
                                 <h2 className="text-4xl md:text-5xl font-black max-w-4xl mx-auto leading-tight">
-                                    Jangan Lewatkan <span className="text-moss italic">Batas Akhir</span> Pendaftaran
+                                    {t('ctaTitle')} <span className="text-moss italic">{t('ctaTitleHighlight')}</span>
                                 </h2>
                                 <p className="text-moss/70 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-                                    Pastikan Anda telah mendaftarkan diri dan mengirimkan karya ilmiah sebelum tenggat waktu yang ditentukan.
+                                    {t('ctaDesc')}
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
                                     <Link
                                         href="/call-for-paper/registration"
                                         className="px-10 py-5 bg-moss text-pine font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-xl shadow-moss/20"
                                     >
-                                        Daftar Sekarang
+                                        {t('registerNow')}
                                     </Link>
                                 </div>
                             </div>
