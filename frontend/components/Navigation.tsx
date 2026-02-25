@@ -98,30 +98,101 @@ export default function Navigation() {
 
   return (
     <>
+      {/* Top Contact Bar */}
+      <div className="bg-pine text-white py-2 relative z-50 border-b border-white/10">
+        <div className="w-full px-5 sm:px-8 lg:px-12 flex flex-wrap justify-center md:justify-between items-center gap-y-3 gap-x-8 text-[13px] font-bold uppercase tracking-wider">
+
+          {/* Left Side: Email & WA */}
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-2">
+            <a href="mailto:fstpt2026@unand.ac.id" className="flex items-center gap-2.5 hover:text-moss transition-all duration-300">
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <span className="hidden sm:inline">fstpt2026@unand.ac.id</span>
+              <span className="sm:hidden">Email</span>
+            </a>
+
+            <div className="flex items-center gap-6 border-l border-white/20 pl-8">
+              <a href="https://wa.me/6281234567890" target="_blank" className="flex items-center gap-2.5 hover:text-moss transition-all duration-300">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                </div>
+                <div className="flex flex-col -space-y-1">
+                  <span className="text-[9px] opacity-60">Nasional</span>
+                  <span>+62 812-3456-7890</span>
+                </div>
+              </a>
+              <a href="https://wa.me/628111222333" target="_blank" className="flex items-center gap-2.5 hover:text-moss transition-all duration-300 border-l border-white/10 pl-6">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                </div>
+                <div className="flex flex-col -space-y-1">
+                  <span className="text-[9px] opacity-60">Internasional</span>
+                  <span>+62 811-1222-333</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Side: Location */}
+          <div className="flex items-center">
+            <a
+              href="https://www.google.com/maps/place/Andalas+University/@-0.9152447,100.4555825,1283m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2fd4b7969c6d51df:0xe826014ce459af90!8m2!3d-0.9152447!4d100.4581574!16s%2Fm%2F02pq9qm?entry=ttu&g_ep=EgoyMDI2MDIyMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              className="flex items-center gap-2.5 bg-white/10 hover:bg-moss/20 px-4 py-1.5 rounded-full transition-all duration-300"
+            >
+              <svg className="w-4 h-4 text-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span className="text-white">Andalas University, Padang</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <nav
         className={`
           sticky top-0 z-50 transition-all duration-500 ease-out
           ${scrolled
             ? 'bg-white/80 backdrop-blur-xl shadow-[0_1px_20px_rgba(34,57,60,0.08)] border-b border-pine/5'
-            : 'bg-white/95 backdrop-blur-sm'
+            : 'bg-white/95 backdrop-blur-sm shadow-sm'
           }
         `}
       >
         <div className="w-full px-5 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
 
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-              <div className="relative overflow-hidden">
+            {/* Logos */}
+            <div className="flex items-center gap-4 sm:gap-6">
+              <Link href="/" className="flex items-center group flex-shrink-0">
                 <Image
                   src="/logo.htm"
                   alt="Logo FSTPT"
-                  width={130}
-                  height={40}
-                  className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  width={160}
+                  height={50}
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  priority
+                />
+              </Link>
+              <div className="w-px h-8 bg-pine/10 hidden sm:block" />
+              <div className="flex items-center group flex-shrink-0">
+                <Image
+                  src="/unand.png"
+                  alt="Logo Unand"
+                  width={50}
+                  height={50}
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                  priority
                 />
               </div>
-            </Link>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">

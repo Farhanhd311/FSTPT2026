@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 export default function FlyerPage() {
@@ -10,39 +11,67 @@ export default function FlyerPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen py-16 lg:py-24 bg-clay/10">
-        <div className="max-w-8xl mx-auto px-15 space-y-10">
-          <h1 className="text-4xl lg:text-5xl font-bold text-pine mb-6 text-center">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fog to-sage">{t('title')}</span>
-          </h1>
-          <p className="text-lg text-sage mb-12 text-center">
-            {t('subtitle')}
-          </p>
-          
-          {/* Placeholder Content - Flyer Display */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-              <div className="aspect-[3/4] bg-gradient-to-br from-clay/30 to-moss/30 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <svg className="w-24 h-24 text-fog mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sage text-lg">{t('preview')}</p>
-                  <p className="text-moss text-sm mt-2">{t('previewDesc')}</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex justify-center gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-fog to-sage text-white rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-200">
-                {t('download')}
-              </button>
-              <button className="px-8 py-4 border-2 border-fog text-fog rounded-xl font-semibold hover:bg-clay/20 transition-all duration-200">
-                {t('share')}
-              </button>
+      <main className="min-h-screen bg-[#fafafa] pb-32 font-inter">
+
+        {/* ═══════════════ HERO SECTION ═══════════════ */}
+        <section className="relative h-[40vh] min-h-[350px] bg-pine flex items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
+            <div className="absolute inset-0 bg-[url('/lembahanai.jpeg')] bg-cover bg-center opacity-20" />
+          </div>
+
+          <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">
+            <div>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-moss text-xs font-bold uppercase tracking-widest mb-6">
+                {t('title')}
+              </span>
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
+                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Official</span>
+              </h1>
+              <p className="text-moss/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+                {t('subtitle')}
+              </p>
             </div>
           </div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10" />
+        </section>
+
+        <div className="max-w-4xl w-full mx-auto px-6 text-center space-y-12 -mt-16 relative z-30">
+          {/* Flyer Display */}
+
+          <div className="relative max-w-2xl mx-auto">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-fog/10 to-clay/10 rounded-[3rem] blur-2xl opacity-60 transition-opacity duration-500" />
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[1/1.414]">
+              <Image
+                src="/flyerrr.png"
+                alt="FSTPT 2026 Official Flyer"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+
+
+          {/* Action Buttons */}
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+            <a
+              href="/flyerrr.png"
+              download="Flyer 5th ISTSDC & FSTPT XXIX 2026.png"
+              className="inline-flex items-center gap-3 px-12 py-5 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog hover:scale-105 shadow-xl shadow-pine/10 transition-all duration-300 group"
+            >
+              <svg className="w-5 h-5 transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              {t('download')}
+            </a>
+
+
+          </div>
+
         </div>
+
       </main>
       <Footer />
     </>

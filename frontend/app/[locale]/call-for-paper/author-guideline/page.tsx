@@ -56,7 +56,7 @@ export default function AuthorGuideline() {
             observer.disconnect();
             window.removeEventListener('scroll', handleScroll);
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -166,7 +166,7 @@ export default function AuthorGuideline() {
 
                         {/* ═══════════════ CONTENT AREA ═══════════════ */}
                         <div className="lg:col-span-9 space-y-10 text-pine/90">
-                            
+
                             {/* Section: TITLE, AUTHORS & ABSTRACTS */}
                             <div id="general" className="scroll-mt-32 space-y-12">
                                 <FadeIn direction="up">
@@ -351,7 +351,7 @@ export default function AuthorGuideline() {
                                                     <div className="bg-white p-8 rounded-2xl border border-clay/10 flex flex-col items-center gap-6 shadow-sm">
                                                         <div className="w-full max-w-md aspect-video bg-clay/5 rounded-xl border-2 border-dashed border-clay/20 flex items-center justify-center group overflow-hidden relative">
                                                             <img
-                                                                src="/gambar.png"
+                                                                src="/Picture1.png"
                                                                 alt="Diagram"
                                                                 className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110"
                                                             />
