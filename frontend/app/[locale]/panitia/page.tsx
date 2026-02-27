@@ -10,7 +10,8 @@ const committeeData = {
     organizer: "Departemen Teknik Sipil, Fakultas Teknik, Universitas Andalas",
     event: "ISTSDC ke-V, Simposium Nasional Transportasi, Rapat Anggota Tahunan (RAT), dan Workshop FSTPT ke-XXIX Tahun 2026",
     steering: [
-        { name: "H. Mahyeldi Ansharullah, S.P., M.M.", image: "/panitia/mahyeldi.jpg" },
+        { name: "H. Mahyeldi Ansharullah, S.P., M.M.", image: "/panitia/mahyeldii.png" },
+        { name: "Andyka Kusuma, S.T., M.Sc., Ph.D.", image: "/panitia/andyka.jpg" },
         { name: "Dr. Efa Yonnedi, S.E., M.PPM., Akt., CA., CRGP", image: "/panitia/efa yonedi.png" },
         { name: "Prof. Dr. Techn. Marzuki, M.Sc. Eng", image: "/panitia/technmarzukii.png" },
         { name: "Dr. Ir. Is Prima Nanda, S.T., M.T", image: "/panitia/primananda.jpeg" },
@@ -158,7 +159,7 @@ export default function Committee() {
                                 <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('steeringCommittee')}</h2>
                                 <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
-                            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                                 {committeeData.steering.map((item, i) => (
                                     <FadeIn key={i} direction="up" delay={i * 50}>
                                         <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
