@@ -44,6 +44,7 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
+        suppressHydrationWarning
         className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium
           text-pine hover:text-fog hover:bg-fog/5 transition-all duration-200"
         aria-label={t('switchLanguage')}
@@ -73,6 +74,7 @@ export default function LanguageSwitcher() {
           <button
             key={l.code}
             onClick={() => switchLocale(l.code)}
+            suppressHydrationWarning
             className={`
               w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-all duration-150
               ${locale === l.code

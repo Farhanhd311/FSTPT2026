@@ -209,6 +209,7 @@ export default function Navigation() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <button
+                      suppressHydrationWarning
                       className={`
                         relative flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium
                         transition-all duration-200
@@ -321,6 +322,7 @@ export default function Navigation() {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                suppressHydrationWarning
                 className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-fog/5 transition-colors"
                 aria-label="Toggle menu"
               >
@@ -357,6 +359,7 @@ export default function Navigation() {
           <span className="text-pine font-bold text-lg">{t('menu')}</span>
           <button
             onClick={() => setIsMenuOpen(false)}
+            suppressHydrationWarning
             className="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-fog/5 transition-colors"
           >
             <svg className="w-5 h-5 text-pine" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -374,6 +377,7 @@ export default function Navigation() {
                   onClick={() =>
                     setMobileDropdown(mobileDropdown === item.label ? null : item.label)
                   }
+                  suppressHydrationWarning
                   className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-pine hover:bg-fog/5 transition-colors"
                 >
                   {item.label}
