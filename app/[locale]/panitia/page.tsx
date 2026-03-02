@@ -26,7 +26,7 @@ const committeeData = {
     scientific: [
         { name: "Prof. Dr. Eng. Ir. Jafril Tanjung, M.T.", institution: "unand", image: "/panitia/jafril.png" },
         { name: "Prof. Dr.Eng. Ir. Rendy Thamrin, S.T., M.T.", institution: "unand", image: "/panitia/rendy.jpg" },
-        { name: "Prof. Ir. Taufika Ophiyandri, S.T., M. Sc, Ph. D", institution: "unand", image: "/opi.jpg" },
+        { name: "Prof. Ir. Taufika Ophiyandri, S.T., M. Sc, Ph. D", institution: "unand", image: "/panitia/opi.jpg" },
         { name: "Ir. Purnawan, M.T., Ph.D.", institution: "unand", image: "/panitia/purnawan.jpg" },
         { name: "Prof. Ir. Elsa Eka Putri, S.T., M. Sc (Eng.), Ph.D.", institution: "unand", image: "/panitia/elsaa.jpeg" }
     ],
