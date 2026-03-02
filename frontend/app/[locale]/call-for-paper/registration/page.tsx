@@ -71,11 +71,11 @@ export default function Registration() {
                                             </div>
                                             <div className="grid gap-3">
                                                 {[
-                                                    { cat: td('student'), price: 'Rp 3.500.000' },
-                                                    { cat: td('nonStudentEarly'), price: 'Rp 3.750.000', note: td('untilDate') },
-                                                    { cat: td('nonStudentRegular'), price: 'Rp 4.000.000', note: td('afterDate') },
-                                                    { cat: td('addPaper'), price: 'Rp 3.000.000' },
-                                                    { cat: td('certificateOnly'), price: 'Rp 650.000' },
+                                                    { cat: td('student'), price: td('prices.istsdc.student') },
+                                                    { cat: td('nonStudentEarly'), price: td('prices.istsdc.nonStudentEarly'), note: td('untilDate') },
+                                                    { cat: td('nonStudentRegular'), price: td('prices.istsdc.nonStudentRegular'), note: td('afterDate') },
+                                                    { cat: td('addPaper'), price: td('prices.istsdc.addPaper') },
+                                                    { cat: td('certificateOnly'), price: td('prices.istsdc.certificateOnly') },
                                                 ].map((f, i) => (
                                                     <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-pine/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <div className="space-y-0.5">
@@ -105,11 +105,11 @@ export default function Registration() {
                                             </div>
                                             <div className="grid gap-3">
                                                 {[
-                                                    { cat: td('student'), price: 'USD 270' },
-                                                    { cat: td('nonStudentEarly'), price: 'USD 330', note: td('untilDate') },
-                                                    { cat: td('nonStudentRegular'), price: 'USD 360', note: td('afterDate') },
-                                                    { cat: td('addPaper'), price: 'USD 200' },
-                                                    { cat: td('certificateOnly'), price: 'USD 65' },
+                                                    { cat: td('student'), price: td('prices.istsdc.intStudent') },
+                                                    { cat: td('nonStudentEarly'), price: td('prices.istsdc.intNonStudentEarly'), note: td('untilDate') },
+                                                    { cat: td('nonStudentRegular'), price: td('prices.istsdc.intNonStudentRegular'), note: td('afterDate') },
+                                                    { cat: td('addPaper'), price: td('prices.istsdc.intAddPaper') },
+                                                    { cat: td('certificateOnly'), price: td('prices.istsdc.intCertificateOnly') },
                                                 ].map((f, i) => (
                                                     <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-pine/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <div className="space-y-0.5">
@@ -151,10 +151,10 @@ export default function Registration() {
                                             </div>
                                             <div className="grid gap-3">
                                                 {[
-                                                    { cat: td('studentMember'), price: 'Rp 300.000' },
-                                                    { cat: td('studentNonMember'), price: 'Rp 500.000' },
-                                                    { cat: td('lecturerMember'), price: 'Rp 400.000' },
-                                                    { cat: td('nonMember'), price: 'Rp 600.000' },
+                                                    { cat: td('studentMember'), price: td('prices.fstpt.studentMember') },
+                                                    { cat: td('studentNonMember'), price: td('prices.fstpt.studentNonMember') },
+                                                    { cat: td('lecturerMember'), price: td('prices.fstpt.lecturerMember') },
+                                                    { cat: td('nonMember'), price: td('prices.fstpt.nonMember') },
                                                 ].map((f, i) => (
                                                     <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-fog/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <p className="text-sm font-bold text-sage">{f.cat}</p>
@@ -176,10 +176,10 @@ export default function Registration() {
                                             </div>
                                             <div className="grid gap-3">
                                                 {[
-                                                    { cat: td('studentMember'), price: 'Rp 400.000' },
-                                                    { cat: td('studentNonMember'), price: 'Rp 600.000' },
-                                                    { cat: td('lecturerMember'), price: 'Rp 500.000' },
-                                                    { cat: td('nonMember'), price: 'Rp 700.000' },
+                                                    { cat: td('studentMember'), price: td('prices.fstpt.studentMemberReg') },
+                                                    { cat: td('studentNonMember'), price: td('prices.fstpt.studentNonMemberReg') },
+                                                    { cat: td('lecturerMember'), price: td('prices.fstpt.lecturerMemberReg') },
+                                                    { cat: td('nonMember'), price: td('prices.fstpt.nonMemberReg') },
                                                 ].map((f, i) => (
                                                     <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-fog/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <p className="text-sm font-bold text-sage">{f.cat}</p>

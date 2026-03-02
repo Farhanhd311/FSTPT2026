@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "translate": "node scripts/translate.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -20,7 +19,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitalets/google-translate-api": "^9.2.1",
+
     "eslint": "^10.0.2",
     "eslint-config-next": "^16.1.6",
     "tailwindcss": "^4",

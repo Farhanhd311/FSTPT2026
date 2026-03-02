@@ -18,21 +18,21 @@ const committeeData = {
         { name: "Ir. Sabril Haris HG., S.T., M.T., Ph. D", image: "/panitia/sabrilll.png" }
     ],
     organizing: [
-        { role: "Chairman", name: "Ir. Bayu Martanto Adji, S.T., M.T., Ph.D.", image: "/panitia/bayuu.png" },
-        { role: "Vice Chairman", name: "Yossyafra, S.T., M.Eng.Sc., Ph.D.", image: "/panitia/yosyafra.png" },
-        { role: "Secretary", name: "Febi Putri Yastari, S.T., M.T.", image: "/panitia/febby.png" },
-        { role: "Treasurer", name: "Dwi Jenita Maharani, S.T., M.Eng.", image: "/panitia/jenita.png" }
+        { role: "chairman", name: "Ir. Bayu Martanto Adji, S.T., M.T., Ph.D.", image: "/panitia/bayuu.png" },
+        { role: "viceChairman", name: "Yossyafra, S.T., M.Eng.Sc., Ph.D.", image: "/panitia/yosyafra.png" },
+        { role: "secretary", name: "Febi Putri Yastari, S.T., M.T.", image: "/panitia/febby.png" },
+        { role: "treasurer", name: "Dwi Jenita Maharani, S.T., M.Eng.", image: "/panitia/jenita.png" }
     ],
     scientific: [
-        { name: "Prof. Dr. Eng. Ir. Jafril Tanjung, M.T.", institution: "Universitas Andalas, Indonesia", image: "/panitia/jafril.png" },
-        { name: "Prof. Dr.Eng. Ir. Rendy Thamrin, S.T., M.T.", institution: "Universitas Andalas, Indonesia", image: "/panitia/rendy.jpg" },
-        { name: "Prof. Ir. Taufika Ophiyandri, S.T., M. Sc, Ph. D", institution: "Universitas Andalas, Indonesia", image: "/panitia/opi.jpg" },
-        { name: "Ir. Purnawan, M.T., Ph.D.", institution: "Universitas Andalas, Indonesia", image: "/panitia/purnawan.jpg" },
-        { name: "Prof. Ir. Elsa Eka Putri, S.T., M. Sc (Eng.), Ph.D.", institution: "Universitas Andalas, Indonesia", image: "/panitia/elsaa.jpeg" }
+        { name: "Prof. Dr. Eng. Ir. Jafril Tanjung, M.T.", institution: "unand", image: "/panitia/jafril.png" },
+        { name: "Prof. Dr.Eng. Ir. Rendy Thamrin, S.T., M.T.", institution: "unand", image: "/panitia/rendy.jpg" },
+        { name: "Prof. Ir. Taufika Ophiyandri, S.T., M. Sc, Ph. D", institution: "unand", image: "/opi.jpg" },
+        { name: "Ir. Purnawan, M.T., Ph.D.", institution: "unand", image: "/panitia/purnawan.jpg" },
+        { name: "Prof. Ir. Elsa Eka Putri, S.T., M. Sc (Eng.), Ph.D.", institution: "unand", image: "/panitia/elsaa.jpeg" }
     ],
     subCommittees: [
         {
-            title: "Secretariat",
+            title: "secretariat",
             coordinator: "Jeply Murdiaman Guci, S.T., M.T.",
             members: [
                 "Dr. Nidiasari, S.T., M.T.",
@@ -44,7 +44,7 @@ const committeeData = {
             ]
         },
         {
-            title: "Events",
+            title: "events",
             coordinator: "Ir. Ridho Aidil Fitrah, S.T., M.T.",
             members: [
                 "Dr. Ir. Andriani, S.T., M.T.",
@@ -59,7 +59,7 @@ const committeeData = {
             ]
         },
         {
-            title: "Equipments & Transportation",
+            title: "equipments",
             coordinator: "Riko Zulhendra, M.T",
             members: [
                 "Ir. Muhammad Aminsyah, M.T.",
@@ -75,7 +75,7 @@ const committeeData = {
             ]
         },
         {
-            title: "Website & Documentation",
+            title: "website",
             coordinator: "Ir. Benny Hidayat, M.T., Ph.D.",
             members: [
                 "Ir. Hendra Gunawan, M.T.",
@@ -87,7 +87,7 @@ const committeeData = {
             ]
         },
         {
-            title: "Publication (Editor)",
+            title: "publication",
             coordinator: "Ir. Masrilayanti, S.T., M.Sc., Ph.D.",
             members: [
                 "Ir. Jati Sunaryati, S.T., M.T., Ph.D.",
@@ -99,7 +99,7 @@ const committeeData = {
             ]
         },
         {
-            title: "Workshop",
+            title: "workshop",
             coordinator: "Yosritzal, S.T, M.T, Ph. D.",
             members: [
                 "Dr. Ir. Titi Kurniati, M.T.",
@@ -148,7 +148,7 @@ export default function Committee() {
                             <div className="bg-white/80 backdrop-blur-xl border border-pine/10 rounded-[2.5rem] p-10 shadow-2xl shadow-pine/5 text-center max-w-7xl mx-auto">
                                 <h2 className="text-xs font-black text-moss uppercase tracking-[0.2em] mb-4">{t('organizer')}</h2>
                                 <p className="text-2xl md:text-3xl font-black text-pine leading-tight">
-                                    {committeeData.organizer}
+                                    {t('organizerName')}
                                 </p>
                             </div>
                         </FadeIn>
@@ -194,7 +194,7 @@ export default function Committee() {
                                                     <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
                                                 </div>
                                                 <div className="absolute bottom-4 left-0 right-0 z-20 px-6">
-                                                    <h3 className="text-[10px] font-black text-moss uppercase tracking-[0.2em] group-hover:tracking-[0.4em] transition-all duration-500">{item.role}</h3>
+                                                    <h3 className="text-[10px] font-black text-moss uppercase tracking-[0.2em] group-hover:tracking-[0.4em] transition-all duration-500">{t(`roles.${item.role}`)}</h3>
                                                 </div>
                                             </div>
                                             <div className="p-6 text-center flex-grow flex items-center justify-center">
@@ -224,7 +224,7 @@ export default function Committee() {
                                             </div>
                                             <div className="p-6 flex-grow flex flex-col justify-center text-center">
                                                 <p className="font-black text-pine leading-tight text-base sm:text-xs xl:text-base tracking-tight mb-2">{item.name}</p>
-                                                <p className="text-[10px] font-bold text-sage uppercase tracking-wider">{item.institution}</p>
+                                                <p className="text-[10px] font-bold text-sage uppercase tracking-wider">{t(`institutions.${item.institution}`)}</p>
                                             </div>
                                         </div>
                                     </FadeIn>
@@ -245,7 +245,7 @@ export default function Committee() {
                                     <FadeIn key={i} direction="up" delay={i * 50}>
                                         <div className="bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 flex flex-col h-full">
                                             <div className="p-8 bg-gradient-to-br from-pine to-fog">
-                                                <h3 className="text-2xl font-black text-white uppercase tracking-tight">{sub.title}</h3>
+                                                <h3 className="text-2xl font-black text-white uppercase tracking-tight">{t(`subthemes.${sub.title}`)}</h3>
                                             </div>
                                             <div className="p-8 space-y-6 flex-grow">
                                                 <div>

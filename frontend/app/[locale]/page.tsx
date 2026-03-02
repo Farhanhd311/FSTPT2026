@@ -9,30 +9,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
-/* ────────────────────────────────────────
-   Data (kept as-is — academic content)
-   ──────────────────────────────────────── */
 
-const subthemes = [
-  { number: '01', title: 'Sustainable Transport Policy & Governance', desc: 'Kebijakan dan tata kelola transportasi yang mendorong keberlanjutan, efisiensi, serta keadilan akses bagi semua lapisan masyarakat merupakan fondasi penting dalam mewujudkan mobilitas berkelanjutan. Dengan kebijakan transportasi yang berorientasi pada keberlanjutan, setiap kelompok masyarakat—baik di perkotaan maupun pedesaan—dapat menikmati akses transportasi yang adil, aman, dan terjangkau. Hal ini secara langsung mendukung SDG 9 (Industry, Innovation and Infrastructure) melalui penguatan pembangunan infrastruktur transportasi yang tangguh dan inovatif, sekaligus mendorong pertumbuhan industri dan teknologi. Pada saat yang sama, kebijakan transportasi yang inklusif berkontribusi terhadap SDG 11 (Sustainable Cities and Communities) dengan menciptakan kota yang layak huni, efisien, dan ramah lingkungan, di mana transportasi publik yang terintegrasi menjadi tulang punggung mobilitas masyarakat. Lebih jauh, tata kelola transportasi yang baik tidak dapat berjalan tanpa kolaborasi lintas sektor dan lintas negara, sehingga memperkuat SDG 17 (Partnerships for the Goals) melalui kemitraan strategis antara pemerintah, akademisi, swasta, dan masyarakat.' },
-  { number: '02', title: 'Digitalization, AI & Smart Mobility Systems', desc: 'Perencanaan mobilitas berbasis data dan partisipasi masyarakat memastikan solusi transportasi lebih inklusif dan tepat sasaran. Pendekatan ini mendukung SDG 4 dengan membuka akses pendidikan, SDG 11 dengan membangun kota berkelanjutan, serta SDG 17 melalui kolaborasi lintas sektor. Sementara itu, pemanfaatan teknologi digital, IoT, dan AI meningkatkan efisiensi serta keselamatan transportasi. Hal ini memperkuat SDG 9 lewat inovasi industri, mendukung SDG 11 dengan kota pintar yang efisien, dan memperkuat SDG 17 melalui integrasi sistem transportasi global.' },
-  { number: '03', title: 'Emergency Mobility & Evacuation Strategies', desc: 'Strategi mobilitas darurat merupakan bagian penting dari sistem transportasi berkelanjutan karena berfungsi menjaga keselamatan masyarakat saat bencana atau krisis.' },
-  { number: '04', title: 'Inclusive & Accessible Public Transport', desc: 'Transportasi publik yang ramah bagi kelompok rentan merupakan elemen penting dalam mewujudkan sistem mobilitas berkelanjutan.' },
-  { number: '05', title: 'Green & Low-Carbon Vehicle Innovations', desc: 'Inovasi kendaraan ramah lingkungan menjadi salah satu pilar penting dalam mewujudkan mobilitas berkelanjutan.' },
-  { number: '06', title: 'Sustainable Transport as a Driver of Smart Cities', desc: 'Transportasi berkelanjutan merupakan motor penggerak utama dalam mewujudkan kota pintar yang efisien, inklusif, dan ramah lingkungan.' },
-  { number: '07', title: 'Freight & Logistics Innovations for Sustainable Supply Chains', desc: 'Inovasi logistik menjadi faktor kunci dalam memperkuat sistem transportasi dan distribusi yang berkelanjutan.' },
-  { number: '08', title: 'Rail Electrification & Smart Railway Systems', desc: 'Elektrifikasi kereta merupakan langkah penting dalam transformasi transportasi berkelanjutan.' },
-  { number: '09', title: 'Sustainable & Climate-Resilient Maritime Infrastructure', desc: 'Pelabuhan berkelanjutan memiliki peran vital dalam mendukung pembangunan berkelanjutan di berbagai sektor.' },
-  { number: '10', title: 'Digitalization & Smart Maritime Logistics', desc: 'Transformasi digital dalam logistik maritim menjadi katalis penting bagi sistem distribusi global yang lebih efisien dan berkelanjutan.' },
-  { number: '11', title: 'Resilient & Sustainable Road Pavement Systems', desc: 'Perkerasan jalan yang tangguh menjadi fondasi penting bagi mobilitas berkelanjutan.' },
-  { number: '12', title: 'Sustainable & Climate-Resilient Air Transport', desc: 'Transportasi udara berkelanjutan memiliki peran strategis dalam mendukung pembangunan lintas sektor.' },
-  { number: '13', title: 'Freight & Logistics Innovations for Sustainable Supply Chains', desc: 'Inovasi logistik berperan penting dalam memperkuat sistem distribusi yang tangguh dan berkelanjutan.' },
-  { number: '14', title: 'Rail Electrification & Smart Railway Systems', desc: 'Elektrifikasi kereta merupakan langkah strategis dalam mewujudkan sistem transportasi berkelanjutan yang modern dan efisien.' },
-  { number: '15', title: 'Sustainable & Climate-Resilient Maritime Infrastructure', desc: 'Pelabuhan berkelanjutan memiliki peran strategis dalam mendukung pembangunan berkelanjutan lintas sektor.' },
-  { number: '16', title: 'Digitalization & Smart Maritime Logistics', desc: 'Transformasi digital dalam logistik maritim memainkan peran penting dalam meningkatkan efisiensi, transparansi, dan daya saing global.' },
-  { number: '17', title: 'Resilient & Sustainable Road Pavement Systems', desc: 'Perkerasan jalan yang tangguh merupakan elemen penting dalam mendukung sistem transportasi berkelanjutan.' },
-  { number: '18', title: 'Sustainable & Climate-Resilient Air Transport', desc: 'Transportasi udara berkelanjutan memiliki peran strategis dalam mendukung pembangunan berkelanjutan lintas sektor.' },
-];
 
 /* ────────────────────────────────────────
    Page Component
@@ -40,6 +17,15 @@ const subthemes = [
 
 export default function Home() {
   const t = useTranslations();
+
+  // Fetch subthemes from translations
+  // Since subthemes is an array in JSON, useTranslations returns a function that can also access the array
+  const subthemesKeys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+  const subthemes = subthemesKeys.map(key => ({
+    number: (key + 1).toString().padStart(2, '0'),
+    title: t(`subthemes.items.${key}.title`),
+    desc: t(`subthemes.items.${key}.desc`)
+  }));
 
   const objectives = [
     { title: t('objectives.items.0.title'), desc: t('objectives.items.0.desc') },

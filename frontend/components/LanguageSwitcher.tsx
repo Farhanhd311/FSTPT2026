@@ -7,12 +7,6 @@ import { useState, useRef, useEffect } from 'react';
 const locales = [
   { code: 'en', flag: '🇬🇧', name: 'English' },
   { code: 'id', flag: '🇮🇩', name: 'Indonesia' },
-  { code: 'de', flag: '🇩🇪', name: 'Deutsch' },
-  { code: 'zh', flag: '🇨🇳', name: '中文' },
-  { code: 'ru', flag: '🇷🇺', name: 'Русский' },
-  { code: 'fr', flag: '🇫🇷', name: 'Français' },
-  { code: 'ja', flag: '🇯🇵', name: '日本語' },
-  { code: 'es', flag: '🇪🇸', name: 'Español' },
 ] as const;
 
 export default function LanguageSwitcher() {

@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl';
 
 export default function AgendaKegiatan() {
     const t = useTranslations('agenda');
+    const tFlyer = useTranslations('flyer');
 
     return (
         <>
@@ -70,7 +71,7 @@ export default function AgendaKegiatan() {
                                 <div className="flex flex-wrap gap-4 pt-4">
                                     <a
                                         href="/flyerrr.png"
-                                        download="Flyer 5th ISTSDC & FSTPT XXIX 2026.png"
+                                        download={tFlyer('filename')}
                                         className="inline-flex items-center gap-2 px-8 py-4 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg transition-all duration-300"
                                     >
                                         {t('downloadFlyer')}

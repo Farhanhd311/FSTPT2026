@@ -6,20 +6,30 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 
-export const metadata: Metadata = {
-  title: "FSTPT 2026 — Forum Studi Transportasi antar Perguruan Tinggi",
-  description:
-    "5th ISTSDC & 29th Symposium Nasional FSTPT — Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future. Hosted by Universitas Andalas.",
-  keywords: [
-    "FSTPT",
-    "ISTSDC",
-    "transportation",
-    "symposium",
-    "sustainable mobility",
-    "Indonesia",
-    "Universitas Andalas",
-  ],
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: [
+      "FSTPT",
+      "ISTSDC",
+      "transportation",
+      "symposium",
+      "sustainable mobility",
+      "Indonesia",
+      "Universitas Andalas",
+    ],
+  };
+}
 
 export default async function LocaleLayout({
   children,

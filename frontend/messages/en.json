@@ -14,7 +14,9 @@
     "panitia": "Committee",
     "flyer": "Flyer",
     "smcFstpt": "SMC-FSTPT",
-    "menu": "Menu"
+    "menu": "Menu",
+    "officialEmail": "Official Email",
+    "location": "Andalas University, Padang"
   },
   "hero": {
     "badge": "FSTPT 2026 — Padang, West Sumatera",
@@ -78,7 +80,81 @@
   "subthemes": {
     "label": "Theme",
     "title": "Sub-Themes",
-    "subtitle": "18 sub-themes covering various important aspects in sustainable transportation development in Indonesia."
+    "subtitle": "18 sub-themes covering various important aspects in sustainable transportation development in Indonesia.",
+    "items": [
+      {
+        "title": "Sustainable Transport Policy & Governance",
+        "desc": "Transportation policies and governance that promote sustainability, efficiency, and equitable access for all layers of society are essential foundations for realizing sustainable mobility. With sustainability-oriented policies, every community group—both in urban and rural areas—can enjoy fair, safe, and affordable transportation access. This directly supports SDG 9 (Industry, Innovation and Infrastructure) through the strengthening of resilient and innovative transportation infrastructure, while encouraging industrial and technological growth. At the same time, inclusive transportation policies contribute to SDG 11 (Sustainable Cities and Communities) by creating livable, efficient, and eco-friendly cities where integrated public transport becomes the backbone of community mobility. Furthermore, good transportation governance cannot function without cross-sector and cross-country collaboration, thereby strengthening SDG 17 (Partnerships for the Goals) through strategic partnerships between government, academia, the private sector, and the community."
+      },
+      {
+        "title": "Digitalization, AI & Smart Mobility Systems",
+        "desc": "Data-driven mobility planning and community participation ensure transportation solutions are more inclusive and targeted. This approach supports SDG 4 by opening access to education, SDG 11 by building sustainable cities, and SDG 17 through cross-sector collaboration. Meanwhile, the use of digital technology, IoT, and AI increases efficiency and transportation safety. This strengthens SDG 9 through industrial innovation, supports SDG 11 with efficient smart cities, and strengthens SDG 17 through the integration of global transportation systems."
+      },
+      {
+        "title": "Emergency Mobility & Evacuation Strategies",
+        "desc": "Emergency mobility strategies are an important part of a sustainable transportation system as they serve to maintain community safety during disasters or crises. Emergency mobility does not only focus on evacuation but also ensures that access to basic needs is maintained. In the context of SDG 2 (Zero Hunger), this strategy guarantees emergency food distribution to affected areas so that communities are not disconnected from food supplies even if main routes are disrupted. Additionally, this strategy supports SDG 11 (Sustainable Cities and Communities) by strengthening community protection through planned evacuation routes, public transport readiness, and integration with urban spatial planning so that communities are more resilient in facing extreme conditions."
+      },
+      {
+        "title": "Inclusive & Accessible Public Transport",
+        "desc": "Public transport that is friendly to vulnerable groups is an essential element in realizing a sustainable mobility system. With universal design that considers the needs of people with disabilities, the elderly, children, and low-income communities, public transport opens wider access to educational services. This is in line with SDG 4 (Quality Education), as safe and affordable transportation access allows students from various backgrounds to reach schools and universities without barriers. Furthermore, inclusive public transport supports SDG 11 (Sustainable Cities and Communities) by creating livable cities where all citizens can actively participate in social, economic, and cultural life."
+      },
+      {
+        "title": "Green & Low-Carbon Vehicle Innovations",
+        "desc": "Green vehicle innovations are one of the important pillars in realizing sustainable mobility. The development of electric, hydrogen, and hybrid vehicles not only presents more efficient transportation technology but also encourages the growth of the automotive industry based on clean energy, thereby supporting SDG 9 (Industry, Innovation and Infrastructure) through the strengthening of innovation and green infrastructure. At the same time, the implementation of low-emission vehicles directly contributes to SDG 11 (Sustainable Cities and Communities) by creating healthier, more sustainable, and livable cities, as air quality improves and pollution decreases."
+      },
+      {
+        "title": "Sustainable Transport as a Driver of Smart Cities",
+        "desc": "Sustainable transportation is the main driving force in realizing efficient, inclusive, and eco-friendly smart cities. By integrating smart technology, clean energy, and connected mobility systems, sustainable transportation strengthens SDG 9 (Industry, Innovation and Infrastructure) through the development of innovative infrastructure that supports industrial growth and accelerates the adoption of new technologies. At the same time, the implementation of sustainable transportation contributes to SDG 11 (Sustainable Cities and Communities) by creating more efficient, healthy, and livable cities."
+      },
+      {
+        "title": "Freight & Logistics Innovations for Sustainable Supply Chains",
+        "desc": "Logistics innovation is a key factor in strengthening sustainable transportation and distribution systems. With the application of digital technology, automation, and data analysis, food supply chains can be managed more efficiently and sustainably, thereby supporting SDG 2 (Zero Hunger) by ensuring food availability evenly to remote areas. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), logistics innovation drives industrial efficiency through reduced operational costs, increased productivity, and the development of transportation infrastructure that is more resilient and adaptive to change."
+      },
+      {
+        "title": "Rail Electrification & Smart Railway Systems",
+        "desc": "Rail electrification is an important step in the transformation of sustainable transportation. By switching from fossil fuels to electricity, this system promotes SDG 9 (Industry, Innovation and Infrastructure) through the development of modern transportation technology that is eco-friendly and strengthens mass mobility infrastructure. Furthermore, rail electrification supports SDG 11 (Sustainable Cities and Communities) by presenting more efficient, low-emission, and integrated urban mobility, thereby improving air quality and making cities more livable."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Maritime Infrastructure",
+        "desc": "Sustainable ports have a vital role in supporting sustainable development across various sectors. In the context of SDG 2 (Zero Hunger), efficient and eco-friendly ports ensure smooth cross-regional food distribution, allowing food supplies to reach remote areas or other countries more quickly and safely. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), the development of modern maritime infrastructure that is adaptive to climate change and based on digital technology strengthens the logistics industry while increasing global competitiveness."
+      },
+      {
+        "title": "Digitalization & Smart Maritime Logistics",
+        "desc": "Digital transformation in maritime logistics becomes an important catalyst for more efficient and sustainable global distribution systems. With the application of technologies such as Internet of Things (IoT), big data, and real-time tracking systems, cross-country food distribution can be done more quickly, accurately, and transparently, thereby supporting SDG 2 (Zero Hunger) by maintaining world food security. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), digitalization drives maritime industry innovation through automated loading and unloading processes, shipping route optimization, and the development of smart port infrastructure that increases global competitiveness."
+      },
+      {
+        "title": "Resilient & Sustainable Road Pavement Systems",
+        "desc": "Resilient road pavements are an essential foundation for sustainable mobility. With construction capable of withstanding traffic loads and extreme climate conditions, strong roads ensure the smooth distribution of food, thereby supporting SDG 2 (Zero Hunger) by keeping supply chains stable. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), the application of innovative materials and eco-friendly technology in road construction and maintenance drives industrial efficiency while strengthening transportation infrastructure."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Air Transport",
+        "desc": "Sustainable air transport has a strategic role in supporting cross-sector development. In the context of SDG 2 (Zero Hunger), sustainable aviation allows rapid distribution of emergency food to remote or disaster-affected areas, ensuring that community access to basic needs is maintained. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), aviation innovation through the use of green fuels, energy-efficient aircraft, and eco-friendly airports strengthens the transportation industry while promoting climate-friendly technology."
+      },
+      {
+        "title": "Freight & Logistics Innovations for Sustainable Supply Chains",
+        "desc": "Logistics innovation plays an important role in strengthening resilient and sustainable distribution systems. With the application of digital technology, automation, and data analysis, food supply chains can be managed more efficiently, thereby supporting SDG 2 (Zero Hunger) by ensuring food availability is distributed evenly even to remote areas. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), logistics innovation increases industrial efficiency through cost reduction, productivity increases, and the development of transportation infrastructure that is more adaptive to change."
+      },
+      {
+        "title": "Rail Electrification & Smart Railway Systems",
+        "desc": "Rail electrification is a strategic step in realizing modern and efficient sustainable transportation systems. By replacing fossil fuel use with electricity, electric trains promote SDG 9 (Industry, Innovation and Infrastructure) through the development of more eco-friendly transportation technology while strengthening mass mobility infrastructure. Furthermore, rail electrification supports SDG 11 (Sustainable Cities and Communities) by presenting more efficient, low-emission, and integrated urban mobility."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Maritime Infrastructure",
+        "desc": "Sustainable ports have a strategic role in supporting cross-sector sustainable development. In the context of SDG 2 (Zero Hunger), resilient and eco-friendly ports ensure smooth cross-regional food distribution, so food supplies can reach remote areas or other countries efficiently. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), the development of modern maritime infrastructure, which is adaptive to climate change and based on technology, supports the growth of the logistics industry and strengthens global supply chains."
+      },
+      {
+        "title": "Digitalization & Smart Maritime Logistics",
+        "desc": "Digital transformation in maritime logistics plays an important role in improving efficiency, transparency, and global competitiveness. Through the application of digital technology, real-time tracking systems, and data integration between ports and supply chains, food distribution can be done faster and more accurately. This supports SDG 2 (Zero Hunger) by ensuring global food supplies are maintained, even in remote areas or during emergency conditions."
+      },
+      {
+        "title": "Resilient & Sustainable Road Pavement Systems",
+        "desc": "Resilient road pavements are an important element in supporting sustainable transportation systems. With designs that are adaptive to traffic loads and extreme climate conditions, strong roads ensure the smooth distribution of food to various regions, thereby supporting SDG 2 (Zero Hunger) by keeping supply chains running without barriers. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), the development of innovative eco-friendly materials and the application of preventive preservation techniques strengthen transportation infrastructure and drive the efficiency of the construction industry."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Air Transport",
+        "desc": "Sustainable air transport has a strategic role in supporting cross-sector sustainable development. In the context of SDG 2 (Zero Hunger), sustainable aviation allows the rapid distribution of emergency food to remote or disaster-affected areas, ensuring that the community still has access to basic needs even if land or sea routes are disrupted. From the perspective of SDG 9 (Industry, Innovation and Infrastructure), aviation innovation through the use of green fuels, energy-efficient aircraft, and climate-resilient airports strengthens the air transport industry while encouraging the development of eco-friendly technology."
+      }
+    ]
   },
   "timeline": {
     "label": "Timeline",
@@ -108,7 +184,12 @@
     "copyright": "© 2026 FSTPT (Forum Studi Transportasi antar Perguruan Tinggi). All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "sitemap": "Sitemap"
+    "sitemap": "Sitemap",
+    "officialEmail": "Official Email",
+    "location": "Andalas University, Padang",
+    "febi": "Febi Petri",
+    "jeply": "Jeply Murdiano",
+    "masrilayanti": "Masrilayanti"
   },
   "flyer": {
     "title": "Flyer",
@@ -116,7 +197,10 @@
     "preview": "Flyer Preview",
     "previewDesc": "Flyer image will be displayed here",
     "download": "Download Flyer",
-    "share": "Share"
+    "share": "Share",
+    "official": "Official",
+    "alt": "FSTPT 2026 Official Flyer",
+    "filename": "Flyer 5th ISTSDC & FSTPT XXIX 2026.png"
   },
   "committee": {
     "badge": "Organizational Structure",
@@ -124,12 +208,31 @@
     "titleHighlight": "FSTPT 2026",
     "subtitle": "Organizer of ISTSDC ke-V, National Transportation Symposium, Annual Meeting, and FSTPT ke-XXIX Workshop 2026.",
     "organizer": "Organizer",
+    "organizerName": "Department of Civil Engineering, Faculty of Engineering, Andalas University",
+    "event": "5th ISTSDC, National Transportation Symposium, Annual Members' Meeting, and 29th FSTPT Workshop 2026",
     "steeringCommittee": "Steering Committee",
     "organizingCommittee": "Organizing Committee",
     "scientificCommittee": "Scientific Committee",
     "subCommittees": "Sub Committees",
     "coordinator": "Coordinator",
-    "members": "Members"
+    "members": "Members",
+    "roles": {
+      "chairman": "Chairman",
+      "viceChairman": "Vice Chairman",
+      "secretary": "Secretary",
+      "treasurer": "Treasurer"
+    },
+    "institutions": {
+      "unand": "Andalas University, Indonesia"
+    },
+    "subthemes": {
+      "secretariat": "Secretariat",
+      "events": "Events",
+      "equipments": "Equipments & Transportation",
+      "website": "Website & Documentation",
+      "publication": "Publication (Editor)",
+      "workshop": "Workshop"
+    }
   },
   "authorGuideline": {
     "badge": "FSTPT XXIX — Padang, West Sumatera",
@@ -237,7 +340,31 @@
     "studentMember": "Student FSTPT Member",
     "studentNonMember": "Student Non-FSTPT Member",
     "lecturerMember": "Lecturer / Public FSTPT Member",
-    "nonMember": "Non-FSTPT Member"
+    "nonMember": "Non-FSTPT Member",
+    "prices": {
+      "istsdc": {
+        "student": "Rp 3,500,000",
+        "nonStudentEarly": "Rp 3,750,000",
+        "nonStudentRegular": "Rp 4,000,000",
+        "addPaper": "Rp 3,000,000",
+        "certificateOnly": "Rp 650,000",
+        "intStudent": "USD 270",
+        "intNonStudentEarly": "USD 330",
+        "intNonStudentRegular": "USD 360",
+        "intAddPaper": "USD 200",
+        "intCertificateOnly": "USD 65"
+      },
+      "fstpt": {
+        "studentMember": "Rp 300,000",
+        "studentNonMember": "Rp 500,000",
+        "lecturerMember": "Rp 400,000",
+        "nonMember": "Rp 600,000",
+        "studentMemberReg": "Rp 400,000",
+        "studentNonMemberReg": "Rp 600,000",
+        "lecturerMemberReg": "Rp 500,000",
+        "nonMemberReg": "Rp 700,000"
+      }
+    }
   },
   "venueData": {
     "hotelLocation": "Padang, West Sumatera"
@@ -336,5 +463,9 @@
     "ja": "日本語",
     "es": "Español",
     "switchLanguage": "Language"
+  },
+  "metadata": {
+    "title": "FSTPT 2026 - 29th National Symposium & 5th ISTSDC",
+    "description": "Inter-University Transportation Studies Forum (FSTPT) 2026 at Andalas University, Padang."
   }
 }

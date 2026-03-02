@@ -26,7 +26,7 @@ export default function FlyerPage() {
                 {t('title')}
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">Official</span>
+                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('official')}</span>
               </h1>
               <p className="text-moss/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
                 {t('subtitle')}
@@ -58,7 +58,7 @@ export default function FlyerPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <a
               href="/flyerrr.png"
-              download="Flyer 5th ISTSDC & FSTPT XXIX 2026.png"
+              download={t('filename')}
               className="inline-flex items-center gap-3 px-12 py-5 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog hover:scale-105 shadow-xl shadow-pine/10 transition-all duration-300 group"
             >
               <svg className="w-5 h-5 transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

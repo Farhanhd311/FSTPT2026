@@ -6,25 +6,27 @@
     "agendaDesc": "Jadwal konferensi lengkap",
     "venueHotel": "Tempat & Hotel",
     "venueDesc": "Info tempat dan akomodasi",
-    "callForPaper": "Panggilan Untuk Kertas",
+    "callForPaper": "Call For Paper",
     "authorGuideline": "Pedoman Penulis",
     "authorDesc": "Panduan penyerahan lengkap",
     "registration": "Pendaftaran",
     "registrationDesc": "Daftar sebagai peserta",
-    "panitia": "Komite",
-    "flyer": "Pamflet",
+    "panitia": "Panitia",
+    "flyer": "Flyer",
     "smcFstpt": "SMC-FSTPT",
-    "menu": "Menu"
+    "menu": "Menu",
+    "officialEmail": "Email Resmi",
+    "location": "Universitas Andalas, Padang"
   },
   "hero": {
-    "badge": "FSTPT 2026 — Padang, West Sumatera",
+    "badge": "FSTPT 2026 — Padang, Sumatera Barat",
     "title1": "Forum Studi",
     "titleHighlight": "Transportasi",
     "title2": "Antar Perguruan Tinggi",
     "subtitle": "ISTSDC Ke-V & Symposium Nasional Ke-XXIX",
-    "theme": "\"Memajukan Solusi Mobilitas Berkelanjutan untuk Masa Depan yang Tangguh dan Inklusif\"",
+    "theme": "\"Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future\"",
     "ctaPrimary": "SMC-FSTPT 2026",
-    "ctaSecondary": "Panggilan Untuk Kertas"
+    "ctaSecondary": "Call For Paper"
   },
   "about": {
     "label": "Tentang",
@@ -40,7 +42,7 @@
     "withTheme": "dengan tema “Memajukan Solusi Mobilitas Berkelanjutan untuk Masa Depan yang Berketahanan dan Inklusif”",
     "statSymposium": "Simposium",
     "statPeserta": "Peserta",
-    "statPaper": "Kertas"
+    "statPaper": "Paper"
   },
   "objectives": {
     "title": "TUJUAN",
@@ -64,7 +66,7 @@
     "title": "KEGIATAN UTAMA",
     "subtitle": "Serangkaian kegiatan yang dirancang untuk memberikan pengalaman akademis dan profesional terbaik bagi seluruh peserta.",
     "block1Title": "Sesi Simposium Internasional & Nasional",
-    "block1Desc": "Simposium Internasional V tentang Transportasi, Pembangunan Berkelanjutan, dan Teknik Sipil (ISTSDC) yang dipadukan dengan Simposium Nasional FSTPT ke-XIX akan menampilkan serangkaian sesi simposium internasional dan nasional, termasuk diskusi pleno dan paralel. Sesi ini akan menghadirkan keynote speaker dan makalah penelitian dengan tema \"Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future\", yang mencakup 18 sub-tema seperti kebijakan transportasi berkelanjutan, digitalisasi, keselamatan jalan raya, transportasi umum inklusif, inovasi kendaraan ramah lingkungan, dan infrastruktur multimoda yang berketahanan.",
+    "block1Desc": "Simposium Internasional V tentang Transportasi, Pembangunan Berkelanjutan, dan Teknik Sipil (ISTSDC) yang dipadukan dengan Simposium Nasional FSTPT ke-XXIX akan menampilkan serangkaian sesi simposium internasional dan nasional, termasuk diskusi pleno dan paralel. Sesi ini akan menghadirkan keynote speaker dan makalah penelitian dengan tema \"Advancing Sustainable Mobility Solutions for Resilient and Inclusive Future\", yang mencakup 18 sub-tema seperti kebijakan transportasi berkelanjutan, digitalisasi, keselamatan jalan raya, transportasi umum inklusif, inovasi kendaraan ramah lingkungan, dan infrastruktur multimoda yang berketahanan.",
     "block2Title": "Rapat Anggota Tahunan",
     "block2Desc": "Selain simposium, Rapat Anggota Akhir Tahun (Rapat Anggota Akhir Tahun) FSTPT akan diadakan sebagai pertemuan formal untuk mengevaluasi kegiatan tahunan, memperkuat jaringan organisasi, dan merencanakan inisiatif kolaboratif di masa depan. Pertemuan ini akan menjadi forum strategis untuk menyelaraskan kontribusi akademis dan profesional dalam memajukan transportasi berkelanjutan di Indonesia.",
     "block3Title": "Lokakarya & Sesi Pelatihan",
@@ -78,7 +80,81 @@
   "subthemes": {
     "label": "Tema",
     "title": "Sub-Tema",
-    "subtitle": "18 subtema yang mencakup berbagai aspek penting dalam pembangunan transportasi berkelanjutan di Indonesia."
+    "subtitle": "18 subtema yang mencakup berbagai aspek penting dalam pembangunan transportasi berkelanjutan di Indonesia.",
+    "items": [
+      {
+        "title": "Sustainable Transport Policy & Governance",
+        "desc": "Kebijakan dan tata kelola transportasi yang mendorong keberlanjutan, efisiensi, serta keadilan akses bagi semua lapisan masyarakat merupakan fondasi penting dalam mewujudkan mobilitas berkelanjutan. Dengan kebijakan transportasi yang berorientasi pada keberlanjutan, setiap kelompok masyarakat—baik di perkotaan maupun pedesaan—dapat menikmati akses transportasi yang adil, aman, dan terjangkau. Hal ini secara langsung mendukung SDG 9 (Industry, Innovation and Infrastructure) melalui penguatan pembangunan infrastruktur transportasi yang tangguh dan inovatif, sekaligus mendorong pertumbuhan industri dan teknologi. Pada saat yang sama, kebijakan transportasi yang inklusif berkontribusi terhadap SDG 11 (Sustainable Cities and Communities) dengan menciptakan kota yang layak huni, efisien, dan ramah lingkungan, di mana transportasi publik yang terintegrasi menjadi tulang punggung mobilitas masyarakat. Lebih jauh, tata kelola transportasi yang baik tidak dapat berjalan tanpa kolaborasi lintas sektor dan lintas negara, sehingga memperkuat SDG 17 (Partnerships for the Goals) melalui kemitraan strategis antara pemerintah, akademisi, swasta, dan masyarakat."
+      },
+      {
+        "title": "Digitalization, AI & Smart Mobility Systems",
+        "desc": "Perencanaan mobilitas berbasis data dan partisipasi masyarakat memastikan solusi transportasi lebih inklusif dan tepat sasaran. Pendekatan ini mendukung SDG 4 dengan membuka akses pendidikan, SDG 11 dengan membangun kota berkelanjutan, serta SDG 17 melalui kolaborasi lintas sektor. Sementara itu, pemanfaatan teknologi digital, IoT, dan AI meningkatkan efisiensi serta keselamatan transportasi. Hal ini memperkuat SDG 9 lewat inovasi industri, mendukung SDG 11 dengan kota pintar yang efisien, dan memperkuat SDG 17 melalui integrasi sistem transportasi global."
+      },
+      {
+        "title": "Emergency Mobility & Evacuation Strategies",
+        "desc": "Strategi mobilitas darurat merupakan bagian penting dari sistem transportasi berkelanjutan karena berfungsi menjaga keselamatan masyarakat saat bencana atau krisis. Mobilitas darurat tidak hanya berfokus pada evakuasi, tetapi juga memastikan akses terhadap kebutuhan dasar tetap terjaga. Dalam konteks SDG 2 (Zero Hunger), strategi ini menjamin distribusi pangan darurat ke wilayah terdampak sehingga masyarakat tidak terputus dari pasokan makanan meskipun jalur utama terganggu. Selain itu, strategi ini mendukung SDG 11 (Sustainable Cities and Communities) dengan memperkuat perlindungan komunitas melalui jalur evakuasi yang terencana, kesiapan transportasi publik, serta integrasi dengan tata ruang kota agar masyarakat lebih tangguh menghadapi kondisi ekstrem."
+      },
+      {
+        "title": "Inclusive & Accessible Public Transport",
+        "desc": "Transportasi publik yang ramah bagi kelompok rentan merupakan elemen penting dalam mewujudkan sistem mobilitas berkelanjutan. Dengan desain universal yang memperhatikan kebutuhan penyandang disabilitas, lansia, anak-anak, dan masyarakat berpenghasilan rendah, transportasi publik membuka akses yang lebih luas terhadap layanan pendidikan. Hal ini sejalan dengan SDG 4 (Quality Education), karena akses transportasi yang aman dan terjangkau memungkinkan siswa dan mahasiswa dari berbagai latar belakang untuk menjangkau sekolah dan universitas tanpa hambatan. Selain itu, transportasi publik yang inklusif mendukung SDG 11 (Sustainable Cities and Communities) dengan menciptakan kota yang layak huni, di mana semua warga dapat berpartisipasi aktif dalam kehidupan sosial, ekonomi, dan budaya."
+      },
+      {
+        "title": "Green & Low-Carbon Vehicle Innovations",
+        "desc": "Inovasi kendaraan ramah lingkungan menjadi salah satu pilar penting dalam mewujudkan mobilitas berkelanjutan. Pengembangan kendaraan listrik, hidrogen, dan hybrid tidak hanya menghadirkan teknologi transportasi yang lebih efisien, tetapi juga mendorong pertumbuhan industri otomotif berbasis energi bersih, sehingga mendukung SDG 9 (Industry, Innovation and Infrastructure) melalui penguatan inovasi dan infrastruktur hijau. Pada saat yang sama, penerapan kendaraan rendah emisi berkontribusi langsung terhadap SDG 11 (Sustainable Cities and Communities) dengan menciptakan kota yang lebih sehat, berkelanjutan, and layak huni, karena kualitas udara meningkat and polusi berkurang."
+      },
+      {
+        "title": "Sustainable Transport as a Driver of Smart Cities",
+        "desc": "Transportasi berkelanjutan merupakan motor penggerak utama dalam mewujudkan kota pintar yang efisien, inklusif, dan ramah lingkungan. Dengan mengintegrasikan teknologi cerdas, energi bersih, serta sistem mobilitas yang terhubung, transportasi berkelanjutan memperkuat SDG 9 (Industry, Innovation and Infrastructure) melalui pembangunan infrastruktur inovatif yang mendukung pertumbuhan industri dan mempercepat adopsi teknologi baru. Pada saat yang sama, penerapan transportasi berkelanjutan berkontribusi terhadap SDG 11 (Sustainable Cities and Communities) dengan menciptakan kota yang lebih efisien, sehat, dan layak huni."
+      },
+      {
+        "title": "Freight & Logistics Innovations for Sustainable Supply Chains",
+        "desc": "Inovasi logistik menjadi faktor kunci dalam memperkuat sistem transportasi dan distribusi yang berkelanjutan. Dengan penerapan teknologi digital, otomatisasi, dan analisis data, rantai pasok pangan dapat dikelola lebih efisien dan berkelanjutan, sehingga mendukung SDG 2 (Zero Hunger) dengan memastikan ketersediaan pangan yang merata hingga ke wilayah terpencil. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), inovasi logistik mendorong efisiensi industri melalui pengurangan biaya operasional, peningkatan produktivitas, serta pengembangan infrastruktur transportasi yang lebih tangguh dan adaptif terhadap perubahan."
+      },
+      {
+        "title": "Rail Electrification & Smart Railway Systems",
+        "desc": "Elektrifikasi kereta merupakan langkah penting dalam transformasi transportasi berkelanjutan. Dengan beralih dari bahan bakar fosil ke energi listrik, sistem ini mendorong SDG 9 (Industry, Innovation and Infrastructure) melalui pengembangan teknologi transportasi modern yang ramah lingkungan dan memperkuat infrastruktur mobilitas massal. Selain itu, elektrifikasi kereta mendukung SDG 11 (Sustainable Cities and Communities) dengan menghadirkan mobilitas perkotaan yang lebih efisien, rendah emisi, dan terintegrasi, sehingga kualitas udara meningkat dan kota menjadi lebih layak huni."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Maritime Infrastructure",
+        "desc": "Pelabuhan berkelanjutan memiliki peran vital dalam mendukung pembangunan berkelanjutan di berbagai sektor. Dalam konteks SDG 2 (Zero Hunger), pelabuhan yang efisien dan ramah lingkungan memastikan distribusi pangan lintas wilayah berjalan lancar, sehingga pasokan makanan dapat menjangkau daerah terpencil maupun negara lain dengan lebih cepat and aman. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), pengembangan infrastruktur maritim yang modern, adaptif terhadap perubahan iklim, dan berbasis teknologi digital memperkuat industri logistik sekaligus meningkatkan daya saing global."
+      },
+      {
+        "title": "Digitalization & Smart Maritime Logistics",
+        "desc": "Transformasi digital dalam logistik maritim menjadi katalis penting bagi sistem distribusi global yang lebih efisien dan berkelanjutan. Dengan penerapan teknologi seperti Internet of Things (IoT), big data, dan sistem pelacakan real-time, distribusi pangan lintas negara dapat dilakukan lebih cepat, akurat, dan transparan, sehingga mendukung SDG 2 (Zero Hunger) dengan menjaga ketahanan pangan dunia. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), digitalisasi mendorong inovasi industri maritim melalui otomatisasi proses bongkar muat, optimalisasi rute pelayaran, serta pengembangan infrastruktur pelabuhan cerdas yang meningkatkan daya saing global."
+      },
+      {
+        "title": "Resilient & Sustainable Road Pavement Systems",
+        "desc": "Perkerasan jalan yang tangguh menjadi fondasi penting bagi mobilitas berkelanjutan. Dengan konstruksi yang mampu menahan beban lalu lintas dan kondisi iklim ekstrem, jalan yang kuat memastikan kelancaran distribusi pangan, sehingga mendukung SDG 2 (Zero Hunger) dengan menjaga rantai pasok tetap stabil. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), penerapan material inovatif dan teknologi ramah lingkungan dalam pembangunan serta pemeliharaan jalan mendorong efisiensi industri sekaligus memperkuat infrastruktur transportasi."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Air Transport",
+        "desc": "Transportasi udara berkelanjutan memiliki peran strategis dalam mendukung pembangunan lintas sektor. Dalam konteks SDG 2 (Zero Hunger), penerbangan berkelanjutan memungkinkan distribusi pangan darurat secara cepat ke wilayah terpencil atau terdampak bencana, sehingga akses masyarakat terhadap kebutuhan dasar tetap terjaga. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), inovasi penerbangan melalui penggunaan bahan bakar hijau, pesawat hemat energi, dan bandara ramah lingkungan memperkuat industri transportasi sekaligus mendorong teknologi ramah iklim."
+      },
+      {
+        "title": "Freight & Logistics Innovations for Sustainable Supply Chains",
+        "desc": "Inovasi logistik berperan penting dalam memperkuat sistem distribusi yang tangguh dan berkelanjutan. Dengan penerapan teknologi digital, otomatisasi, dan analisis data, rantai pasok pangan dapat dikelola lebih efisien sehingga mendukung SDG 2 (Zero Hunger) dengan memastikan ketersediaan pangan merata hingga ke wilayah terpencil. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), inovasi logistik meningkatkan efisiensi industri melalui pengurangan biaya, peningkatan produktivitas, serta pengembangan infrastruktur transportasi yang lebih adaptif terhadap perubahan."
+      },
+      {
+        "title": "Rail Electrification & Smart Railway Systems",
+        "desc": "Elektrifikasi kereta merupakan langkah strategis dalam mewujudkan sistem transportasi berkelanjutan yang modern dan efisien. Dengan mengganti penggunaan bahan bakar fosil menjadi energi listrik, kereta listrik mendorong SDG 9 (Industry, Innovation and Infrastructure) melalui pengembangan teknologi transportasi yang lebih ramah lingkungan sekaligus memperkuat infrastruktur mobilitas massal. Selain itu, elektrifikasi kereta mendukung SDG 11 (Sustainable Cities and Communities) dengan menghadirkan mobilitas perkotaan yang lebih efisien, rendah emisi, dan terintegrasi."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Maritime Infrastructure",
+        "desc": "Pelabuhan berkelanjutan memiliki peran strategis dalam mendukung pembangunan berkelanjutan lintas sektor. Dalam konteks SDG 2 (Zero Hunger), pelabuhan yang tangguh dan ramah lingkungan memastikan distribusi pangan lintas wilayah berjalan lancar, sehingga pasokan makanan dapat menjangkau daerah terpencil maupun negara lain secara efisien. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), pengembangan infrastruktur maritim yang modern, adaptif terhadap perubahan iklim, dan berbasis teknologi mendukung pertumbuhan industri logistik serta memperkuat rantai pasok global."
+      },
+      {
+        "title": "Digitalization & Smart Maritime Logistics",
+        "desc": "Transformasi digital dalam logistik maritim memainkan peran penting dalam meningkatkan efisiensi, transparansi, dan daya saing global. Melalui penerapan teknologi digital, sistem pelacakan real-time, serta integrasi data antar-pelabuhan dan rantai pasok, distribusi pangan dapat dilakukan lebih cepat dan lebih tepat. Hal ini mendukung SDG 2 (Zero Hunger) dengan memastikan pasokan pangan global tetap terjaga, bahkan di wilayah terpencil atau saat kondisi darurat."
+      },
+      {
+        "title": "Resilient & Sustainable Road Pavement Systems",
+        "desc": "Perkerasan jalan yang tangguh merupakan elemen penting dalam mendukung sistem transportasi berkelanjutan. Dengan desain yang adaptif terhadap beban lalu lintas dan kondisi iklim ekstrem, jalan yang kuat memastikan kelancaran distribusi pangan ke berbagai wilayah, sehingga mendukung SDG 2 (Zero Hunger) dengan menjaga rantai pasok tetap berjalan tanpa hambatan. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), pengembangan material inovatif yang ramah lingkungan serta penerapan teknik preservasi preventif memperkuat infrastruktur transportasi sekaligus mendorong efisiensi industri konstruksi."
+      },
+      {
+        "title": "Sustainable & Climate-Resilient Air Transport",
+        "desc": "Transportasi udara berkelanjutan memiliki peran strategis dalam mendukung pembangunan berkelanjutan lintas sektor. Dalam konteks SDG 2 (Zero Hunger), penerbangan berkelanjutan memungkinkan distribusi pangan darurat ke wilayah terpencil atau terdampak bencana dengan cepat, sehingga masyarakat tetap memiliki akses terhadap kebutuhan dasar meskipun jalur darat atau laut terganggu. Dari sisi SDG 9 (Industry, Innovation and Infrastructure), inovasi penerbangan melalui penggunaan bahan bakar hijau, pesawat efisien energi, serta bandara tangguh iklim memperkuat industri transportasi udara sekaligus mendorong pengembangan teknologi ramah lingkungan."
+      }
+    ]
   },
   "timeline": {
     "label": "Garis Waktu",
@@ -98,9 +174,9 @@
     "quickLinks": "Tautan Cepat",
     "home": "Rumah",
     "mainProgram": "Program Utama",
-    "callForPaper": "Panggilan Untuk Kertas",
-    "panitia": "Komite",
-    "flyer": "Pamflet",
+    "callForPaper": "Call For Paper",
+    "panitia": "Panitia",
+    "flyer": "Flyer",
     "contact": "Kontak",
     "followUs": "Ikuti Kami",
     "newsletter": "Berlangganan buletin kami",
@@ -108,35 +184,62 @@
     "copyright": "© 2026 FSTPT (Forum Studi Transportasi antar Perguruan Tinggi). All rights reserved.",
     "privacy": "Kebijakan Privasi",
     "terms": "Ketentuan Layanan",
-    "sitemap": "Peta Situs"
+    "sitemap": "Peta Situs",
+    "officialEmail": "Email Resmi",
+    "location": "Universitas Andalas, Padang",
+    "febi": "Febi Petri",
+    "jeply": "Jeply Murdiano",
+    "masrilayanti": "Masrilayanti"
   },
   "flyer": {
-    "title": "Pamflet",
+    "title": "Flyer",
     "subtitle": "Unduh brosur acara kami.",
-    "preview": "Pratinjau Pamflet",
+    "preview": "Pratinjau Flyer",
     "previewDesc": "Gambar brosur akan ditampilkan di sini",
-    "download": "Unduh Pamflet",
-    "share": "Membagikan"
+    "download": "Unduh Flyer",
+    "share": "Bagikan",
+    "official": "Resmi",
+    "alt": "Flyer Resmi FSTPT 2026",
+    "filename": "Flyer 5th ISTSDC & FSTPT XXIX 2026.png"
   },
   "committee": {
     "badge": "Struktur Organisasi",
-    "title": "Komite",
+    "title": "Panitia",
     "titleHighlight": "FSTPT 2026",
     "subtitle": "Penyelenggara ISTSDC ke-V, Simposium Transportasi Nasional, Pertemuan Tahunan, dan Workshop FSTPT ke-XXIX 2026.",
     "organizer": "Penyelenggara",
-    "steeringCommittee": "Panitia acara",
-    "organizingCommittee": "Panitia penyelenggara",
+    "organizerName": "Departemen Teknik Sipil, Fakultas Teknik, Universitas Andalas",
+    "event": "ISTSDC ke-V, Simposium Nasional Transportasi, Rapat Anggota Tahunan (RAT), dan Workshop FSTPT ke-XXIX Tahun 2026",
+    "steeringCommittee": "Panitia Acara",
+    "organizingCommittee": "Panitia Penyelenggara",
     "scientificCommittee": "Komite Ilmiah",
     "subCommittees": "Sub Komite",
     "coordinator": "Koordinator",
-    "members": "Anggota"
+    "members": "Anggota",
+    "roles": {
+      "chairman": "Ketua",
+      "viceChairman": "Wakil Ketua",
+      "secretary": "Sekretaris",
+      "treasurer": "Bendahara"
+    },
+    "institutions": {
+      "unand": "Universitas Andalas, Indonesia"
+    },
+    "subthemes": {
+      "secretariat": "Sekretariat",
+      "events": "Acara",
+      "equipments": "Peralatan & Transportasi",
+      "website": "Situs Web & Dokumentasi",
+      "publication": "Publikasi (Editor)",
+      "workshop": "Workshop"
+    }
   },
   "authorGuideline": {
     "badge": "FSTPT XXIX — Padang, Sumatera Barat",
     "title": "Pengarang",
     "titleHighlight": "Pedoman",
     "subtitle": "Pedoman Penulisan Makalah Lengkap Simposium Nasional FSTPT XXIX.",
-    "templateTitle": "Kertas Templat",
+    "templateTitle": "Template Paper",
     "templateFormat": "Microsoft Word",
     "templateDesc": "Unduh file `.docx` untuk mempercepat dan menstandarkan proses penulisan makalah Anda.",
     "downloadTemplate": "Unduh Templat",
@@ -159,18 +262,18 @@
     "loginBtn": "Masuk ke Akun"
   },
   "agenda": {
-    "badge": "Jadwal & Pamflet",
-    "title": "Peristiwa",
-    "titleHighlight": "Agenda",
+    "badge": "Jadwal & Flyer",
+    "title": "Agenda",
+    "titleHighlight": "Acara",
     "subtitle": "Jadwal Konferensi Lengkap dan Informasi Penting FSTPT 2026.",
     "timelineLabel": "Garis Waktu",
     "timelineTitle": "Tanggal Penting",
     "timelineSubtitle": "Catat tanggal-tanggal penting ini untuk memastikan keikutsertaan Anda dalam FSTPT XXIX.",
     "flyerBadge": "Pengumuman Resmi",
-    "flyerTitle": "Peristiwa",
-    "flyerTitleHighlight": "Pamflet",
+    "flyerTitle": "Flyer",  
+    "flyerTitleHighlight": "Acara",
     "flyerDesc": "Dapatkan rangkuman informasi lengkap mengenai simposium, topik penelitian, dan detail pendaftaran melalui flyer resmi FSTPT 2026. Anda dapat mengunduh atau membagikan brosur ini kepada rekan-rekan Anda.",
-    "downloadFlyer": "Unduh Pamflet",
+    "downloadFlyer": "Unduh Flyer",
     "ctaBadge": "Tetap Diperbarui",
     "ctaTitle": "Jangan Lewatkan Pendaftarannya",
     "ctaTitleHighlight": "Tenggat waktu",
@@ -235,117 +338,145 @@
   },
   "registrationData": {
     "istsdc": "THE 5th ISTSDC 2026",
-    "istsdcSub": "International Symposium",
-    "fstpt": "NATIONAL SYMPOSIUM FSTPT",
-    "fstptSub": "National Symposium",
-    "student": "Student",
-    "nonStudentEarly": "Non-Student (Early Bird)",
-    "nonStudentRegular": "Non-Student (Regular)",
-    "addPaper": "Additional Paper",
-    "certificateOnly": "Certificate Only",
-    "untilDate": "until July 16, 2026",
-    "afterDate": "after July 16, 2026",
-    "studentMember": "Student FSTPT Member",
-    "studentNonMember": "Student Non-FSTPT Member",
-    "lecturerMember": "Lecturer / Public FSTPT Member",
-    "nonMember": "Non-FSTPT Member"
+    "istsdcSub": "Simposium Internasional",
+    "fstpt": "SIMPOSIUM NASIONAL FSTPT",
+    "fstptSub": "Simposium Nasional",
+    "student": "Mahasiswa",
+    "nonStudentEarly": "Bukan Mahasiswa (Early Bird)",
+    "nonStudentRegular": "Bukan Mahasiswa (Reguler)",
+    "addPaper": "Makalah Tambahan",
+    "certificateOnly": "Hanya Sertifikat",
+    "untilDate": "sampai 16 Juli 2026",
+    "afterDate": "setelah 16 Juli 2026",
+    "studentMember": "Anggota Mahasiswa FSTPT",
+    "studentNonMember": "Bukan Anggota Mahasiswa FSTPT",
+    "lecturerMember": "Dosen / Umum Anggota FSTPT",
+    "nonMember": "Bukan Anggota FSTPT",
+    "prices": {
+      "istsdc": {
+        "student": "Rp 3.500.000",
+        "nonStudentEarly": "Rp 3.750.000",
+        "nonStudentRegular": "Rp 4.000.000",
+        "addPaper": "Rp 3.000.000",
+        "certificateOnly": "Rp 650.000",
+        "intStudent": "USD 270",
+        "intNonStudentEarly": "USD 330",
+        "intNonStudentRegular": "USD 360",
+        "intAddPaper": "USD 200",
+        "intCertificateOnly": "USD 65"
+      },
+      "fstpt": {
+        "studentMember": "Rp 300.000",
+        "studentNonMember": "Rp 500.000",
+        "lecturerMember": "Rp 400.000",
+        "nonMember": "Rp 600.000",
+        "studentMemberReg": "Rp 400.000",
+        "studentNonMemberReg": "Rp 600.000",
+        "lecturerMemberReg": "Rp 500.000",
+        "nonMemberReg": "Rp 700.000"
+      }
+    }
   },
   "venueData": {
     "hotelLocation": "Padang, West Sumatera"
   },
   "authorGuidelineContent": {
-    "tocGeneral": "General Instructions",
-    "tocFormat": "Writing Format",
-    "tocStructure": "Paper Structure",
-    "tocBibliography": "Bibliography",
-    "tocThanks": "Acknowledgments",
-    "tocAppendix": "Appendix",
-    "paperTitle": "PAPER WRITING INSTRUCTIONS FOR FSTPT XXIX NATIONAL SYMPOSIUM,",
+    "tocGeneral": "Instruksi Umum",
+    "tocFormat": "Format Penulisan",
+    "tocStructure": "Struktur Paper",
+    "tocBibliography": "Daftar Pustaka",
+    "tocThanks": "Ucapan Terima Kasih",
+    "tocAppendix": "Lampiran",
+    "paperTitle": "PETUNJUK PENULISAN PAPER UNTUK SIMPOSIUM NASIONAL FSTPT XXIX,",
     "paperDate": "07 – 08 NOVEMBER 2026",
-    "author1Role": "Master Student of Civil Engineering, Faculty of Engineering",
-    "author2Role": "Civil Engineering, Faculty of Engineering",
-    "author3Role": "Civil Engineering, Faculty of Engineering",
+    "author1Role": "Mahasiswa Magister Teknik Sipil, Fakultas Teknik",
+    "author2Role": "Teknik Sipil, Fakultas Teknik",
+    "author3Role": "Teknik Sipil, Fakultas Teknik",
     "university": "Universitas Andalas, Padang",
     "abstractTitle": "ABSTRACT",
-    "abstractContent": "This document consists of detailed paper writing instructions for Seminar Nasional FSTPT XXIX at Andalas University Padang. To submit a paper in this seminar, please follow the following guidelines for writing the paper. The author should read through these instructions before writing a paper. Papers that do not follow these instructions are not included in the seminar. The deadline for submission a draft of full paper is September 25, 2023. The paper will be reviewed by a reviewer team and the results will be informed through the author's email address. All accepted papers will be published in a seminar proceeding that has an ISBN and uploaded online. The best papers and presentations in the seminar will be awarded by the committee. The abstract is written in a concise and straightforward sentence and must not more than 250 words.",
-    "keywords": "Keywords: keyword 1, keyword 2, keyword 3, keyword 4, keyword 5",
+    "abstractContent": "Dokumen ini berisi instruksi rinci penulisan paper untuk Seminar Nasional FSTPT XXIX di Universitas Andalas Padang. Untuk mengirimkan paper dalam seminar ini, harap ikuti panduan penulisan berikut. Penulis harus membaca instruksi ini secara menyeluruh sebelum menulis paper. Paper yang tidak mengikuti instruksi ini tidak akan disertakan dalam seminar. Batas waktu pengiriman draf paper lengkap adalah 25 September 2023. Paper akan ditinjau oleh tim reviewer dan hasilnya akan diinformasikan melalui alamat email penulis. Semua paper yang diterima akan diterbitkan dalam prosiding seminar yang memiliki ISBN dan diunggah secara daring. Paper dan presentasi terbaik dalam seminar akan diberikan penghargaan oleh panitia. Abstrak ditulis dalam kalimat yang ringkas dan padat, serta tidak boleh lebih dari 250 kata.",
+    "keywords": "Kata kunci: kata kunci 1, kata kunci 2, kata kunci 3, kata kunci 4, kata kunci 5",
     "abstrakTitle": "ABSTRAK",
-    "abstrakContent": "This document consists of detailed instructions for paper writing for ACE Conference 2023 at Andalas University Padang. To submit a paper in this seminar, please follow the writing instructions below. Authors must read all these instructions before writing a paper. Papers that do not follow these instructions will not be included in the seminar. The deadline for submission of a complete draft paper is September 25, 2023. Papers will be reviewed by a reviewer team and results will be informed through the author's email address. All accepted papers will be published in seminar proceedings with an ISBN and uploaded online. The best papers and presentations will be awarded by the committee. The abstract should be written in concise and straightforward sentences of no more than 250 words.",
-    "abstrakKeywords": "Keywords: keyword 1, keyword 2, keyword 3, keyword 4, keyword 5",
-    "section1Title": "1. GENERAL INSTRUCTIONS",
-    "section1P1": "These instructions are made as a guide for preparing papers suitable for presentation in the seminar. The first author is the researcher, master's or doctoral student, while subsequent authors can be supervisors or co-supervisors or colleagues in the research group.",
-    "section1P2": "Authors must write their papers according to these instructions so that the paper can be accepted. The submitted paper must be written using",
+    "abstrakContent": "Dokumen ini berisi instruksi rinci penulisan paper untuk Konferensi ACE 2023 di Universitas Andalas Padang. Untuk mengirimkan paper dalam seminar ini, harap ikuti instruksi penulisan di bawah ini. Penulis harus membaca semua instruksi ini sebelum menulis paper. Paper yang tidak mengikuti instruksi ini tidak akan disertakan dalam seminar. Batas waktu pengiriman draf paper lengkap adalah 25 September 2023. Paper akan ditinjau oleh tim reviewer dan hasilnya akan diinformasikan melalui alamat email penulis. Semua paper yang diterima akan diterbitkan dalam prosiding seminar dengan ISBN dan diunggah secara daring. Paper dan presentasi terbaik akan diberikan penghargaan oleh panitia. Abstrak harus ditulis dalam kalimat yang ringkas dan padat, tidak lebih dari 250 kata.",
+    "abstrakKeywords": "Kata kunci: kata kunci 1, kata kunci 2, kata kunci 3, kata kunci 4, kata kunci 5",
+    "section1Title": "1. INSTRUKSI UMUM",
+    "section1P1": "Instruksi ini dibuat sebagai panduan untuk mempersiapkan paper yang layak dipresentasikan dalam seminar. Penulis pertama adalah peneliti, mahasiswa magister atau doktoral, sedangkan penulis berikutnya dapat berupa pembimbing atau rekan dalam kelompok penelitian.",
+    "section1P2": "Penulis harus menulis paper mereka sesuai dengan instruksi ini agar paper dapat diterima. Paper yang dikirimkan harus ditulis menggunakan",
     "section1P2Bold": "Microsoft Word 2003/2007/2010/2013/2019",
-    "section2Title": "2. WRITING FORMAT",
-    "section2_1Title": "2.1 General Requirements",
-    "section2_1Intro": "The paper must follow the following format:",
-    "format1": "A4 paper, with portrait orientation",
-    "format2": "Margin: Top 3 cm, Bottom 4 cm, Left 3 cm, and Right 3 cm",
-    "format3": "Font type is Times New Roman",
-    "format4": "Number of pages: 6 to 10 pages",
-    "format5": "Text writing: single spaced and single column text",
-    "format6": "Writing in headers and footers is prohibited",
-    "formatNote": "* Please recheck for any typos and spelling errors. Follow the format settings using the Ms-Word styles provided in the template.",
-    "section2_2Title": "2.2 Using Styles for Settings",
-    "section2_2Intro": "In this paper file, Ms-Word styles have been provided for formatting the paper. Authors simply need to click the corresponding style to get proper paper formatting.",
-    "styleTitleDesc": "Font size Times New Roman 16pt, bold, single spaced.",
-    "styleAuthorDesc": "Author names written in one line, add superscript numbers for affiliation identification.",
-    "styleAffiliationDesc": "Department/Study Program, Faculty, University, and Email information.",
-    "styleAbstractDesc": "Abstract – header for title and Abstract for content (single column, single paragraph).",
-    "styleKeyword": "Provide a maximum of five keywords using the style",
+    "section2Title": "2. FORMAT PENULISAN",
+    "section2_1Title": "2.1 Persyaratan Umum",
+    "section2_1Intro": "Paper harus mengikuti format berikut:",
+    "format1": "Kertas A4, dengan orientasi portrait",
+    "format2": "Margin: Atas 3 cm, Bawah 4 cm, Kiri 3 cm, dan Kanan 3 cm",
+    "format3": "Jenis font adalah Times New Roman",
+    "format4": "Jumlah halaman: 6 sampai 10 halaman",
+    "format5": "Penulisan teks: spasi tunggal dan teks satu kolom",
+    "format6": "Dilarang menulis pada header dan footer",
+    "formatNote": "* Harap periksa kembali kesalahan ketik dan ejaan. Ikuti pengaturan format menggunakan gaya Ms-Word yang disediakan dalam templat.",
+    "section2_2Title": "2.2 Menggunakan Styles untuk Pengaturan",
+    "section2_2Intro": "Dalam file paper ini, style Ms-Word telah disediakan untuk memformat paper. Penulis cukup mengklik style yang sesuai untuk mendapatkan format paper yang benar.",
+    "styleTitleDesc": "Ukuran font Times New Roman 16pt, tebal, spasi tunggal.",
+    "styleAuthorDesc": "Nama penulis ditulis dalam satu baris, tambahkan angka superskrip untuk identifikasi afiliasi.",
+    "styleAffiliationDesc": "Informasi Departemen/Program Studi, Fakultas, Universitas, dan Email.",
+    "styleAbstractDesc": "Abstract – header untuk judul dan Abstract untuk isi (satu kolom, satu paragraf).",
+    "styleKeyword": "Berikan maksimal lima kata kunci menggunakan style",
     "styleKeywordBold": "'Keywords'",
-    "styleKeywordAfter": ". Bold the word 'Abstract:' before the keywords.",
-    "styleNormal": "Paragraph text uses the style",
+    "styleKeywordAfter": ". Cetak tebal kata 'Abstract:' sebelum kata kunci.",
+    "styleNormal": "Teks paragraf menggunakan style",
     "styleNormalBold": "'Normal'",
-    "styleNormalAfter": " which provides spacing between paragraphs.",
-    "styleHeading": "Use",
+    "styleNormalAfter": " yang memberikan spasi antar paragraf.",
+    "styleHeading": "Gunakan",
     "styleH1": "'Heading 1'",
-    "styleH1After": " (CAPITAL LETTERS),",
+    "styleH1After": " (HURUF KAPITAL),",
     "styleH2": "'Heading 2'",
-    "styleH2After": ", and",
+    "styleH2After": ", dan",
     "styleH3": "'Heading 3'",
-    "styleH3After": ". Chapter numbers will be automatically generated by Ms-Word.",
-    "section2_3Title": "2.3 Tables and Figures",
-    "section2_3P1": "Equations, tables, and figures must be placed between the text at the appropriate location for discussion of the table and figure. Tables must be numbered sequentially. Table titles are placed above the table.",
-    "tableCaption": "Table 1. Service conditions of travel attributes",
+    "styleH3After": ". Nomor bab akan dibuat secara otomatis oleh Ms-Word.",
+    "section2_3Title": "2.3 Tabel dan Gambar",
+    "section2_3P1": "Persamaan, tabel, dan gambar harus diletakkan di antara teks pada lokasi yang tepat untuk pembahasan tabel dan gambar tersebut. Tabel harus diberi nomor secara berurutan. Judul tabel diletakkan di atas tabel.",
+    "tableCaption": "Tabel 1. Kondisi pelayanan atribut perjalanan",
     "tableCol1": "No.",
-    "tableCol2": "Travel attribute",
-    "tableCol3": "Service condition",
-    "tableRow1": "Travel cost",
-    "tableRow2": "Congestion cost",
-    "tableRow3": "Parking tariff",
-    "tableRow4": "Travel time",
-    "tableRow5": "Walking time",
-    "section2_3P2": "Figures must be numbered sequentially. Figure titles are placed below the figure. Figures must be clear and easy to read. See Figure 1, equations must also be numbered sequentially. Numbers are placed on the right side of the equation.",
-    "figureCaption": "Figure 1. Paper selection diagram at ACE 8",
-    "previewImage": "PREVIEW IMAGE",
-    "section3Title": "3. PAPER STRUCTURE",
-    "section3Intro": "The paper structure should consist of the following main components:",
+    "tableCol2": "Atribut perjalanan",
+    "tableCol3": "Kondisi pelayanan",
+    "tableRow1": "Biaya perjalanan",
+    "tableRow2": "Biaya kemacetan",
+    "tableRow3": "Tarif parkir",
+    "tableRow4": "Waktu tempuh",
+    "tableRow5": "Waktu jalan kaki",
+    "section2_3P2": "Gambar harus diberi nomor secara berurutan. Judul gambar diletakkan di bawah gambar. Gambar harus jelas dan mudah dibaca. Lihat Gambar 1, persamaan juga harus diberi nomor secara berurutan. Nomor diletakkan di sisi kanan persamaan.",
+    "figureCaption": "Gambar 1. Diagram pemilihan paper pada ACE 8",
+    "previewImage": "PRATINJAU GAMBAR",
+    "section3Title": "3. STRUKTUR PAPER",
+    "section3Intro": "Struktur paper harus terdiri dari komponen utama berikut:",
     "structureItems": [
-      "Title",
-      "Author information",
-      "Abstract",
-      "Introduction",
-      "Literature review",
-      "Results & Discussion",
-      "Conclusion",
-      "Bibliography",
-      "Acknowledgments",
-      "Appendix"
+      "Judul",
+      "Informasi penulis",
+      "Abstrak",
+      "Pendahuluan",
+      "Tinjauan pustaka",
+      "Hasil & Pembahasan",
+      "Kesimpulan",
+      "Daftar Pustaka",
+      "Ucapan Terima Kasih",
+      "Lampiran"
     ],
-    "section4Title": "4. BIBLIOGRAPHY",
-    "section4P1": "The bibliography should only contain references cited in the paper text. This bibliography is written in ascending order based on the last name of the author. Use the style",
+    "section4Title": "4. DAFTAR PUSTAKA",
+    "section4P1": "Daftar pustaka hanya boleh berisi referensi yang disitasi dalam teks paper. Daftar pustaka ini ditulis dalam urutan menaik berdasarkan nama belakang penulis. Gunakan style",
     "section4P1Bold": "'References'",
-    "section4P1After": " for formatting this bibliography.",
-    "section4Format": "Reference writing format follows the APA 6th method, the example of writing is as follows: Author name. Year of publication. Publication title. Place of publication: publisher.",
-    "section4Examples": "Writing Examples:",
-    "section5Title": "5. ACKNOWLEDGMENTS",
-    "section5P1": "If needed, add acknowledgments to parties who helped in the research, paper writing, or seminar execution.",
-    "section6Title": "6. APPENDIX",
-    "section6P1": "The paper can be supplemented with appendices containing tables, figures, maps, and others if necessary to be attached. Appendices must comply with language requirements, page numbering, header, page format, table and figure format.",
-    "important": "Important:",
-    "pageLength": "Page length",
-    "pageLengthValue": "6 to 10 pages",
-    "pageLengthNote": "(including appendices, tables, figures, and bibliography)"
+    "section4P1After": " untuk memformat daftar pustaka ini.",
+    "section4Format": "Format penulisan referensi mengikuti metode APA edisi ke-6, contoh penulisannya adalah sebagai berikut: Nama penulis. Tahun terbit. Judul publikasi. Tempat terbit: penerbit.",
+    "section4Examples": "Contoh Penulisan:",
+    "section5Title": "5. UCAPAN TERIMA KASIH",
+    "section5P1": "Jika diperlukan, tambahkan ucapan terima kasih kepada pihak-pihak yang membantu dalam penelitian, penulisan paper, atau pelaksanaan seminar.",
+    "section6Title": "6. LAMPIRAN",
+    "section6P1": "Paper dapat dilengkapi dengan lampiran berisi tabel, gambar, peta, dan lainnya jika perlu dilampirkan. Lampiran harus mematuhi persyaratan bahasa, penomoran halaman, header, format halaman, format tabel dan gambar.",
+    "important": "Penting:",
+    "pageLength": "Panjang halaman",
+    "pageLengthValue": "6 sampai 10 halaman",
+    "pageLengthNote": "(termasuk lampiran, tabel, gambar, dan daftar pustaka)"
+  },
+  "metadata": {
+    "title": "FSTPT 2026 - Simposium Nasional XXIX & ISTSDC V",
+    "description": "Forum Studi Transportasi antar Perguruan Tinggi (FSTPT) 2026 di Universitas Andalas, Padang."
   }
 }
