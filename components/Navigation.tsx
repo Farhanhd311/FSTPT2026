@@ -305,8 +305,10 @@ export default function Navigation() {
               <LanguageSwitcher />
 
               {/* CTA Button */}
-              <Link
-                href="/login"
+              <a
+                href="https://smc.fstpt.info/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-semibold
                   bg-gradient-to-r from-pine to-fog text-white
                   hover:shadow-lg hover:shadow-fog/25 hover:-translate-y-[1px]
@@ -317,7 +319,7 @@ export default function Navigation() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
                 {t('smcFstpt')}
-              </Link>
+              </a>
 
               {/* Mobile hamburger */}
               <button
@@ -437,8 +439,10 @@ export default function Navigation() {
 
         {/* Mobile CTA */}
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-clay/20 bg-white">
-          <Link
-            href="/login"
+          <a
+            href="https://smc.fstpt.info/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-semibold
               bg-gradient-to-r from-pine to-fog text-white
@@ -448,7 +452,7 @@ export default function Navigation() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             {t('smcFstpt')}
-          </Link>
+          </a>
         </div>
       </div>
     </>

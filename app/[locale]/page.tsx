@@ -99,7 +99,9 @@ export default function Home() {
 
               <FadeIn delay={500}>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Link href="/login"
+                  <a href="https://smc.fstpt.info/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group relative px-7 py-3.5 bg-gradient-to-r from-fog to-sage text-white
                              text-sm font-bold rounded-xl overflow-hidden
                              hover:shadow-[0_8px_30px_rgba(70,112,126,0.4)] hover:-translate-y-0.5
@@ -110,7 +112,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
-                  </Link>
+                  </a>
                   <Link href="/call-for-paper/author-guideline"
                     className="px-7 py-3.5 text-white/80 text-sm font-semibold rounded-xl
                              border border-white/20 backdrop-blur-sm
@@ -369,11 +371,14 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-pine leading-tight mb-6">{t('cta.title')}</h2>
               <p className="text-sage leading-relaxed mb-10 max-w-2xl mx-auto">{t('cta.description')}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-pine text-white font-bold rounded-xl
+                <a href="https://smc.fstpt.info/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-pine text-white font-bold rounded-xl
                                  hover:bg-fog hover:-translate-y-1 hover:shadow-xl
-                                 transition-all duration-300">
+                                 transition-all duration-300 text-center">
                   {t('cta.submitPaper')}
-                </button>
+                </a>
                 <Link href="/call-for-paper/author-guideline">
                   <button className="px-8 py-4 border-2 border-fog text-fog font-bold rounded-xl
                                    hover:bg-fog hover:text-white hover:-translate-y-1

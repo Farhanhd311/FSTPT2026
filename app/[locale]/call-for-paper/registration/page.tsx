@@ -219,9 +219,12 @@ export default function Registration() {
                                     </p>
 
                                     <div className="flex justify-center">
-                                        <Link href="/login" className="px-12 py-4 bg-pine text-white font-bold rounded-2xl hover:bg-fog hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-pine/10">
+                                        <a href="https://smc.fstpt.info/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-12 py-4 bg-pine text-white font-bold rounded-2xl hover:bg-fog hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-pine/10">
                                             {t('loginBtn')}
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
