@@ -8,6 +8,8 @@ import Timeline from '@/components/Timeline';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import KeynoteSpeakers from '@/components/KeynoteSpeakers';
+
 
 
 
@@ -336,7 +338,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ═══════════════ KEYNOTE SPEAKERS ═══════════════ */}
+        <KeynoteSpeakers />
+
         {/* ═══════════════ IMPORTANT DATES ═══════════════ */}
+
         <section className="relative py-28 lg:py-20 bg-gradient-to-b from-white via-clay/5 to-white overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-40" />
           <div className="absolute top-16 left-[8%] w-64 h-64 bg-fog/5 rounded-full blur-3xl animate-float-slow" />
