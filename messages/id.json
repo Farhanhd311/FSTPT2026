@@ -188,7 +188,7 @@
     "officialEmail": "Email Resmi",
     "location": "Universitas Andalas, Padang",
     "febi": "Febi Petri",
-    "jeply": "Jeply Murdiano",
+    "jeply": "Jeply Murdiarman",
     "masrilayanti": "Masrilayanti"
   },
   "flyer": {
@@ -242,7 +242,8 @@
     "templateTitle": "Template Paper",
     "templateFormat": "Microsoft Word",
     "templateDesc": "Unduh file `.docx` untuk mempercepat dan menstandarkan proses penulisan makalah Anda.",
-    "downloadTemplate": "Unduh Templat",
+    "downloadTemplate": "Unduh Templat (Nasional)",
+    "downloadTemplateInt": "Unduh Templat (Internasional)",
     "toc": "Daftar isi"
   },
   "registration": {
@@ -270,7 +271,7 @@
     "timelineTitle": "Tanggal Penting",
     "timelineSubtitle": "Catat tanggal-tanggal penting ini untuk memastikan keikutsertaan Anda dalam FSTPT XXIX.",
     "flyerBadge": "Pengumuman Resmi",
-    "flyerTitle": "Flyer",  
+    "flyerTitle": "Flyer",
     "flyerTitleHighlight": "Acara",
     "flyerDesc": "Dapatkan rangkuman informasi lengkap mengenai simposium, topik penelitian, dan detail pendaftaran melalui flyer resmi FSTPT 2026. Anda dapat mengunduh atau membagikan brosur ini kepada rekan-rekan Anda.",
     "downloadFlyer": "Unduh Flyer",

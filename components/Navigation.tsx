@@ -121,7 +121,7 @@ export default function Navigation() {
             <div className="flex flex-wrap items-center gap-4 md:border-l md:border-white/10 md:pl-8">
               {[
                 { name: 'Febi Putri', phone: '+62 812-7003-1883', wa: '6281270031883' },
-                { name: 'Jeply Murdiano', phone: '+62 852-7856-8360', wa: '6285278568360' },
+                { name: 'Jeply Murdiarman', phone: '+62 852-7856-8360', wa: '6285278568360' },
                 { name: 'Masrilayanti', phone: '+62 811-6642-443', wa: '628116642443' }
               ].map((contact, idx) => (
                 <a

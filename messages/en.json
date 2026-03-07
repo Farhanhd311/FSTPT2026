@@ -188,7 +188,7 @@
     "officialEmail": "Official Email",
     "location": "Andalas University, Padang",
     "febi": "Febi Petri",
-    "jeply": "Jeply Murdiano",
+    "jeply": "Jeply Murdiarman",
     "masrilayanti": "Masrilayanti"
   },
   "flyer": {
@@ -242,7 +242,8 @@
     "templateTitle": "Template Paper",
     "templateFormat": "Microsoft Word",
     "templateDesc": "Download the `.docx` file to speed up and standardize your paper writing process.",
-    "downloadTemplate": "Download Template",
+    "downloadTemplate": "Download Template (National)",
+    "downloadTemplateInt": "Download Template (International)",
     "toc": "Table of Contents"
   },
   "registration": {
@@ -437,7 +438,18 @@
     "previewImage": "PREVIEW IMAGE",
     "section3Title": "3. PAPER STRUCTURE",
     "section3Intro": "The paper structure should consist of the following main components:",
-    "structureItems": ["Title", "Author information", "Abstract", "Introduction", "Literature review", "Results & Discussion", "Conclusion", "Bibliography", "Acknowledgments", "Appendix"],
+    "structureItems": [
+      "Title",
+      "Author information",
+      "Abstract",
+      "Introduction",
+      "Literature review",
+      "Results & Discussion",
+      "Conclusion",
+      "Bibliography",
+      "Acknowledgments",
+      "Appendix"
+    ],
     "section4Title": "4. BIBLIOGRAPHY",
     "section4P1": "The bibliography should only contain references cited in the paper text. This bibliography is written in ascending order based on the last name of the author. Use the style",
     "section4P1Bold": "'References'",

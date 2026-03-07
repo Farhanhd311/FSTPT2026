@@ -130,16 +130,41 @@ export default function AuthorGuideline() {
                                     <p className="text-sage text-[11px] font-medium mb-8 leading-relaxed">
                                         {t('templateDesc')}
                                     </p>
-                                    <a
-                                        href="/template_Symposium FSTPT Unand 2026.docx"
-                                        download="template_Symposium FSTPT Unand 2026.docx"
-                                        className="flex items-center justify-center gap-2 w-full py-4 bg-pine text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg hover:shadow-fog/30 transition-all duration-300"
-                                    >
-                                        {t('downloadTemplate')}
-                                        <svg className="w-4 h-4 translate-y-[1px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                        </svg>
-                                    </a>
+                                    <div className="flex flex-col gap-3">
+                                        <a
+                                            href="/template_Symposium FSTPT Unand 2026.docx"
+                                            download="template_Symposium FSTPT Unand 2026.docx"
+                                            className="group/btn relative flex flex-col items-center justify-center p-5 bg-pine text-white rounded-[2rem] transition-all duration-300 hover:bg-fog hover:shadow-2xl hover:shadow-fog/20 overflow-hidden"
+                                        >
+                                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                                            <div className="relative z-10 flex flex-col items-center gap-2 text-center">
+                                                <span className="text-[10px] font-black uppercase tracking-[0.2em]">{t('downloadTemplate')}</span>
+                                                <div className="flex items-center gap-2 text-white/50 group-hover/btn:text-white/80">
+                                                    <span className="text-[9px] font-bold uppercase tracking-wider">DOCX · 122 KB</span>
+                                                    <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a
+                                            href="/paper template-LNCE.docx"
+                                            download="paper template-LNCE.docx"
+                                            className="group/btn relative flex flex-col items-center justify-center p-5 bg-pine text-white rounded-[2rem] transition-all duration-300 hover:bg-fog hover:shadow-2xl hover:shadow-fog/20 overflow-hidden"
+                                        >
+                                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                                            <div className="relative z-10 flex flex-col items-center gap-2 text-center">
+                                                <span className="text-[10px] font-black uppercase tracking-[0.2em]">{t('downloadTemplateInt')}</span>
+                                                <div className="flex items-center gap-2 text-white/50 group-hover/btn:text-white/80">
+                                                    <span className="text-[9px] font-bold uppercase tracking-wider">DOCX · 32 KB</span>
+                                                    <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </FadeIn>
 
