@@ -57,7 +57,7 @@ export default function FlyerPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <a
-              href="/flyerrr.png"
+              href="/flyer.png"
               download={t('filename')}
               className="inline-flex items-center gap-3 px-12 py-5 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog hover:scale-105 shadow-xl shadow-pine/10 transition-all duration-300 group"
             >
