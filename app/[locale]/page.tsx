@@ -63,7 +63,7 @@ export default function Home() {
 
           {/* Content */}
           <div className="relative w-full px-6 sm:px-10 lg:px-16 py-20">
-            <div className="max-w-3xl space-y-6">
+            <div className="max-w-3xl space-y-4">
               <FadeIn delay={100}>
                 <span className="inline-flex items-center gap-2.5 px-5 py-2 text-sm font-medium
                                text-white/90 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full">
@@ -97,8 +97,16 @@ export default function Home() {
                 </div>
               </FadeIn>
 
+              <FadeIn delay={300}>
+                <p className="text-lg sm:text-xl text-white/90 font-semibold tracking-tight">
+                  <span className="bg-gradient-to-r from-sage via-moss to-white bg-clip-text text-transparent">
+                    Hybrid from Convention Hall
+                  </span>
+                </p>
+              </FadeIn>
+
               <FadeIn delay={500}>
-                <div className="flex flex-wrap gap-4 pt-4">
+                <div className="flex flex-wrap gap-4">
                   <a href="https://smc.fstpt.info/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -205,7 +213,7 @@ export default function Home() {
             <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12 py-10">
               {objectives.map((obj, i) => (
                 <FadeIn key={i} delay={i * 120}>
-                  <div className="group relative bg-white rounded-2xl shadow-sm h-70
+                  <div className="group relative bg-white rounded-2xl shadow-sm h-full
                                   hover:shadow-xl hover:-translate-y-1
                                   transition-all duration-300 overflow-hidden">
 
@@ -252,7 +260,7 @@ export default function Home() {
             </FadeIn>
 
             {/* Paragraph blocks with left accent + number */}
-            <div className="h-100 space-y-12 mb-20">
+            <div className="space-y-12 mb-20">
 
               {/* Block 1 */}
               <FadeIn direction="left">
@@ -298,7 +306,7 @@ export default function Home() {
 
             {/* ISTSDC & FSTPT Detail Block */}
             <FadeIn>
-              <div className="bg-pine rounded-3xl p-10 lg:p-16 relative overflow-hidden mt-50">
+              <div className="bg-pine rounded-3xl p-10 lg:p-16 relative overflow-hidden mt-20">
                 <div className="absolute top-0 right-0 w-72 h-72 bg-fog/5 rounded-full -translate-y-1/2 translate-x-1/3" />
                 <div className="absolute bottom-0 left-0 w-56 h-56 bg-sage/5 rounded-full translate-y-1/3 -translate-x-1/4" />
                 <div className="absolute top-0 left-10 right-10 h-1 bg-gradient-to-r from-transparent via-fog to-transparent rounded-full" />

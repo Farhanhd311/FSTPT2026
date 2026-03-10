@@ -70,7 +70,7 @@ export default function AgendaKegiatan() {
                                 </p>
                                 <div className="flex flex-wrap gap-4 pt-4">
                                     <a
-                                        href="/flyerrr.png"
+                                        href="/flyer.png"
                                         download={tFlyer('filename')}
                                         className="inline-flex items-center gap-2 px-8 py-4 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog shadow-lg transition-all duration-300"
                                     >
@@ -88,7 +88,7 @@ export default function AgendaKegiatan() {
                                 <div className="absolute -inset-4 bg-gradient-to-tr from-fog/20 to-clay/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-60" />
                                 <div className="relative aspect-[1/1.4] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
                                     <Image
-                                        src="/flyerrr.png"
+                                        src="/flyer.png"
                                         alt="FSTPT 2026 Flyer"
                                         fill
                                         className="object-contain bg-white transition-transform duration-700 group-hover:scale-105"

@@ -43,7 +43,7 @@ export default function FlyerPage() {
             <div className="absolute -inset-4 bg-gradient-to-tr from-fog/10 to-clay/10 rounded-[3rem] blur-2xl opacity-60 transition-opacity duration-500" />
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[1/1.414]">
               <Image
-                src="/flyerrr.png"
+                src="/flyer.png"
                 alt="FSTPT 2026 Official Flyer"
                 fill
                 className="object-contain"
