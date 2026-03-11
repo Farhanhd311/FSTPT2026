@@ -12,10 +12,10 @@ const committeeData = {
     steering: [
         { name: "H. Mahyeldi Ansharullah, S.P., M.M.", image: "/panitia/mahyeldii.png" },
         { name: "Andyka Kusuma, S.T., M.Sc., Ph.D.", image: "/panitia/andyka.jpg" },
-        { name: "Dr. Efa Yonnedi, S.E., M.PPM., Akt., CA., CRGP", image: "/panitia/efa yonedi.png" },
+        { name: "Dr. Efa Yonnedi, S.E., M.PPM., Akt., CA., CRGP", image: "/panitia/rektor.png" },
         { name: "Prof. Dr. Techn. Marzuki, M.Sc. Eng", image: "/panitia/technmarzukii.png" },
-        { name: "Dr. Ir. Is Prima Nanda, S.T., M.T", image: "/panitia/primananda.jpeg" },
-        { name: "Ir. Sabril Haris HG., S.T., M.T., Ph. D", image: "/panitia/sabrilll.png" }
+        { name: "Dr. Ir. Is Prima Nanda, S.T., M.T", image: "/panitia/isprima.png" },
+        { name: "Ir. Sabril Haris HG., S.T., M.T., Ph. D", image: "/panitia/sabrill1.png" }
     ],
     organizing: [
         { role: "chairman", name: "Ir. Bayu Martanto Adji, S.T., M.T., Ph.D.", image: "/panitia/bayuu.png" },
