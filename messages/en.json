@@ -19,7 +19,7 @@
     "location": "Andalas University, Padang"
   },
   "hero": {
-    "badge": "FSTPT 2026 — Padang, West Sumatera",
+    "badge": "The 5th International Symposium on Transportation Studies in Developing Countries (ISTSDC) and National Symposium of Inter-University Transportation Studies Forum (FSTPT), 2026",
     "title1": "Forum Studi",
     "titleHighlight": "Transportasi",
     "title2": "Antar Perguruan Tinggi",
@@ -223,7 +223,13 @@
       "treasurer": "Treasurer"
     },
     "institutions": {
-      "unand": "Andalas University, Indonesia"
+      "unand": "Andalas University, Indonesia",
+      "undip": "Diponegoro University, Semarang, Indonesia",
+      "uir": "Universitas Islam Riau, Riau, Indonesia",
+      "boku": "BOKU University, Vienna, Austria",
+      "essex": "University of Essex, Colchester, United Kingdom",
+      "utp": "Universiti Teknologi Petronas, Malaysia",
+      "shizuoka": "Shizuoka Institute of Science and Technology, Japan"
     },
     "subthemes": {
       "secretariat": "Secretariat",

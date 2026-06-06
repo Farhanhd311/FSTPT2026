@@ -12,10 +12,10 @@ interface Speaker {
 
 const speakers: Speaker[] = [
     {
-        name: "Prof. Karl Kim, Ph.D.",
-        affiliation: "University of Hawaii",
-        location: "United State of America",
-        image: "/panitia/kkarlkim.jpg"
+        name: "Prof. Tomio Miwa, Ph.D.",
+        affiliation: "Nagoya University",
+        location: "Nagoya,Japan",
+        image: "/panitia/tomio.png"
     },
     {
         name: "Prof. Dr.Eng. Ir. M. Zudhy Irawan, S.T., M.T., IPM.",
