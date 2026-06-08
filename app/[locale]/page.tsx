@@ -22,7 +22,7 @@ export default function Home() {
 
   // Fetch subthemes from translations
   // Since subthemes is an array in JSON, useTranslations returns a function that can also access the array
-  const subthemesKeys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+  const subthemesKeys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
   const subthemes = subthemesKeys.map(key => ({
     number: (key + 1).toString().padStart(2, '0'),
     title: t(`subthemes.items.${key}.title`),
@@ -110,8 +110,8 @@ export default function Home() {
                   <a href="https://smc.fstpt.info/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative px-7 py-3.5 bg-gradient-to-r from-fog to-sage text-white
-                             text-sm font-bold rounded-xl overflow-hidden
+                    className="group relative px-6 sm:px-7 py-3.5 bg-gradient-to-r from-fog to-sage text-white
+                             text-sm font-bold rounded-xl overflow-hidden whitespace-nowrap
                              hover:shadow-[0_8px_30px_rgba(70,112,126,0.4)] hover:-translate-y-0.5
                              transition-all duration-300">
                     <span className="relative z-10 flex items-center gap-2">

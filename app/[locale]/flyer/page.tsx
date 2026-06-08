@@ -43,8 +43,8 @@ export default function FlyerPage() {
             <div className="absolute -inset-4 bg-gradient-to-tr from-fog/10 to-clay/10 rounded-[3rem] blur-2xl opacity-60 transition-opacity duration-500" />
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[1/1.414]">
               <Image
-                src="/flyer.png"
-                alt="FSTPT 2026 Official Flyer"
+                src="/flyer fix.png"
+                alt="Official Flyer"
                 fill
                 className="object-contain"
                 priority
@@ -57,7 +57,7 @@ export default function FlyerPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <a
-              href="/flyer.png"
+              href="/flyer fix.png"
               download={t('filename')}
               className="inline-flex items-center gap-3 px-12 py-5 bg-pine text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-fog hover:scale-105 shadow-xl shadow-pine/10 transition-all duration-300 group"
             >
