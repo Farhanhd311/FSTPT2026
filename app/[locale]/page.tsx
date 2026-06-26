@@ -149,7 +149,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-[url('/mobility.jpg')] bg-cover bg-center opacity-30" />
                     <div className="relative z-10 flex left-3 bottom-2 flex-col justify-end h-full p-8">
                       <p className="text-clay text-sm font-semibold tracking-widest uppercase mb-2">{t('about.year')}</p>
-                      <p className="text-white text-2xl font-extrabold leading-tight whitespace-pre-line">
+                      <p className="text-white text-xl font-extrabold leading-snug whitespace-pre-line">
                         {t('about.symposiumTitle')}
                       </p>
                     </div>

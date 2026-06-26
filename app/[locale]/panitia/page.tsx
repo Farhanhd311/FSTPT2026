@@ -18,7 +18,7 @@ const committeeData = {
         { name: "Ir. Sabril Haris HG., S.T., M.T., Ph. D", image: "/panitia/sabrill1.png" }
     ],
     organizing: [
-        { role: "chairman", name: "Ir. Bayu Martanto Adji, S.T., M.T., Ph.D.", image: "/panitia/bayuu.png" },
+        { role: "chairman", name: "Ir. Bayu Martanto Adji, S.T., M.T., Ph.D.", image: "/panitia/bayu.png" },
         { role: "viceChairman", name: "Yossyafra, S.T., M.Eng.Sc., Ph.D.", image: "/panitia/yosyafra.png" },
         { role: "secretary", name: "Febi Putri Yastari, S.T., M.T.", image: "/panitia/febby.png" },
         { role: "treasurer", name: "Dwi Jenita Maharani, S.T., M.Eng.", image: "/panitia/jenita.png" }
