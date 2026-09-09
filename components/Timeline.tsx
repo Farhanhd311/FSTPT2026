@@ -13,14 +13,17 @@ interface TimelineItem {
   highlight?: boolean;
 }
 
+// `label` dan `date` dipakai untuk logika (warna badge & perhitungan status), sehingga
+// nilainya tetap dalam bahasa Inggris. Teks yang tampil diambil dari labelKey/dateKey
+// agar ikut berubah mengikuti bahasa yang dipilih pengunjung.
 const timelineBase = [
-  { label: 'MILESTONE', titleKey: 'item1Title', date: '14 February', year: '2026' },
-  { label: 'SUBMISSION', titleKey: 'item2Title', date: '1 March – 15 July', year: '2026' },
-  { label: 'REVIEW', titleKey: 'item3Title', date: '1 June – 31 July', year: '2026' },
-  { label: 'ANNOUNCEMENT', titleKey: 'item4Title', date: '1 August', year: '2026' },
-  { label: 'REVISION', titleKey: 'item5Title', date: '1 – 31 August', year: '2026' },
-  { label: 'REGISTRATION', titleKey: 'item6Title', date: '15 August – 30 September', year: '2026' },
-  { label: 'EVENT DAY', titleKey: 'item7Title', descKey: 'item7Desc', date: '6 – 7 November', year: '2026', highlight: true },
+  { label: 'MILESTONE', labelKey: 'item1Label', titleKey: 'item1Title', date: '14 February', dateKey: 'item1Date', year: '2026' },
+  { label: 'SUBMISSION', labelKey: 'item2Label', titleKey: 'item2Title', date: '1 March – 15 July', dateKey: 'item2Date', year: '2026' },
+  { label: 'REVIEW', labelKey: 'item3Label', titleKey: 'item3Title', date: '1 June – 31 July', dateKey: 'item3Date', year: '2026' },
+  { label: 'ANNOUNCEMENT', labelKey: 'item4Label', titleKey: 'item4Title', date: '1 August', dateKey: 'item4Date', year: '2026' },
+  { label: 'REVISION', labelKey: 'item5Label', titleKey: 'item5Title', date: '1 – 31 August', dateKey: 'item5Date', year: '2026' },
+  { label: 'REGISTRATION', labelKey: 'item6Label', titleKey: 'item6Title', date: '15 August – 30 September', dateKey: 'item6Date', year: '2026' },
+  { label: 'EVENT DAY', labelKey: 'item7Label', titleKey: 'item7Title', descKey: 'item7Desc', date: '6 – 7 November', dateKey: 'item7Date', year: '2026', highlight: true },
 ];
 
 
@@ -234,7 +237,7 @@ export default function Timeline() {
                         <div>
                           <span className={`inline-block px-4 py-1.5 text-xs font-bold rounded-full mb-3
                                         ${labelColors[item.label]}`}>
-                            {item.label}
+                            {t(item.labelKey)}
                           </span>
                           <h3 className={`text-lg lg:text-xl font-extrabold text-white`}>
                             {t(item.titleKey)}
@@ -247,7 +250,7 @@ export default function Timeline() {
                         </div>
                         <div className="text-right shrink-0">
                           <p className={`text-2xl lg:text-3xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-moss to-clay`}>
-                            {item.date}
+                            {t(item.dateKey)}
                           </p>
                           <p className={`text-sm font-semibold text-fog`}>
                             {item.year}
@@ -275,7 +278,7 @@ export default function Timeline() {
                           <div className="flex items-center gap-2 mb-2">
                             <span className={`inline-block px-3 py-1 text-xs font-bold rounded-full
                                           ${labelColors[item.label]}`}>
-                              {item.label}
+                              {t(item.labelKey)}
                             </span>
                             {isCurrent && (
                               <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold text-fog bg-fog/10 rounded-full">
@@ -290,7 +293,7 @@ export default function Timeline() {
                         </div>
                         <div className="text-right shrink-0">
                           <p className={`text-lg lg:text-xl font-extrabold tracking-tight text-fog`}>
-                            {item.date}
+                            {t(item.dateKey)}
                           </p>
                           <p className={`text-xs font-medium text-sage`}>
                             {item.year}

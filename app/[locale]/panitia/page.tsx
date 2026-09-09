@@ -129,7 +129,7 @@ export default function Committee() {
                 <section className="relative h-[45vh] min-h-[400px] bg-pine flex items-center overflow-hidden">
                     <div className="absolute inset-0">
                         <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
-                        <div className="absolute inset-0 bg-[url('/smartcity.jpg')] bg-cover bg-center opacity-20" />
+                        <div className="absolute inset-0 bg-[url('/mobility.jpg')] bg-cover bg-center opacity-20" />
                     </div>
 
                     <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full text-center">

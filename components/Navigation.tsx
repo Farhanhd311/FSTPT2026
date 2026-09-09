@@ -178,7 +178,7 @@ export default function Navigation() {
             <div className="flex items-center gap-4 sm:gap-6">
               <Link href="/" className="flex items-center group flex-shrink-0">
                 <Image
-                  src="/logo.htm"
+                  src="/logo.png"
                   alt="Logo FSTPT"
                   width={160}
                   height={50}
