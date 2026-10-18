@@ -20,7 +20,7 @@ export default function AgendaKegiatan() {
                 {/* ═══════════════ HERO SECTION ═══════════════ */}
                 <section className="relative h-[45vh] min-h-[400px] bg-pine flex items-center overflow-hidden">
                     <div className="absolute inset-0">
-                        <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
+                        <div className="absolute inset-0 bg-linear-to-br from-pine via-pine/90 to-fog/40 z-10" />
                         <div className="absolute inset-0 bg-[url('/lembahanai.jpeg')] bg-cover bg-center opacity-20" />
                     </div>
 
@@ -30,14 +30,14 @@ export default function AgendaKegiatan() {
                                 {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
+                                {t('title')} <span className="text-gradient-fog bg-linear-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
                                 {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#fafafa] to-transparent z-10" />
                 </section>
 
                 {/* ═══════════════ TIMELINE SECTION ═══════════════ */}
@@ -85,11 +85,11 @@ export default function AgendaKegiatan() {
 
                         <FadeIn direction="left" delay={200}>
                             <div className="relative group">
-                                <div className="absolute -inset-4 bg-gradient-to-tr from-fog/20 to-clay/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-60" />
+                                <div className="absolute -inset-4 bg-linear-to-tr from-fog/20 to-clay/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-60" />
                                 <div className="relative aspect-[1/1.4] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
                                     <Image
                                         src="/flyer fix.png"
-                                        alt="FSTPT 2026 Flyer"
+                                        alt={tFlyer('alt')}
                                         fill
                                         className="object-contain bg-white transition-transform duration-700 group-hover:scale-105"
                                     />
@@ -102,7 +102,7 @@ export default function AgendaKegiatan() {
                 {/* ═══════════════ CTA BANNER ═══════════════ */}
                 <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mt-32">
                     <FadeIn direction="up">
-                        <div className="bg-gradient-to-br from-pine to-[#1a2e31] rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+                        <div className="bg-linear-to-br from-pine to-[#1a2e31] rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-96 h-96 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                             <div className="relative z-10 space-y-8">
                                 <span className="text-moss font-black uppercase tracking-[0.4em] text-xs">{t('ctaBadge')}</span>

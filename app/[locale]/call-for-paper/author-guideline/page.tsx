@@ -88,7 +88,7 @@ export default function AuthorGuideline() {
                 {/* ═══════════════ HERO SECTION ═══════════════ */}
                 <section className="relative h-[45vh] min-h-[400px] bg-pine flex items-center overflow-hidden">
                     <div className="absolute inset-0">
-                        <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
+                        <div className="absolute inset-0 bg-linear-to-br from-pine via-pine/90 to-fog/40 z-10" />
                         <div className="absolute inset-0 bg-[url('/mobility.jpg')] bg-cover bg-center opacity-20" />
                     </div>
 
@@ -98,14 +98,14 @@ export default function AuthorGuideline() {
                                 {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
+                                {t('title')} <span className="text-gradient-fog bg-linear-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
                                 {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#fafafa] to-transparent z-10" />
                 </section>
 
                 <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 -mt-16 relative z-30">
@@ -136,7 +136,7 @@ export default function AuthorGuideline() {
                                             download="template_Symposium FSTPT Unand 2026.docx"
                                             className="group/btn relative flex flex-col items-center justify-center p-5 bg-pine text-white rounded-[2rem] transition-all duration-300 hover:bg-fog hover:shadow-2xl hover:shadow-fog/20 overflow-hidden"
                                         >
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                                            <div className="absolute inset-0 bg-linear-to-br from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                                             <div className="relative z-10 flex flex-col items-center gap-2 text-center">
                                                 <span className="text-[10px] font-black uppercase tracking-[0.2em]">{t('downloadTemplate')}</span>
                                                 <div className="flex items-center gap-2 text-white/50 group-hover/btn:text-white/80">
@@ -153,7 +153,7 @@ export default function AuthorGuideline() {
                                             download="paper template-LNCE.docx"
                                             className="group/btn relative flex flex-col items-center justify-center p-5 bg-pine text-white rounded-[2rem] transition-all duration-300 hover:bg-fog hover:shadow-2xl hover:shadow-fog/20 overflow-hidden"
                                         >
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                                            <div className="absolute inset-0 bg-linear-to-br from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                                             <div className="relative z-10 flex flex-col items-center gap-2 text-center">
                                                 <span className="text-[10px] font-black uppercase tracking-[0.2em]">{t('downloadTemplateInt')}</span>
                                                 <div className="flex items-center gap-2 text-white/50 group-hover/btn:text-white/80">
@@ -406,7 +406,7 @@ export default function AuthorGuideline() {
 
                                         <div className="max-w-2xl flex flex-col gap-4">
                                             {structureItems.map((item, i) => (
-                                                <div key={i} className="group relative flex items-center p-4 bg-gradient-to-r from-sage/5 to-moss/10 rounded-2xl border border-moss/10 transition-all duration-300 hover:shadow-lg hover:border-moss/30">
+                                                <div key={i} className="group relative flex items-center p-4 bg-linear-to-r from-sage/5 to-moss/10 rounded-2xl border border-moss/10 transition-all duration-300 hover:shadow-lg hover:border-moss/30">
                                                     <div className="flex items-center gap-4">
                                                         <div className="w-10 h-10 rounded-xl bg-pine flex items-center justify-center">
                                                             <span className="text-white font-black text-xs">{(i + 1).toString()}</span>
@@ -475,7 +475,7 @@ export default function AuthorGuideline() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-gradient-to-br from-pine to-[#1a2e31] rounded-[2.5rem] p-12 text-center text-white relative overflow-hidden mt-12">
+                                    <div className="bg-linear-to-br from-pine to-[#1a2e31] rounded-[2.5rem] p-12 text-center text-white relative overflow-hidden mt-12">
                                         <div className="absolute top-0 right-0 w-64 h-64 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                                         <div className="relative z-10 space-y-4">
                                             <h4 className="text-fog font-black uppercase tracking-[0.2em] text-xs">{c('important')}</h4>

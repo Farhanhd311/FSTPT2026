@@ -247,17 +247,17 @@ export default function Navigation() {
                     >
                       <div className="w-[320px] bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_20px_50px_rgba(34,57,60,0.15)] border border-pine/5 p-2.5 overflow-hidden">
                         {/* Elegant accent border at top */}
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-fog via-sage to-clay opacity-80" />
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-fog via-sage to-clay opacity-80" />
 
                         <div className="space-y-1">
                           {item.dropdown.map((sub) => (
                             <Link
                               key={sub.href}
                               href={sub.href}
-                              className="group/item flex items-start gap-4 p-3 rounded-xl hover:bg-gradient-to-r hover:from-white hover:to-pine/5 transition-all duration-300 relative overflow-hidden"
+                              className="group/item flex items-start gap-4 p-3 rounded-xl hover:bg-linear-to-r hover:from-white hover:to-pine/5 transition-all duration-300 relative overflow-hidden"
                             >
                               {/* Hover glow effect */}
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000" />
+                              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000" />
 
                               <div className={`
                                 w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300
@@ -294,7 +294,7 @@ export default function Navigation() {
                     className="relative px-3.5 py-2 rounded-lg text-sm font-medium text-pine hover:text-fog hover:bg-fog/5 transition-all duration-200 group"
                   >
                     {item.label}
-                    <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-fog to-sage group-hover:w-4/5 transition-all duration-300 rounded-full" />
+                    <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-linear-to-r from-fog to-sage group-hover:w-4/5 transition-all duration-300 rounded-full" />
                   </Link>
                 )
               )}
@@ -311,7 +311,7 @@ export default function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap
-                  bg-gradient-to-r from-pine to-fog text-white
+                  bg-linear-to-r from-pine to-fog text-white
                   hover:shadow-lg hover:shadow-fog/25 hover:-translate-y-[1px]
                   active:translate-y-0 active:shadow-md
                   transition-all duration-300"
@@ -446,7 +446,7 @@ export default function Navigation() {
             rel="noopener noreferrer"
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold
-              bg-gradient-to-r from-pine to-fog text-white
+              bg-linear-to-r from-pine to-fog text-white
               hover:shadow-lg transition-all duration-300"
           >
             {tHero('ctaPrimary')}

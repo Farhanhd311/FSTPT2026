@@ -64,12 +64,12 @@ function getStatus(date: string, year: string): 'past' | 'current' | 'upcoming' 
 
 const labelColors: Record<string, string> = {
   'MILESTONE': 'text-fog bg-fog/10',
-  'SUBMISSION': 'text-white bg-gradient-to-r from-fog to-sage',
+  'SUBMISSION': 'text-white bg-linear-to-r from-fog to-sage',
   'REVIEW': 'text-sage bg-sage/10',
   'ANNOUNCEMENT': 'text-fog bg-fog/10',
-  'REVISION': 'text-white bg-gradient-to-r from-sage to-moss',
+  'REVISION': 'text-white bg-linear-to-r from-sage to-moss',
   'REGISTRATION': 'text-fog bg-fog/10',
-  'EVENT DAY': 'text-white bg-gradient-to-r from-fog to-sage shadow-lg shadow-fog/20',
+  'EVENT DAY': 'text-white bg-linear-to-r from-fog to-sage shadow-lg shadow-fog/20',
 };
 
 // Compute overall progress percentage based on dates
@@ -199,15 +199,15 @@ export default function Timeline() {
                     {item.highlight ? (
                       <div className={`w-5 h-5 rounded-full ring-4 transition-all duration-500
                                     ${isCurrent
-                          ? 'bg-gradient-to-br from-fog to-pine ring-fog/30 shadow-[0_0_20px_rgba(70,112,126,0.5)] animate-pulse-glow'
-                          : 'bg-gradient-to-br from-fog to-pine ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.4)]'
+                          ? 'bg-linear-to-br from-fog to-pine ring-fog/30 shadow-[0_0_20px_rgba(70,112,126,0.5)] animate-pulse-glow'
+                          : 'bg-linear-to-br from-fog to-pine ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.4)]'
                         }`} />
                     ) : (
                       <div className={`w-4 h-4 rounded-full ring-4 transition-all duration-500
                                     group-hover:scale-125
                                     ${isCurrent
-                          ? 'bg-gradient-to-br from-fog to-sage ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.5)] scale-125'
-                          : 'bg-gradient-to-br from-fog to-sage ring-white shadow-[0_0_12px_rgba(70,112,126,0.3)]'
+                          ? 'bg-linear-to-br from-fog to-sage ring-fog/20 shadow-[0_0_16px_rgba(70,112,126,0.5)] scale-125'
+                          : 'bg-linear-to-br from-fog to-sage ring-white shadow-[0_0_12px_rgba(70,112,126,0.3)]'
                         }
                                     group-hover:shadow-[0_0_20px_rgba(70,112,126,0.5)]`} />
                     )}
@@ -225,13 +225,13 @@ export default function Timeline() {
                     /* Highlighted event card */
                     <div className={`flex-1 rounded-2xl p-6 lg:p-7 relative overflow-hidden transition-all duration-400
                                   ${isCurrent || !isPast
-                        ? 'bg-gradient-to-r from-pine to-[#1e3a3f] border border-fog/20 shadow-xl shadow-pine/10'
-                        : 'bg-gradient-to-r from-pine to-[#1e3a3f] border border-fog/20 shadow-xl shadow-pine/10'
+                        ? 'bg-linear-to-r from-pine to-[#1e3a3f] border border-fog/20 shadow-xl shadow-pine/10'
+                        : 'bg-linear-to-r from-pine to-[#1e3a3f] border border-fog/20 shadow-xl shadow-pine/10'
                       }
                                   hover:-translate-y-0.5`}>
                       {/* Glow decoration */}
                       <div className="absolute top-0 right-0 w-40 h-40 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/3" />
-                      <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-fog/40 to-transparent rounded-full" />
+                      <div className="absolute top-0 left-6 right-6 h-[2px] bg-linear-to-r from-transparent via-fog/40 to-transparent rounded-full" />
 
                       <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div>
@@ -249,7 +249,7 @@ export default function Timeline() {
                           )}
                         </div>
                         <div className="text-right shrink-0">
-                          <p className={`text-2xl lg:text-3xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-moss to-clay`}>
+                          <p className={`text-2xl lg:text-3xl font-black tracking-tight text-transparent bg-clip-text bg-linear-to-r from-moss to-clay`}>
                             {t(item.dateKey)}
                           </p>
                           <p className={`text-sm font-semibold text-fog`}>

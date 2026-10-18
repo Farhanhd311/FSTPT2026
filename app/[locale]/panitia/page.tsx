@@ -35,7 +35,8 @@ const committeeData = {
         { name: "Prof. Dr. Yusak Octavius Susilo", institution: "boku", image: "/panitia/yusak.jpg" },
         { name: "Dr. Ir. Iswandaru Widyatmoko", institution: "essex", image: "/panitia/iswandaru.jpg" },
         { name: "Dr. Muslich Hartadi Sutanto", institution: "utp", image: "/panitia/muslich.jpg" },
-        { name: "Prof. Takahiro Nishida", institution: "shizuoka", image: "/panitia/takahiro.jpg" }
+        { name: "Prof. Takahiro Nishida", institution: "shizuoka", image: "/panitia/takahiro.jpg" },
+        { name: "Prof. Madya Ts. Dr.-Ing. Joewono Prasetijo, P.Tech.", institution: "uthm", image: "/panitia/joewono1.png" }
     ],
     subCommittees: [
         {
@@ -128,7 +129,7 @@ export default function Committee() {
                 {/* ═══════════════ HERO SECTION ═══════════════ */}
                 <section className="relative h-[45vh] min-h-[400px] bg-pine flex items-center overflow-hidden">
                     <div className="absolute inset-0">
-                        <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
+                        <div className="absolute inset-0 bg-linear-to-br from-pine via-pine/90 to-fog/40 z-10" />
                         <div className="absolute inset-0 bg-[url('/mobility.jpg')] bg-cover bg-center opacity-20" />
                     </div>
 
@@ -138,14 +139,14 @@ export default function Committee() {
                                 {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
+                                {t('title')} <span className="text-gradient-fog bg-linear-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
                                 {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#fafafa] to-transparent z-10" />
                 </section>
 
                 <div className="space-y-24 -mt-20 relative z-30">
@@ -164,14 +165,14 @@ export default function Committee() {
                         <section>
                             <div className="text-center mb-12">
                                 <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('steeringCommittee')}</h2>
-                                <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
+                                <div className="h-1.5 w-24 bg-linear-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                                 {committeeData.steering.map((item, i) => (
                                     <FadeIn key={i} direction="up" delay={i * 50}>
                                         <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
                                             <div className="relative h-64 overflow-hidden bg-pine/5">
-                                                <div className="absolute inset-0 bg-gradient-to-t from-pine/20 to-transparent z-10" />
+                                                <div className="absolute inset-0 bg-linear-to-t from-pine/20 to-transparent z-10" />
                                                 <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
                                                     <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
                                                 </div>
@@ -189,14 +190,14 @@ export default function Committee() {
                         <section>
                             <div className="text-center mb-12">
                                 <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('organizingCommittee')}</h2>
-                                <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
+                                <div className="h-1.5 w-24 bg-linear-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {committeeData.organizing.map((item, i) => (
                                     <FadeIn key={i} direction="up" delay={i * 100}>
                                         <div className="h-full bg-pine border border-white/10 rounded-[2.5rem] overflow-hidden shadow-xl flex flex-col group hover:-translate-y-2 transition-all duration-500">
                                             <div className="relative h-72 overflow-hidden bg-white/5">
-                                                <div className="absolute inset-0 bg-gradient-to-t from-pine/60 to-transparent z-10" />
+                                                <div className="absolute inset-0 bg-linear-to-t from-pine/60 to-transparent z-10" />
                                                 <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
                                                     <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
                                                 </div>
@@ -217,14 +218,14 @@ export default function Committee() {
                         <section>
                             <div className="text-center mb-12">
                                 <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('scientificCommittee')}</h2>
-                                <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
+                                <div className="h-1.5 w-24 bg-linear-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                                 {committeeData.scientific.map((item, i) => (
                                     <FadeIn key={i} direction="up" delay={i * 50}>
                                         <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
                                             <div className="relative h-72 overflow-hidden bg-pine/5">
-                                                <div className="absolute inset-0 bg-gradient-to-t from-pine/20 to-transparent z-10" />
+                                                <div className="absolute inset-0 bg-linear-to-t from-pine/20 to-transparent z-10" />
                                                 <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
                                                     <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
                                                 </div>
@@ -245,13 +246,13 @@ export default function Committee() {
                         <section className="space-y-12">
                             <div className="text-center">
                                 <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('subCommittees')}</h2>
-                                <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
+                                <div className="h-1.5 w-24 bg-linear-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid lg:grid-cols-2 gap-10">
                                 {committeeData.subCommittees.map((sub, i) => (
                                     <FadeIn key={i} direction="up" delay={i * 50}>
                                         <div className="bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 flex flex-col h-full">
-                                            <div className="p-8 bg-gradient-to-br from-pine to-fog">
+                                            <div className="p-8 bg-linear-to-br from-pine to-fog">
                                                 <h3 className="text-2xl font-black text-white uppercase tracking-tight">{t(`subthemes.${sub.title}`)}</h3>
                                             </div>
                                             <div className="p-8 space-y-6 flex-grow">

@@ -17,7 +17,7 @@ export default function Registration() {
                 {/* ═══════════════ HERO SECTION ═══════════════ */}
                 <section className="relative h-[45vh] min-h-[400px] bg-pine flex items-center overflow-hidden">
                     <div className="absolute inset-0">
-                        <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
+                        <div className="absolute inset-0 bg-linear-to-br from-pine via-pine/90 to-fog/40 z-10" />
                         <div className="absolute inset-0 bg-[url('/mobility.jpg')] bg-cover bg-center opacity-20" />
                     </div>
 
@@ -27,14 +27,14 @@ export default function Registration() {
                                 {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
+                                {t('title')} <span className="text-gradient-fog bg-linear-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
                                 {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#fafafa] to-transparent z-10" />
                 </section>
 
                 {/* Content Section */}
@@ -45,7 +45,7 @@ export default function Registration() {
                         <FadeIn direction="left" delay={100} className="lg:col-span-2">
                             <div className="text-center mb-16">
                                 <h2 className="text-4xl font-black text-pine uppercase tracking-tight mb-4">{t('feeTitle')}</h2>
-                                <div className="h-1.5 w-24 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
+                                <div className="h-1.5 w-24 bg-linear-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
 
                             <div className="flex flex-col gap-12">
@@ -58,7 +58,7 @@ export default function Registration() {
                                         <div className="mt-8 hidden md:block w-12 h-1 bg-moss/20 rounded-full" />
                                     </div>
 
-                                    <div className="p-8 md:p-12 md:flex-1 grid md:grid-cols-2 gap-10 bg-gradient-to-br from-white to-clay/5">
+                                    <div className="p-8 md:p-12 md:flex-1 grid md:grid-cols-2 gap-10 bg-linear-to-br from-white to-clay/5">
                                         {/* WNI Category */}
                                         <div className="space-y-6">
                                             <div className="flex items-center gap-3 mb-2">
@@ -77,7 +77,7 @@ export default function Registration() {
                                                     { cat: td('addPaper'), price: td('prices.istsdc.addPaper') },
                                                     { cat: td('certificateOnly'), price: td('prices.istsdc.certificateOnly') },
                                                 ].map((f, i) => (
-                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-pine/40 transition-all duration-300 shadow-sm shadow-sage/5">
+                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-linear-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-pine/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <div className="space-y-0.5">
                                                             <p className="text-sm font-bold text-sage leading-tight">
                                                                 {f.cat.split(' (')[0]}
@@ -111,7 +111,7 @@ export default function Registration() {
                                                     { cat: td('addPaper'), price: td('prices.istsdc.intAddPaper') },
                                                     { cat: td('certificateOnly'), price: td('prices.istsdc.intCertificateOnly') },
                                                 ].map((f, i) => (
-                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-pine/40 transition-all duration-300 shadow-sm shadow-sage/5">
+                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-linear-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-pine/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <div className="space-y-0.5">
                                                             <p className="text-sm font-bold text-sage leading-tight">
                                                                 {f.cat.split(' (')[0]}
@@ -131,14 +131,14 @@ export default function Registration() {
 
                                 {/* FSTPT Card (Landscape) */}
                                 <div className="bg-white rounded-[2.5rem] border border-clay/30 overflow-hidden shadow-2xl shadow-sage/5 flex flex-col md:flex-row">
-                                    <div className="bg-gradient-to-br from-fog to-sage p-8 md:p-12 text-white relative md:w-1/3 flex flex-col justify-center">
+                                    <div className="bg-linear-to-br from-fog to-sage p-8 md:p-12 text-white relative md:w-1/3 flex flex-col justify-center">
                                         <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl" />
                                         <h3 className="text-3xl font-black leading-tight relative z-10">{td('fstpt')}</h3>
                                         <p className="text-white/60 text-sm font-bold uppercase tracking-[0.2em] mt-4 relative z-10">{td('fstptSub')}</p>
                                         <div className="mt-8 hidden md:block w-12 h-1 bg-white/20 rounded-full" />
                                     </div>
 
-                                    <div className="p-8 md:p-12 md:flex-1 grid md:grid-cols-2 gap-10 bg-gradient-to-br from-white to-clay/5">
+                                    <div className="p-8 md:p-12 md:flex-1 grid md:grid-cols-2 gap-10 bg-linear-to-br from-white to-clay/5">
                                         {/* Early Bird */}
                                         <div className="space-y-6">
                                             <div className="flex items-center gap-3 mb-2">
@@ -156,7 +156,7 @@ export default function Registration() {
                                                     { cat: td('lecturerMember'), price: td('prices.fstpt.lecturerMember') },
                                                     { cat: td('nonMember'), price: td('prices.fstpt.nonMember') },
                                                 ].map((f, i) => (
-                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-fog/40 transition-all duration-300 shadow-sm shadow-sage/5">
+                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-linear-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-fog/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <p className="text-sm font-bold text-sage">{f.cat}</p>
                                                         <p className="font-black text-fog tracking-tight whitespace-nowrap">{f.price}</p>
                                                     </div>
@@ -181,7 +181,7 @@ export default function Registration() {
                                                     { cat: td('lecturerMember'), price: td('prices.fstpt.lecturerMemberReg') },
                                                     { cat: td('nonMember'), price: td('prices.fstpt.nonMemberReg') },
                                                 ].map((f, i) => (
-                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-gradient-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-fog/40 transition-all duration-300 shadow-sm shadow-sage/5">
+                                                    <div key={i} className="flex justify-between items-center gap-8 p-4 bg-linear-to-br from-white via-moss/5 to-sage/10 border border-sage/20 rounded-2xl hover:border-fog/40 transition-all duration-300 shadow-sm shadow-sage/5">
                                                         <p className="text-sm font-bold text-sage">{f.cat}</p>
                                                         <p className="font-black text-fog tracking-tight whitespace-nowrap">{f.price}</p>
                                                     </div>
@@ -204,7 +204,7 @@ export default function Registration() {
                         {/* Login CTA Card */}
                         <FadeIn direction="right" delay={200} className="lg:col-span-2">
                             <div className="bg-white rounded-[2.5rem] p-12 shadow-2xl border border-clay/20 text-center relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pine via-fog to-sage" />
+                                <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-pine via-fog to-sage" />
 
                                 <div className="relative z-10 max-w-2xl mx-auto">
                                     <div className="w-20 h-20 bg-pine/5 rounded-3xl flex items-center justify-center mx-auto mb-8 text-pine group-hover:scale-110 transition-transform duration-500">

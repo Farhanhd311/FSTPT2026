@@ -16,7 +16,7 @@ export default function FlyerPage() {
         {/* ═══════════════ HERO SECTION ═══════════════ */}
         <section className="relative h-[40vh] min-h-[350px] bg-pine flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
+            <div className="absolute inset-0 bg-linear-to-br from-pine via-pine/90 to-fog/40 z-10" />
             <div className="absolute inset-0 bg-[url('/lembahanai.jpeg')] bg-cover bg-center opacity-20" />
           </div>
 
@@ -26,25 +26,25 @@ export default function FlyerPage() {
                 {t('title')}
               </span>
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('official')}</span>
+                {t('title')} <span className="text-gradient-fog bg-linear-to-r from-moss to-clay bg-clip-text text-transparent">{t('official')}</span>
               </h1>
               <p className="text-moss/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
                 {t('subtitle')}
               </p>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#fafafa] to-transparent z-10" />
         </section>
 
         <div className="max-w-4xl w-full mx-auto px-6 text-center space-y-12 -mt-16 relative z-30">
           {/* Flyer Display */}
 
           <div className="relative max-w-2xl mx-auto">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-fog/10 to-clay/10 rounded-[3rem] blur-2xl opacity-60 transition-opacity duration-500" />
+            <div className="absolute -inset-4 bg-linear-to-tr from-fog/10 to-clay/10 rounded-[3rem] blur-2xl opacity-60 transition-opacity duration-500" />
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[1/1.414]">
               <Image
                 src="/flyer fix.png"
-                alt="Official Flyer"
+                alt={t('alt')}
                 fill
                 className="object-contain"
                 priority

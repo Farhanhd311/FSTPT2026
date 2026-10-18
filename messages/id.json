@@ -13,7 +13,6 @@
     "registrationDesc": "Daftar sebagai peserta",
     "panitia": "Panitia",
     "flyer": "Flyer",
-    "smcFstpt": "SMC-FSTPT",
     "menu": "Menu",
     "officialEmail": "Email Resmi",
     "location": "Universitas Andalas, Padang"
@@ -198,10 +197,7 @@
   "flyer": {
     "title": "Flyer",
     "subtitle": "Unduh brosur acara kami.",
-    "preview": "Pratinjau Flyer",
-    "previewDesc": "Gambar brosur akan ditampilkan di sini",
     "download": "Unduh Flyer",
-    "share": "Bagikan",
     "official": "Resmi",
     "alt": "Flyer Resmi FSTPT 2026",
     "filename": "Flyer 5th ISTSDC & FSTPT XXIX 2026.png"
@@ -213,7 +209,6 @@
     "subtitle": "Penyelenggara ISTSDC ke-V, Simposium Transportasi Nasional, Pertemuan Tahunan, dan Workshop FSTPT ke-XXIX 2026.",
     "organizer": "Penyelenggara",
     "organizerName": "Departemen Teknik Sipil, Fakultas Teknik, Universitas Andalas",
-    "event": "ISTSDC ke-V, Simposium Nasional Transportasi, Rapat Anggota Tahunan (RAT), dan Workshop FSTPT ke-XXIX Tahun 2026",
     "steeringCommittee": "Panitia Pengarah",
     "organizingCommittee": "Panitia Penyelenggara",
     "scientificCommittee": "Komite Ilmiah",
@@ -233,7 +228,8 @@
       "boku": "Universitas BOKU, Wina, Austria",
       "essex": "University of Essex, Colchester, Inggris (United Kingdom)",
       "utp": "Universiti Teknologi Petronas, Malaysia",
-      "shizuoka": "Shizuoka Institute of Science and Technology, Jepang"
+      "shizuoka": "Shizuoka Institute of Science and Technology, Jepang",
+      "uthm": "Universiti Tun Hussein Onn Malaysia, Malaysia"
     },
     "subthemes": {
       "secretariat": "Sekretariat",
@@ -327,12 +323,6 @@
   "language": {
     "en": "English",
     "id": "Indonesia",
-    "de": "Deutsch",
-    "zh": "中文",
-    "ru": "Русский",
-    "fr": "Français",
-    "ja": "日本語",
-    "es": "Español",
     "switchLanguage": "Bahasa"
   },
   "timelineData": {

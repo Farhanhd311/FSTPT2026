@@ -74,7 +74,7 @@ export default function VenueHotel() {
                 {/* ═══════════════ HERO SECTION ═══════════════ */}
                 <section className="relative h-[45vh] min-h-[400px] bg-pine flex items-center overflow-hidden">
                     <div className="absolute inset-0">
-                        <div className="absolute inset-0 bg-gradient-to-br from-pine via-pine/90 to-fog/40 z-10" />
+                        <div className="absolute inset-0 bg-linear-to-br from-pine via-pine/90 to-fog/40 z-10" />
                         <div className="absolute inset-0 bg-[url('/chunand.jpg')] bg-cover bg-center opacity-20" />
                     </div>
 
@@ -84,14 +84,14 @@ export default function VenueHotel() {
                                 {t('badge')}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1]">
-                                {t('title')} <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
+                                {t('title')} <span className="text-gradient-fog bg-linear-to-r from-moss to-clay bg-clip-text text-transparent">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-moss/80 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
                                 {t('subtitle')}
                             </p>
                         </FadeIn>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#fafafa] to-transparent z-10" />
                 </section>
 
                 {/* ═══════════════ VENUE SECTION ═══════════════ */}
@@ -106,7 +106,7 @@ export default function VenueHotel() {
                                         fill
                                         className="object-cover"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-pine/40 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-pine/40 to-transparent" />
                                 </div>
                                 <div className="p-8 md:p-14 flex flex-col justify-center">
                                     <div className="space-y-6">
@@ -248,8 +248,8 @@ export default function VenueHotel() {
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-r from-pine/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-pine/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 md:hidden" />
+                                        <div className="absolute inset-0 bg-linear-to-r from-pine/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block" />
+                                        <div className="absolute inset-0 bg-linear-to-t from-pine/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 md:hidden" />
 
                                         {/* Stars Badge */}
                                         <div className="absolute top-6 left-6 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full shadow-lg border border-white/20 flex items-center gap-1">
@@ -309,7 +309,7 @@ export default function VenueHotel() {
                 {/* ═══════════════ CTA BANNER ═══════════════ */}
                 <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mt-32">
                     <FadeIn direction="up">
-                        <div className="bg-gradient-to-br from-pine to-[#1a2e31] rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+                        <div className="bg-linear-to-br from-pine to-[#1a2e31] rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-96 h-96 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl animate-float-slow" />
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-moss/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl animate-float-delay" />
 

@@ -54,7 +54,7 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
                         transition-all duration-400 cursor-pointer overflow-hidden"
             >
               {/* Hover gradient glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-fog/0 via-transparent to-sage/0
+              <div className="absolute inset-0 bg-linear-to-br from-fog/0 via-transparent to-sage/0
                               group-hover:from-fog/5 group-hover:to-sage/5 transition-all duration-500 rounded-xl" />
 
               {/* Number badge */}
@@ -64,7 +64,7 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
               </span>
 
               <div className="relative">
-                <div className="w-8 h-1 bg-gradient-to-r from-fog to-sage rounded-full mb-3
+                <div className="w-8 h-1 bg-linear-to-r from-fog to-sage rounded-full mb-3
                                 group-hover:w-12 transition-all duration-400" />
                 <h3 className="text-sm font-bold text-white/90 pr-10 pt-3 leading-snug
                                group-hover:text-white transition-colors duration-300">{st.title}</h3>
@@ -103,11 +103,11 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-gradient-to-br from-pine via-[#1e3a3f] to-pine rounded-2xl p-8 lg:p-10 border border-fog/15 shadow-2xl relative overflow-hidden">
+            <div className="bg-linear-to-br from-pine via-[#1e3a3f] to-pine rounded-2xl p-8 lg:p-10 border border-fog/15 shadow-2xl relative overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-fog/5 rounded-full -translate-y-1/2 translate-x-1/3" />
               <div className="absolute bottom-0 left-0 w-40 h-40 bg-sage/5 rounded-full translate-y-1/3 -translate-x-1/4" />
-              <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-fog/30 to-transparent rounded-full" />
+              <div className="absolute top-0 left-8 right-8 h-[2px] bg-linear-to-r from-transparent via-fog/30 to-transparent rounded-full" />
 
               {/* Close button */}
               <button
@@ -126,7 +126,7 @@ export default function SubThemesGrid({ subthemes }: { subthemes: SubTheme[] }) 
                 <span className="text-6xl font-black text-fog/30">{selected.number}</span>
 
                 {/* Accent line */}
-                <div className="w-14 h-1 bg-gradient-to-r from-fog to-sage rounded-full mt-4 mb-5" />
+                <div className="w-14 h-1 bg-linear-to-r from-fog to-sage rounded-full mt-4 mb-5" />
 
                 {/* Title */}
                 <h3 className="text-xl lg:text-2xl font-extrabold text-white leading-snug mb-5">

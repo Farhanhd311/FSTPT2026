@@ -51,8 +51,8 @@ export default function Home() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-pine/95 via-pine/80 to-pine/40" />
-            <div className="absolute inset-0 bg-gradient-to-t from-pine/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-pine/95 via-pine/80 to-pine/40" />
+            <div className="absolute inset-0 bg-linear-to-t from-pine/60 via-transparent to-transparent" />
           </div>
 
           {/* Floating decorative elements */}
@@ -75,7 +75,7 @@ export default function Home() {
               <FadeIn delay={200}>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
                   {t('hero.title1')}{' '}
-                  <span className="text-gradient-fog bg-gradient-to-r from-moss to-clay bg-clip-text text-transparent">{t('hero.titleHighlight')}</span>
+                  <span className="text-gradient-fog bg-linear-to-r from-moss to-clay bg-clip-text text-transparent">{t('hero.titleHighlight')}</span>
                   <br />
                   {t('hero.title2')}
                 </h1>
@@ -90,7 +90,7 @@ export default function Home() {
               <FadeIn delay={400}>
                 <div className="max-w-3xl border-l-4 border-fog pl-6 py-2">
                   <p className="text-2xl sm:text-3xl lg:text-4xl font-black leading-[1.2] tracking-tight">
-                    <span className="bg-gradient-to-r from-white via-moss to-sage bg-clip-text text-transparent italic pr-4">
+                    <span className="bg-linear-to-r from-white via-moss to-sage bg-clip-text text-transparent italic pr-4">
                       {t('hero.theme')}
                     </span>
                   </p>
@@ -99,7 +99,7 @@ export default function Home() {
 
               <FadeIn delay={300}>
                 <p className="text-lg sm:text-xl text-white/90 font-semibold tracking-tight">
-                  <span className="bg-gradient-to-r from-sage via-moss to-white bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-sage via-moss to-white bg-clip-text text-transparent">
                     Hybrid from Convention Hall
                   </span>
                 </p>
@@ -110,7 +110,7 @@ export default function Home() {
                   <a href="https://smc.fstpt.info/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative px-6 sm:px-7 py-3.5 bg-gradient-to-r from-fog to-sage text-white
+                    className="group relative px-6 sm:px-7 py-3.5 bg-linear-to-r from-fog to-sage text-white
                              text-sm font-bold rounded-xl overflow-hidden whitespace-nowrap
                              hover:shadow-[0_8px_30px_rgba(70,112,126,0.4)] hover:-translate-y-0.5
                              transition-all duration-300">
@@ -134,7 +134,7 @@ export default function Home() {
           </div>
 
           {/* Bottom gradient fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white to-transparent" />
         </section>
 
         {/* ═══════════════ ABOUT / PENJELASAN ═══════════════ */}
@@ -145,7 +145,7 @@ export default function Home() {
               {/* Left — Decorative block */}
               <FadeIn direction="left">
                 <div className="relative">
-                  <div className="aspect-[6/3] rounded-2xl bg-gradient-to-br from-pine to-fog overflow-hidden relative">
+                  <div className="aspect-6/3 rounded-2xl bg-linear-to-br from-pine to-fog overflow-hidden relative">
                     <div className="absolute inset-0 bg-[url('/mobility.jpg')] bg-cover bg-center opacity-30" />
                     <div className="relative z-10 flex left-3 bottom-2 flex-col justify-end h-full p-8">
                       <p className="text-clay text-sm font-semibold tracking-widest uppercase mb-2">{t('about.year')}</p>
@@ -218,7 +218,7 @@ export default function Home() {
                                   transition-all duration-300 overflow-hidden">
 
                     {/* Top accent line */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-fog to-sage
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-fog to-sage
                                     scale-x-0 group-hover:scale-x-100 origin-left
                                     transition-transform duration-500" />
 
@@ -309,7 +309,7 @@ export default function Home() {
               <div className="bg-pine rounded-3xl p-10 lg:p-16 relative overflow-hidden mt-20">
                 <div className="absolute top-0 right-0 w-72 h-72 bg-fog/5 rounded-full -translate-y-1/2 translate-x-1/3" />
                 <div className="absolute bottom-0 left-0 w-56 h-56 bg-sage/5 rounded-full translate-y-1/3 -translate-x-1/4" />
-                <div className="absolute top-0 left-10 right-10 h-1 bg-gradient-to-r from-transparent via-fog to-transparent rounded-full" />
+                <div className="absolute top-0 left-10 right-10 h-1 bg-linear-to-r from-transparent via-fog to-transparent rounded-full" />
 
                 <div className="relative">
                   <div className="text-center mb-10">
@@ -331,7 +331,7 @@ export default function Home() {
 
         {/* ═══════════════ SUBTHEMES ═══════════════ */}
         <section className="flex flex-col justify-center items-center py-24 lg:py-20 bg-pine relative overflow-hidden mt-16">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-125 h-125 bg-fog/10 rounded-full -translate-y-1/2 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-sage/10 rounded-full translate-y-1/2 -translate-x-1/3" />
 
           <div className="relative max-w-5xl mx-auto px-6 lg:px-12">
@@ -353,7 +353,7 @@ export default function Home() {
 
         {/* ═══════════════ IMPORTANT DATES ═══════════════ */}
 
-        <section className="relative py-28 lg:py-20 bg-gradient-to-b from-white via-clay/5 to-white overflow-hidden">
+        <section className="relative py-28 lg:py-20 bg-linear-to-b from-white via-clay/5 to-white overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-40" />
           <div className="absolute top-16 left-[8%] w-64 h-64 bg-fog/5 rounded-full blur-3xl animate-float-slow" />
           <div className="absolute bottom-20 right-[10%] w-48 h-48 bg-sage/5 rounded-full blur-3xl animate-float-delay" />
@@ -372,7 +372,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════ CTA BANNER ═══════════════ */}
-        <section className="flex flex-col justify-center items-center py-24 lg:py-32 bg-gradient-to-br from-clay/20 to-white mt-16">
+        <section className="flex flex-col justify-center items-center py-24 lg:py-32 bg-linear-to-br from-clay/20 to-white mt-16">
           <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
             <FadeIn>
               <p className="text-fog font-semibold tracking-widest uppercase text-sm mb-3">{t('cta.label')}</p>

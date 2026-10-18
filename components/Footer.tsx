@@ -23,9 +23,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-pine to-[#0f1f22] text-clay overflow-hidden">
+    <footer className="relative bg-linear-to-b from-pine to-[#0f1f22] text-clay overflow-hidden">
       {/* Subtle top accent line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-fog/60 to-transparent"></div>
+      <div className="h-[2px] bg-linear-to-r from-transparent via-fog/60 to-transparent"></div>
 
       <div className="relative w-full px-6 sm:px-10 lg:px-16 pt-10 pb-6">
         {/* Main Grid - compact 4-column layout */}
@@ -34,7 +34,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2.5 group mb-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-fog to-sage rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <div className="w-9 h-9 bg-linear-to-br from-fog to-sage rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -133,7 +133,7 @@ export default function Footer() {
                 placeholder={t('emailPlaceholder')}
                 className="flex-1 min-w-0 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder-moss/50 focus:outline-none focus:border-fog/50 transition-colors"
               />
-              <button className="px-3 py-1.5 bg-gradient-to-r from-fog to-sage text-white rounded-lg hover:opacity-90 transition-opacity duration-200 flex-shrink-0">
+              <button className="px-3 py-1.5 bg-linear-to-r from-fog to-sage text-white rounded-lg hover:opacity-90 transition-opacity duration-200 flex-shrink-0">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -143,7 +143,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5"></div>
+        <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-5"></div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3">

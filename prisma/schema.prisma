@@ -1,0 +1,580 @@
+// Rancang Bangun Sistem Informasi Pengelolaan Website Konferensi Multi-Edisi
+// Berbasis Platform Low-Code pada Organisasi FSTPT — skema basis data.
+//
+// Rujukan proposal TA: §2.13 (Arsitektur Multi-Edisi), §3.6.4 (Perancangan Sistem),
+// Tabel 3.1 (KF-01 s.d. KF-07), Batasan Masalah butir 4 (penyimpanan berkas) & 6 (bahasa).
+//
+// Pemisahan skema:
+//   - Model GLOBAL   : data organisasi FSTPT, berlaku lintas edisi, hanya SUPERADMIN
+//                      yang mengubah (§2.13, §2.6.3 RBAC).
+//   - Model PER-EDISI: seluruh model lain terikat `editionId`, membentuk satu tenant.
+//                      Saat status edisi diubah menjadi ARCHIVED, seluruh barisnya
+//                      menjadi arsip permanen (KF-04) dan tidak lagi diedit ADMIN_LOCAL.
+//   - Pola *Translation: field teks disimpan terpisah per locale, bukan kolom kembar
+//     (Batasan Bahasa butir 6) — menambah bahasa baru berarti menambah baris, bukan kolom.
+//
+// Catatan desain — normalisasi tanggal (memperbaiki bug yang ditemukan di web berjalan):
+// TimelineItem menyimpan startDate/endDate sebagai DateTime asli, BUKAN teks per-bahasa.
+// Sebelumnya Timeline.tsx menulis "6 – 7 November" sementara authorGuidelineContent
+// menulis "07 – 08 NOVEMBER" untuk hari yang sama, karena keduanya string bebas yang
+// diketik terpisah dan tidak pernah disinkronkan. Dengan DateTime sebagai satu sumber
+// kebenaran, teks tampilan dibentuk saat render lewat Intl.DateTimeFormat(locale),
+// sehingga inkonsistensi seperti itu tidak bisa terjadi lagi secara struktural.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// URL koneksi dikonfigurasi di prisma.config.ts (Prisma 7), bukan di sini.
+datasource db {
+  provider = "mysql"
+}
+
+// ============================================================
+// ENUM
+// ============================================================
+
+enum Locale {
+  ID
+  EN
+}
+
+enum Role {
+  SUPERADMIN
+  ADMIN_LOCAL
+}
+
+enum EditionStatus {
+  DRAFT // sedang dikonfigurasi ADMIN_LOCAL, belum tayang ke PUBLIC
+  ACTIVE // edisi yang sedang tayang di halaman publik (KF-06)
+  ARCHIVED // edisi lampau, hanya baca — arsip digital institusional (KF-04)
+}
+
+enum MediaType {
+  LOGO
+  BANNER
+  FLYER
+  PHOTO
+  DOCUMENT
+}
+
+enum CommitteeGroup {
+  STEERING // Panitia Pengarah
+  ORGANIZING // Panitia Penyelenggara (memakai CommitteeRole)
+  SCIENTIFIC // Komite Ilmiah (memakai Institution)
+}
+
+enum TimelineLabel {
+  MILESTONE
+  SUBMISSION
+  REVIEW
+  ANNOUNCEMENT
+  REVISION
+  REGISTRATION
+  EVENT_DAY
+}
+
+enum FeeScheme {
+  ISTSDC // simposium internasional
+  FSTPT // simposium nasional
+}
+
+enum FeePeriod {
+  EARLY_BIRD
+  REGULAR
+}
+
+enum Currency {
+  IDR
+  USD
+}
+
+// ============================================================
+// GLOBAL — data organisasi FSTPT, dirujuk oleh setiap edisi
+// ============================================================
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role
+  // null untuk SUPERADMIN (akses penuh seluruh platform); terisi untuk
+  // ADMIN_LOCAL yang dibatasi hanya pada satu edisi (Batasan Aktor, KF-05).
+  editionId    String?
+  edition      Edition? @relation(fields: [editionId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([editionId])
+}
+
+model Institution {
+  id               String            @id @default(cuid())
+  name             String // "Universitas Andalas, Indonesia"
+  committeeMembers CommitteeMember[]
+}
+
+model CommitteeRole {
+  id               String            @id @default(cuid())
+  code             String            @unique // CHAIRMAN | VICE_CHAIRMAN | SECRETARY | TREASURER
+  labelId          String // "Ketua"
+  labelEn          String // "Chairman"
+  committeeMembers CommitteeMember[]
+}
+
+model SubCommitteeType {
+  id            String         @id @default(cuid())
+  code          String         @unique // SECRETARIAT | EVENTS | EQUIPMENT | WEBSITE | PUBLICATION | WORKSHOP
+  labelId       String
+  labelEn       String
+  order         Int
+  subCommittees SubCommittee[]
+}
+
+// ============================================================
+// EDISI — akar tenant multi-edisi (§2.13)
+// ============================================================
+
+model Edition {
+  id                     String        @id @default(cuid())
+  year                   Int
+  editionNumber          String // "XXIX"
+  istsdcNumber           String? // "V"
+  slug                   String        @unique // dasar routing publik, mis. "fstpt-2026"
+  status                 EditionStatus @default(DRAFT)
+  hostUniversity         String
+  hostCity               String
+  officialEmail          String
+  startDate              DateTime
+  endDate                DateTime
+  externalPaperSystemUrl String? // tautan sistem manajemen makalah pihak lain (mis. SMC-FSTPT)
+  // Referensi lunak ke Media.id — lihat catatan di model Media perihal mengapa
+  // pointer logo/banner/flyer tidak dideklarasikan sebagai relasi Prisma formal.
+  flyerMediaId           String?
+  createdAt              DateTime      @default(now())
+  updatedAt              DateTime      @updatedAt
+
+  users             User[]
+  media             Media[]
+  hero              HeroSection?
+  about             AboutSection?
+  objectives        Objective[]
+  activityBlocks    ActivityBlock[]
+  subthemes         Subtheme[]
+  visualConfig      VisualConfig?
+  committeeMembers  CommitteeMember[]
+  subCommittees     SubCommittee[]
+  keynoteSpeakers   KeynoteSpeaker[]
+  timelineItems     TimelineItem[]
+  feeCategories     FeeCategory[]
+  guidelineSections GuidelineSection[]
+  venue             Venue?
+  hotels            Hotel[]
+  contactPersons    ContactPerson[]
+  footer            FooterContent?
+}
+
+// -------------------- Identitas visual & berkas (KF-02) --------------------
+
+// Satu tabel media untuk seluruh berkas unggahan (D3), sesuai Batasan Teknologi:
+// berkas disimpan di direktori server, basis data hanya mencatat lokasinya (path).
+// logoMediaId/bannerMediaId/photoMediaId/flyerMediaId di model lain adalah
+// referensi lunak (String, bukan relasi Prisma formal) ke Media.id — sebuah media
+// sudah terikat kuat ke Edition lewat editionId di bawah ini, sehingga pointer
+// "media mana yang jadi logo/banner/foto ini" cukup ditangani di lapisan aplikasi.
+model Media {
+  id         String    @id @default(cuid())
+  editionId  String
+  edition    Edition   @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  type       MediaType
+  path       String
+  altTextId  String?
+  altTextEn  String?
+  uploadedAt DateTime  @default(now())
+
+  @@index([editionId])
+}
+
+model VisualConfig {
+  id             String  @id @default(cuid())
+  editionId      String  @unique
+  edition        Edition @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  primaryColor   String // hex, contoh "#22393c" — diinjeksikan sebagai CSS Custom Property
+  secondaryColor String
+  accentColor    String
+  logoMediaId    String?
+  bannerMediaId  String?
+}
+
+// -------------------- Beranda: Hero, About, Tujuan, Kegiatan --------------------
+
+model HeroSection {
+  id           String                   @id @default(cuid())
+  editionId    String                   @unique
+  edition      Edition                  @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  translations HeroSectionTranslation[]
+}
+
+model HeroSectionTranslation {
+  id             String      @id @default(cuid())
+  heroSectionId  String
+  heroSection    HeroSection @relation(fields: [heroSectionId], references: [id], onDelete: Cascade)
+  locale         Locale
+  badge          String
+  title1         String
+  titleHighlight String
+  title2         String
+  subtitle       String
+  theme          String      @db.Text // tema tahunan edisi, mis. "Advancing Sustainable Mobility..."
+  ctaPrimary     String
+  ctaSecondary   String
+
+  @@unique([heroSectionId, locale])
+}
+
+model AboutSection {
+  id           String                    @id @default(cuid())
+  editionId    String                    @unique
+  edition      Edition                   @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  translations AboutSectionTranslation[]
+  statistics   Statistic[]
+}
+
+model AboutSectionTranslation {
+  id             String       @id @default(cuid())
+  aboutSectionId String
+  aboutSection   AboutSection @relation(fields: [aboutSectionId], references: [id], onDelete: Cascade)
+  locale         Locale
+  label          String
+  title          String
+  titleHighlight String
+  description    String       @db.Text
+  eventInfo      String       @db.Text
+
+  @@unique([aboutSectionId, locale])
+}
+
+model Statistic {
+  id             String                 @id @default(cuid())
+  aboutSectionId String
+  aboutSection   AboutSection           @relation(fields: [aboutSectionId], references: [id], onDelete: Cascade)
+  order          Int
+  value          String // teks bebas agar menampung "29", "500+", "Ke-XXIX"
+  translations   StatisticTranslation[]
+}
+
+model StatisticTranslation {
+  id          String    @id @default(cuid())
+  statisticId String
+  statistic   Statistic @relation(fields: [statisticId], references: [id], onDelete: Cascade)
+  locale      Locale
+  label       String // "Simposium" / "Symposium"
+
+  @@unique([statisticId, locale])
+}
+
+model Objective {
+  id           String                 @id @default(cuid())
+  editionId    String
+  edition      Edition                @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  order        Int
+  translations ObjectiveTranslation[]
+
+  @@index([editionId])
+}
+
+model ObjectiveTranslation {
+  id          String    @id @default(cuid())
+  objectiveId String
+  objective   Objective @relation(fields: [objectiveId], references: [id], onDelete: Cascade)
+  locale      Locale
+  title       String
+  description String    @db.Text
+
+  @@unique([objectiveId, locale])
+}
+
+model ActivityBlock {
+  id           String                     @id @default(cuid())
+  editionId    String
+  edition      Edition                    @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  order        Int
+  translations ActivityBlockTranslation[]
+
+  @@index([editionId])
+}
+
+model ActivityBlockTranslation {
+  id              String        @id @default(cuid())
+  activityBlockId String
+  activityBlock   ActivityBlock @relation(fields: [activityBlockId], references: [id], onDelete: Cascade)
+  locale          Locale
+  title           String
+  description     String        @db.Text
+
+  @@unique([activityBlockId, locale])
+}
+
+// -------------------- Tema & sub-tema (KF-03) --------------------
+
+model Subtheme {
+  id           String                @id @default(cuid())
+  editionId    String
+  edition      Edition               @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  order        Int
+  translations SubthemeTranslation[]
+
+  @@index([editionId])
+}
+
+model SubthemeTranslation {
+  id          String   @id @default(cuid())
+  subthemeId  String
+  subtheme    Subtheme @relation(fields: [subthemeId], references: [id], onDelete: Cascade)
+  locale      Locale
+  title       String
+  description String   @db.Text
+
+  @@unique([subthemeId, locale])
+}
+
+// -------------------- Susunan komite & keynote speaker (KF-03) --------------------
+
+model CommitteeMember {
+  id            String         @id @default(cuid())
+  editionId     String
+  edition       Edition        @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  group         CommitteeGroup
+  name          String // nama diri, tidak diterjemahkan
+  roleId        String? // dipakai untuk group = ORGANIZING
+  role          CommitteeRole? @relation(fields: [roleId], references: [id])
+  institutionId String? // dipakai untuk group = SCIENTIFIC
+  institution   Institution?   @relation(fields: [institutionId], references: [id])
+  photoMediaId  String?
+  order         Int
+
+  @@index([editionId])
+}
+
+model SubCommittee {
+  id                 String               @id @default(cuid())
+  editionId          String
+  edition            Edition              @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  subCommitteeTypeId String
+  subCommitteeType   SubCommitteeType     @relation(fields: [subCommitteeTypeId], references: [id])
+  coordinatorName    String
+  order              Int
+  members            SubCommitteeMember[]
+
+  @@index([editionId])
+}
+
+model SubCommitteeMember {
+  id             String       @id @default(cuid())
+  subCommitteeId String
+  subCommittee   SubCommittee @relation(fields: [subCommitteeId], references: [id], onDelete: Cascade)
+  name           String
+  order          Int
+}
+
+model KeynoteSpeaker {
+  id           String                      @id @default(cuid())
+  editionId    String
+  edition      Edition                     @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  name         String // nama diri, tidak diterjemahkan
+  photoMediaId String?
+  order        Int
+  translations KeynoteSpeakerTranslation[]
+
+  @@index([editionId])
+}
+
+model KeynoteSpeakerTranslation {
+  id               String         @id @default(cuid())
+  keynoteSpeakerId String
+  keynoteSpeaker   KeynoteSpeaker @relation(fields: [keynoteSpeakerId], references: [id], onDelete: Cascade)
+  locale           Locale
+  affiliation      String
+  location         String
+
+  @@unique([keynoteSpeakerId, locale])
+}
+
+// -------------------- Jadwal kegiatan (KF-03) --------------------
+
+model TimelineItem {
+  id           String                    @id @default(cuid())
+  editionId    String
+  edition      Edition                   @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  labelCode    TimelineLabel // dipakai untuk logika warna badge, bukan teks tampil
+  startDate    DateTime
+  endDate      DateTime
+  highlight    Boolean                   @default(false)
+  order        Int
+  translations TimelineItemTranslation[]
+
+  @@index([editionId])
+}
+
+model TimelineItemTranslation {
+  id             String       @id @default(cuid())
+  timelineItemId String
+  timelineItem   TimelineItem @relation(fields: [timelineItemId], references: [id], onDelete: Cascade)
+  locale         Locale
+  labelText      String // teks tampil label, mis. "PEMBUKAAN" / "MILESTONE"
+  title          String
+  description    String?
+
+  @@unique([timelineItemId, locale])
+}
+
+// -------------------- Biaya registrasi (KF-03) --------------------
+
+model FeeCategory {
+  id           String                   @id @default(cuid())
+  editionId    String
+  edition      Edition                  @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  scheme       FeeScheme
+  order        Int
+  translations FeeCategoryTranslation[]
+  amounts      FeeAmount[]
+
+  @@index([editionId])
+}
+
+model FeeCategoryTranslation {
+  id            String      @id @default(cuid())
+  feeCategoryId String
+  feeCategory   FeeCategory @relation(fields: [feeCategoryId], references: [id], onDelete: Cascade)
+  locale        Locale
+  label         String // "Mahasiswa" / "Student"
+
+  @@unique([feeCategoryId, locale])
+}
+
+model FeeAmount {
+  id            String      @id @default(cuid())
+  feeCategoryId String
+  feeCategory   FeeCategory @relation(fields: [feeCategoryId], references: [id], onDelete: Cascade)
+  period        FeePeriod
+  currency      Currency
+  amount        Int // satuan terkecil mata uang yang ditampilkan (rupiah penuh / dolar penuh)
+
+  @@unique([feeCategoryId, period, currency])
+}
+
+// -------------------- Standar penulisan makalah & templat (KF-03) --------------------
+
+model GuidelineSection {
+  id            String                        @id @default(cuid())
+  editionId     String
+  edition       Edition                       @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  order         Int
+  translations  GuidelineSectionTranslation[]
+  templateFiles GuidelineTemplateFile[]
+
+  @@index([editionId])
+}
+
+model GuidelineSectionTranslation {
+  id                 String           @id @default(cuid())
+  guidelineSectionId String
+  guidelineSection   GuidelineSection @relation(fields: [guidelineSectionId], references: [id], onDelete: Cascade)
+  locale             Locale
+  title              String
+  bodyHtml           String           @db.LongText // keluaran editor rich-text di dashboard
+
+  @@unique([guidelineSectionId, locale])
+}
+
+model GuidelineTemplateFile {
+  id                 String           @id @default(cuid())
+  guidelineSectionId String
+  guidelineSection   GuidelineSection @relation(fields: [guidelineSectionId], references: [id], onDelete: Cascade)
+  label              String // "Templat Nasional" / "Templat Internasional"
+  mediaId            String
+}
+
+// -------------------- Venue & rekomendasi hotel (KF-03) --------------------
+
+model Venue {
+  id           String             @id @default(cuid())
+  editionId    String             @unique
+  edition      Edition            @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  address      String
+  capacityText String // "Hingga 2000 Orang"
+  mapUrl       String
+  photoMediaId String?
+  translations VenueTranslation[]
+}
+
+model VenueTranslation {
+  id             String  @id @default(cuid())
+  venueId        String
+  venue          Venue   @relation(fields: [venueId], references: [id], onDelete: Cascade)
+  locale         Locale
+  name           String
+  description    String  @db.Text
+  facilitiesText String?
+
+  @@unique([venueId, locale])
+}
+
+// Nama, harga, dan jarak hotel tidak diterjemahkan (nama diri & angka).
+model Hotel {
+  id            String  @id @default(cuid())
+  editionId     String
+  edition       Edition @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  name          String
+  stars         Int
+  pricePerNight Int
+  distanceKm    Float
+  bookingUrl    String
+  photoMediaId  String?
+  order         Int
+
+  @@index([editionId])
+}
+
+// -------------------- Kontak panitia & footer (KF-03) --------------------
+
+model ContactPerson {
+  id             String  @id @default(cuid())
+  editionId      String
+  edition        Edition @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  name           String
+  phoneDisplay   String
+  whatsappNumber String
+  order          Int
+
+  @@index([editionId])
+}
+
+model FooterContent {
+  id           String                     @id @default(cuid())
+  editionId    String                     @unique
+  edition      Edition                    @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  translations FooterContentTranslation[]
+  socialLinks  SocialLink[]
+}
+
+model FooterContentTranslation {
+  id              String        @id @default(cuid())
+  footerContentId String
+  footerContent   FooterContent @relation(fields: [footerContentId], references: [id], onDelete: Cascade)
+  locale          Locale
+  brandDesc       String        @db.Text
+  copyright       String
+
+  @@unique([footerContentId, locale])
+}
+
+model SocialLink {
+  id              String        @id @default(cuid())
+  footerContentId String
+  footerContent   FooterContent @relation(fields: [footerContentId], references: [id], onDelete: Cascade)
+  platform        String // "instagram" | "facebook" | "youtube" | "x" | "linkedin"
+  url             String
+  order           Int
+}

@@ -51,7 +51,7 @@ export default function KeynoteSpeakers() {
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-pine leading-tight mb-4">
                             Keynote Speakers
                         </h2>
-                        <div className="w-20 h-1 bg-gradient-to-r from-fog to-sage mx-auto rounded-full" />
+                        <div className="w-20 h-1 bg-linear-to-r from-fog to-sage mx-auto rounded-full" />
                     </div>
                 </FadeIn>
 
@@ -68,13 +68,13 @@ export default function KeynoteSpeakers() {
                                         className="object-cover"
                                     />
                                     {/* Overlay gradient - permanent */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-pine via-pine/20 to-transparent opacity-80" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-pine via-pine/20 to-transparent opacity-80" />
                                 </div>
 
                                 {/* Content */}
                                 <div className="p-6 relative bg-pine flex-1 flex flex-col justify-center">
                                     {/* Accent bar - permanent */}
-                                    <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-fog to-sage opacity-100" />
+                                    <div className="absolute top-0 left-6 right-6 h-0.5 bg-linear-to-r from-fog to-sage opacity-100" />
 
                                     <h3 className="text-lg font-bold text-white leading-snug mb-2">
                                         {speaker.name}
