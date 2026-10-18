@@ -32,7 +32,15 @@ const committeeData = {
         { name: "Prof. Bagus Hario Setiadji, S.T., M.T., Ph.D.", institution: "undip", image: "/panitia/setiadji.jpeg" },
         { name: "Prof. Ir. Mas Mera, M.T., Ph.D.", institution: "unand", image: "/panitia/masmera.png" },
         { name: "Dr. Muchammad Zaenal Muttaqin, S.T., M.Sc.", institution: "uir", image: "/panitia/zaenal.jpg" },
-        { name: "Prof. Dr. Yusak Octavius Susilo", institution: "boku", image: "/panitia/yusak.jpg" },
+        { 
+            name: "Prof. Dr. Yusak O. Susilo", 
+            email: "Y.O.Susilo@tudelft.nl",
+            institutions: [
+                ["yusakRole"],
+                ["yusakUni"]
+            ], 
+            image: "/panitia/yusak.jpg" 
+        },
         { name: "Dr. Ir. Iswandaru Widyatmoko", institution: "essex", image: "/panitia/iswandaru.jpg" },
         { name: "Dr. Muslich Hartadi Sutanto", institution: "utp", image: "/panitia/muslich.jpg" },
         { name: "Prof. Takahiro Nishida", institution: "shizuoka", image: "/panitia/takahiro.jpg" },
@@ -221,22 +229,55 @@ export default function Committee() {
                                 <div className="h-1.5 w-24 bg-linear-to-r from-fog to-sage mx-auto rounded-full" />
                             </div>
                             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                                {committeeData.scientific.map((item, i) => (
-                                    <FadeIn key={i} direction="up" delay={i * 50}>
-                                        <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
-                                            <div className="relative h-72 overflow-hidden bg-pine/5">
-                                                <div className="absolute inset-0 bg-linear-to-t from-pine/20 to-transparent z-10" />
-                                                <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
-                                                    <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
+                                {committeeData.scientific.map((item, i) => {
+                                    const instGroups: string[][] = ('institutions' in item && Array.isArray(item.institutions))
+                                        ? item.institutions.map(g => Array.isArray(g) ? g : [g])
+                                        : ('institution' in item && item.institution ? [[item.institution]] : []);
+                                    const hasEmail = 'email' in item && item.email;
+
+                                    return (
+                                        <FadeIn key={i} direction="up" delay={i * 50}>
+                                            <div className="h-full bg-white border border-clay/20 rounded-[2.5rem] overflow-hidden hover:border-pine/30 hover:shadow-2xl hover:shadow-pine/5 transition-all duration-500 group flex flex-col">
+                                                <div className="relative h-72 overflow-hidden bg-pine/5">
+                                                    <div className="absolute inset-0 bg-linear-to-t from-pine/20 to-transparent z-10" />
+                                                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
+                                                        <NextImage src={item.image} alt={item.name} fill className="object-cover" sizes="(max-w-7xl) 25vw" />
+                                                    </div>
+                                                </div>
+                                                <div className="p-6 flex-grow flex flex-col justify-center text-center">
+                                                    <p className={`font-black text-pine leading-tight text-base sm:text-xs xl:text-base tracking-tight ${!hasEmail ? 'mb-2' : ''}`}>
+                                                        {item.name}
+                                                    </p>
+                                                    {hasEmail && (
+                                                        <a
+                                                            href={`mailto:${item.email}`}
+                                                            className="text-[11px] font-semibold text-moss hover:underline transition-colors mt-1 mb-2.5 inline-block"
+                                                        >
+                                                            {item.email}
+                                                        </a>
+                                                    )}
+                                                    {instGroups.length > 1 || (instGroups[0] && instGroups[0].length > 1) ? (
+                                                        <div className="space-y-2 mt-1">
+                                                            {instGroups.map((group, gIdx) => (
+                                                                <div key={gIdx} className={gIdx > 0 ? "pt-2 border-t border-clay/20 space-y-1" : "space-y-1"}>
+                                                                    {group.map((inst, idx) => (
+                                                                        <p key={idx} className="text-[11px] font-semibold text-sage leading-relaxed">
+                                                                            {t(`institutions.${inst}`)}
+                                                                        </p>
+                                                                    ))}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    ) : (
+                                                        <p className="text-[10px] font-bold text-sage uppercase tracking-wider">
+                                                            {instGroups[0]?.[0] ? t(`institutions.${instGroups[0][0]}`) : ''}
+                                                        </p>
+                                                    )}
                                                 </div>
                                             </div>
-                                            <div className="p-6 flex-grow flex flex-col justify-center text-center">
-                                                <p className="font-black text-pine leading-tight text-base sm:text-xs xl:text-base tracking-tight mb-2">{item.name}</p>
-                                                <p className="text-[10px] font-bold text-sage uppercase tracking-wider">{t(`institutions.${item.institution}`)}</p>
-                                            </div>
-                                        </div>
-                                    </FadeIn>
-                                ))}
+                                        </FadeIn>
+                                    );
+                                })}
                             </div>
                         </section>
                     </div>
